@@ -9,12 +9,19 @@ import Main from './layout/Main';
 import AuthProvider from './Providers/AuthProvider';
 import Login from './pages/Login/Login';
 import Register from './pages/Register';
+import Home from './pages/Home/Home';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
     children: [
+      {
+        path:'/',
+        element: <Home></Home>
+      }
+      ,
+
       {
         path: '/login',
         element: <Login></Login>

@@ -7,14 +7,13 @@ import Swal from "sweetalert2";
 import { AuthContext } from "../../Providers/AuthProvider";
 
 
+
 const Login = () => {
     const { googleLogin, userLogin } = useContext(AuthContext);
     const location = useLocation();
     const navigate = useNavigate();
 
     const from = location.state?.from?.pathname || "/";
-    //console.log('state in the location login page', location.state)
-
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -22,8 +21,6 @@ const Login = () => {
         const password = e.target.password.value;
         userLogin(email, password)
             .then(result => {
-                // const user = result.user;
-                //console.log(user);
                 if (result) {
                     Swal.fire({
                         title: 'User Login Successful.',
