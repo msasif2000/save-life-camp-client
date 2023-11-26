@@ -1,17 +1,13 @@
 import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form';
-import { AuthContext } from "../Providers/AuthProvider";
-
-
-
+import useAuth from "../../hooks/useAuth";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
-    const { createUser, googleLogin, updateUserProfile } = useContext(AuthContext);
+    const { createUser, googleLogin, updateUserProfile } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 

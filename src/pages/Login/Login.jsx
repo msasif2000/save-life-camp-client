@@ -1,15 +1,15 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { useContext } from "react";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
-import { AuthContext } from "../../Providers/AuthProvider";
+import useAuth from "../../hooks/useAuth";
+
 
 
 
 const Login = () => {
-    const { googleLogin, userLogin } = useContext(AuthContext);
+    const { googleLogin, userLogin } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -33,6 +33,16 @@ const Login = () => {
                     });
                     navigate(from, { replace: true });
                 }
+            })
+            .catch(error => {
+                console.log(error.message)
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'check email and password again!',
+                    footer: '<a href="/register">Create an account?</a>'
+                });
+            
             })
     }
 

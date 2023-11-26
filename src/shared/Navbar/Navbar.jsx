@@ -1,12 +1,11 @@
 import { BiUserCircle } from "react-icons/bi";
 import { NavLink } from "react-router-dom";
 import './Navbar.css'
-import { useContext } from "react";
-import { AuthContext } from "../../Providers/AuthProvider";
 import logo from '../../assets/logo.jpg'
+import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
-    const { user, userLogout } = useContext(AuthContext);
+    const { user, userLogout } = useAuth();
 
     const handleLogout = () => {
         userLogout()
@@ -16,9 +15,10 @@ const Navbar = () => {
     const navlinks =
         <>
             <li className=""><NavLink to='/'>Home</NavLink></li>
+            <li className=""><NavLink to='/availableCamp'>Available Camp</NavLink></li>
             {
                 user ?
-                    <li><button onClick={handleLogout} className="btn btn-sm">Sign Out</button></li>
+                    ''
                     :
                     <>
                         <li><NavLink to='/login'>Sign in</NavLink></li>
@@ -50,10 +50,12 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <img src={user.photoURL} alt=""  className="h-16 w-16 rounded-full bg-red-600 p-1"/>
+                                <li><button onClick={handleLogout} className="btn btn-sm mr-2 border-2 border-red-600 text-xl">Sign Out</button></li>
+                                <img src={user.photoURL} alt="" className="h-16 w-16 rounded-full bg-red-600 p-1" />
                             </>
                             :
                             <BiUserCircle className="text-red-600 text-4xl"></BiUserCircle>
+
                     }
                 </div>
             </div>

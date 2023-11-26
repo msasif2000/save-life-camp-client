@@ -8,8 +8,9 @@ import './index.css'
 import Main from './layout/Main';
 import AuthProvider from './Providers/AuthProvider';
 import Login from './pages/Login/Login';
-import Register from './pages/Register';
 import Home from './pages/Home/Home';
+import Register from './pages/Register/Register';
+import AvailableCamps from './pages/AvailableCamps/AvailableCamps';
 
 const router = createBrowserRouter([
   {
@@ -17,18 +18,20 @@ const router = createBrowserRouter([
     element: <Main></Main>,
     children: [
       {
-        path:'/',
+        path: '/',
         element: <Home></Home>
-      }
-      ,
-
+      },
       {
         path: '/login',
         element: <Login></Login>
-      }, 
+      },
       {
-        path: '/register', 
-      element: <Register></Register>
+        path: '/register',
+        element: <Register></Register>
+      },
+      {
+        path:'/availableCamp',
+        element: <AvailableCamps></AvailableCamps>
       }
     ]
   },
@@ -36,8 +39,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-      <AuthProvider>
-          <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
     </AuthProvider>
   </React.StrictMode>,
 )

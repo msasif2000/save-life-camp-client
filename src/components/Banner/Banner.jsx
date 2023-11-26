@@ -4,6 +4,7 @@ import b1 from '../../assets/banner/b1.jpg'
 import b2 from '../../assets/banner/b2.jpg';
 import b3 from '../../assets/banner/b3.jpg';
 import b4 from '../../assets/banner/b4.jpg';
+import b5 from '../../assets/banner/b5.jpg';
 
 const Banner = () => {
     return (
@@ -19,6 +20,9 @@ const Banner = () => {
             </div>
             <div>
                 <img src={b4} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
+            </div>
+            <div>
+                <img src={b5} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
             </div>
         </Carousel>
     );
