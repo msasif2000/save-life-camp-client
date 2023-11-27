@@ -7,13 +7,13 @@ const AvailableCamps = () => {
 
     const [camps, setCamps] = useState([]);
 
-    axiosSecure('/camp')
+    axiosSecure.get('/camp')
         .then(res => {
             //console.log(res.data);
             setCamps(res.data);
         })
-        .catch(err => {
-            console.log(err);
+        .catch(() => {
+         //   console.log(err);
         })
 //console.log(camps);
     return (

@@ -21,6 +21,7 @@ import DashBoard from './layout/DashBoard';
 import PrivateRoute from './Providers/PrivateRoute';
 import Booked from './pages/Dashboard/Booked/Booked';
 import AddCamp from './AdminPages/AddCamp/AddCamp';
+import ManageCamps from './AdminPages/ManageCamps/ManageCamps';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
       {
         path: 'addCamp',
         element: <AddCamp></AddCamp>
+      },
+      {
+        path:'manageCamp',
+        element: <ManageCamps></ManageCamps>
       }
     ]
   }

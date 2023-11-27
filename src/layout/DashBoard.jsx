@@ -20,7 +20,7 @@ const DashBoard = () => {
     }
     return (
         <div className="flex md:container mx-auto">
-            <div className="w-64 min-h-screen bg-red-600 text-white">
+            <div className="w-64 min-h-screen bg-red-600 text-white pt-12">
                 <ul className="menu text-xl">
 
                     {
