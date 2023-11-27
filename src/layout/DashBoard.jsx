@@ -58,7 +58,7 @@ const DashBoard = () => {
                                 </li>
                             </>
                     }
-                     <li>
+                     {/* <li>
                                     <NavLink to='/dashboard/profile'><img src={user?.photoURL} alt="" className="w-12 rounded-full" /> My Profile</NavLink>
                                 </li>
                                 <li>
@@ -69,7 +69,7 @@ const DashBoard = () => {
                                 </li>
                                 <li>
                                     <NavLink to='/dashboard/payment'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
-                                </li>
+                                </li> */}
 
                     <div className="divider"></div>
 

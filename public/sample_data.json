@@ -31,7 +31,7 @@
     },
     {
       "campName": "CompassionCare",
-      "image": "url/to/compassioncare-image.jpg",
+      "image": "https://i.ibb.co/NYzdJ0r/im2.jpg",
       "date": "2023-11-25T14:00:00",
       "venue": "Community Hall, Oak Street",
       "services": ["Primary Care", "Eye Check-ups"],
@@ -41,7 +41,7 @@
     },
     {
       "campName": "WellBeingWave",
-      "image": "url/to/wellbeingwave-image.jpg",
+      "image": "https://i.ibb.co/mCbv51b/fitness-322.jpg",
       "date": "2023-11-28T13:15:00",
       "venue": "Wellness Center, Beachside",
       "services": ["Wellness Workshops", "Fitness Assessments"],

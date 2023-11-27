@@ -17,7 +17,7 @@ const AvailableCamps = () => {
         })
 //console.log(camps);
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-16">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 my-16">
             {
                 camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
             }

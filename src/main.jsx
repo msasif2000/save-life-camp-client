@@ -20,6 +20,7 @@ import { axiosSecure } from './hooks/useAxiosSecure';
 import DashBoard from './layout/DashBoard';
 import PrivateRoute from './Providers/PrivateRoute';
 import Booked from './pages/Dashboard/Booked/Booked';
+import AddCamp from './AdminPages/AddCamp/AddCamp';
 
 
 const router = createBrowserRouter([
@@ -59,7 +60,10 @@ const router = createBrowserRouter([
         element: <Booked></Booked>
       },
       //admin routes
-      
+      {
+        path: 'addCamp',
+        element: <AddCamp></AddCamp>
+      }
     ]
   }
 ]);
