@@ -5,6 +5,10 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import './index.css'
+import {
+  QueryClient,
+  QueryClientProvider,
+} from '@tanstack/react-query'
 import Main from './layout/Main';
 import AuthProvider from './Providers/AuthProvider';
 import Login from './pages/Login/Login';
@@ -15,6 +19,8 @@ import CampRegistration from './pages/AvailableCamps/CampRegistration/CampRegist
 import { axiosSecure } from './hooks/useAxiosSecure';
 import DashBoard from './layout/DashBoard';
 import PrivateRoute from './Providers/PrivateRoute';
+import Booked from './pages/Dashboard/Booked/Booked';
+
 
 const router = createBrowserRouter([
   {
@@ -39,16 +45,21 @@ const router = createBrowserRouter([
       },
       {
         path: '/joinCamp/:id',
-        element: <CampRegistration></CampRegistration>,
+        element: <PrivateRoute><CampRegistration></CampRegistration></PrivateRoute>,
         loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       }
     ]
   },
   {
-    path: '/dashboard',
-    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+    path: 'dashboard',
+    element: <DashBoard></DashBoard>,
     children: [
-
+      {
+        path: 'joinedCamp',
+        element: <Booked></Booked>
+      },
+      //admin routes
+      
     ]
   }
 ]);
@@ -56,7 +67,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <QueryClientProvider client={new QueryClient()}>
+        <RouterProvider router={router} />
+      </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

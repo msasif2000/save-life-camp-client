@@ -58,7 +58,7 @@ const Navbar = () => {
                         user ?
                             <>
                                 <li><button onClick={handleLogout} className="btn btn-sm mr-2 border-2 border-red-600 text-xl">Sign Out</button></li>
-                                <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-16 w-16 rounded-full bg-red-600 p-1" /></Link>
+                                <Link to='/dashboard/profile'><img src={user.photoURL} alt="" className="h-16 w-16 rounded-full bg-red-600 p-1" /></Link>
                             </>
                             :
                             <BiUserCircle className="text-red-600 text-4xl"></BiUserCircle>

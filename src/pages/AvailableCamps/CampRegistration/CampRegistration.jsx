@@ -22,7 +22,7 @@ const CampRegistration = () => {
 
 
         if (user && user.email) {
-            const participant = { campId: _id, ...data };
+            const participant = { campId: _id, ...data,campName: campName, campImg: image, campFee: campFee, date, venue };
             console.log(participant);
             axiosSecure.post('/participants', participant)
                 .then(res => {
@@ -36,6 +36,8 @@ const CampRegistration = () => {
                             timer: 1500
                         });
                         reset();
+
+                        navigate('/dashboard/joinedCamp');
                     }
                 })
         }
