@@ -1,5 +1,5 @@
 import { BiUserCircle } from "react-icons/bi";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
 import logo from '../../assets/logo.jpg'
 import useAuth from "../../hooks/useAuth";
@@ -16,6 +16,13 @@ const Navbar = () => {
         <>
             <li className=""><NavLink to='/'>Home</NavLink></li>
             <li className=""><NavLink to='/availableCamp'>Available Camp</NavLink></li>
+            {
+                user ?
+                    <li className=""><NavLink to='/dashboard'>Dashboard</NavLink></li>
+                    :
+                    <li className=""><NavLink to='/login'>Dashboard</NavLink></li>
+            }
+            <li className=""><NavLink to='/contact'>Contact Us</NavLink></li>
             {
                 user ?
                     ''
@@ -51,7 +58,7 @@ const Navbar = () => {
                         user ?
                             <>
                                 <li><button onClick={handleLogout} className="btn btn-sm mr-2 border-2 border-red-600 text-xl">Sign Out</button></li>
-                                <img src={user.photoURL} alt="" className="h-16 w-16 rounded-full bg-red-600 p-1" />
+                                <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-16 w-16 rounded-full bg-red-600 p-1" /></Link>
                             </>
                             :
                             <BiUserCircle className="text-red-600 text-4xl"></BiUserCircle>
