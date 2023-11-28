@@ -57,11 +57,11 @@ const AllUsers = () => {
     }
     return (
         <div>
-            <h1>Total Users : {users.length}</h1>
+            <h1 className="text-3xl">Total Users : {users.length}</h1>
 
             <div>
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table min-w-full divide-y divide-red-500">
                         {/* head */}
                         <thead>
                             <tr>

@@ -46,7 +46,7 @@ const ManageCamps = () => {
             </div>
             <div>
                 <div className="overflow-x-auto">
-                    <table className="table">
+                    <table className="table min-w-full divide-y divide-gray-200">
                         {/* head */}
                         <thead>
                             <tr>

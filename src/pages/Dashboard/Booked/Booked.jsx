@@ -11,7 +11,7 @@ const Booked = () => {
                 </h2>
             </div>
             <div className="overflow-x-auto">
-                <table className="table" style={{ minWidth: "600px" }}>
+                <table className="table min-w-full divide-y divide-gray-200">
                     <thead>
                         <tr>
                             <th>#</th>
