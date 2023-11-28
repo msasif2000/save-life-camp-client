@@ -1,14 +1,18 @@
 import { BiUserCircle } from "react-icons/bi";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import './Navbar.css'
 import logo from '../../assets/logo.jpg'
 import useAuth from "../../hooks/useAuth";
 
 const Navbar = () => {
+    
     const { user, userLogout } = useAuth();
-
+const navigate = useNavigate();
     const handleLogout = () => {
         userLogout()
+            .then(() => {
+                navigate('/');
+            })
     }
 
 
