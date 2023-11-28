@@ -3,15 +3,12 @@ import { axiosSecure } from "../../hooks/useAxiosSecure";
 import { MdDelete } from "react-icons/md";
 import useCamp from "../../hooks/useCamp";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 
 
 const ManageCamps = () => {
     const [camps, refetch] = useCamp();
 
-
-    const handleUpdate = (id) => {
-        console.log(id);
-    }
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",
@@ -74,7 +71,7 @@ const ManageCamps = () => {
                                     <td>{camp.date}</td>
                                     <td>{camp.venue}</td>
                                     <td className="flex gap-1">
-                                        <button onClick={() => handleUpdate(camp._id)} className="btn btn-sm bg-green-500 px-1 text-white"><AiFillEdit className="text-2xl" /></button>
+                                        <Link to={`/dashboard/updateCamp/${camp._id}`}><button className="btn btn-sm bg-green-500 px-1 text-white"><AiFillEdit className="text-2xl" /></button></Link>
                                         <button onClick={() => handleDelete(camp._id)} className="btn btn-sm bg-red-600 px-1 text-white"><MdDelete className="text-2xl"></MdDelete> </button>
                                     </td>
 

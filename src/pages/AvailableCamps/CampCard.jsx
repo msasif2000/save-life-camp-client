@@ -7,29 +7,24 @@ import useAuth from "../../hooks/useAuth";
 
 const CampCard = ({ camp }) => {
     const { user } = useAuth();
-    const { _id, campName, image, date, venue, services, professionals, audience, details } = camp;
+    const { _id, campName, image, date, campFee, venue, services, professionals, audience, details } = camp;
 
     return (
         <div className="flex flex-col border-2 border-dotted border-red-600 p-4 transition-all hover:-translate-y-1 hover:scale-110 hover:bg-slate-200 duration-500">
             <img src={image} alt="" className="h-56 w-full object-cover" />
 
-            <p className="font-bold text-3xl py-1">{campName}</p>
+            <div className="flex items-center justify-between">
+                <p className="font-bold text-3xl py-1">{campName}</p>
+                <p className="bg-green-400 p-1 rounded text-red-800 font-bold">{campFee} tk</p>
+            </div>
             <div className="flex flex-col flex-grow text-white bg-red-600 p-1">
                 <span className="font-bold text-xl text-center">Session Topic</span>
-                {services?.map((serv, index) => (
-                    <p className="flex items-center gap-1" key={index}>
-                        <MdTopic /> {serv}
-                    </p>
-                ))}
+                {services?.map((serv, index) => (<p className="flex items-center gap-1" key={index}><MdTopic /> {serv}</p>))}
             </div>
 
             <div className="flex flex-col flex-grow text-xl bg-sky-300 p-1">
                 <span className="font-bold text-xl text-center">Guests</span>
-                {professionals?.map((person, index) => (
-                    <p className="flex items-center flex-wrap gap-1" key={index}>
-                        <BsFilePerson /> {person}
-                    </p>
-                ))}
+                {professionals?.map((person, index) => (<p className="flex items-center flex-wrap gap-1" key={index}> <BsFilePerson /> {person}</p>))}
             </div>
 
             <p className="bg-red-600 flex text-white p-2"><span>Target Audience: </span> <span className="font-bold">{audience}</span></p>

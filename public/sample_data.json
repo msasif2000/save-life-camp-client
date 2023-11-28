@@ -51,7 +51,7 @@
     },
     {
       "campName": "HopeHealth Express",
-      "image": "url/to/hopehealthexpress-image.jpg",
+      "image": "https://i.ibb.co/frnZpVF/download.jpg",
       "date": "2023-12-05T09:45:00",
       "venue": "Hope Clinic, Riverside",
       "services": ["Women's Health Check-ups", "Family Planning Consultations"],
@@ -61,7 +61,7 @@
     },
     {
       "campName": "AidSphere",
-      "image": "url/to/aidsphere-image.jpg",
+      "image": "https://i.ibb.co/QfCcRsf/downloa.png",
       "date": "2023-12-10T12:30:00",
       "venue": "Community Center, Pine Street",
       "services": ["HIV/AIDS Awareness", "Testing and Counseling"],
@@ -71,7 +71,7 @@
     },
     {
       "campName": "CommunityCure",
-      "image": "url/to/communitycure-image.jpg",
+      "image": "https://i.ibb.co/NN493LF/images.jpg",
       "date": "2023-12-18T15:00:00",
       "venue": "Community Park, Elm Street",
       "services": ["Pediatric Care", "Immunization for Children"],
@@ -81,7 +81,7 @@
     },
     {
       "campName": "MediMission",
-      "image": "url/to/medimission-image.jpg",
+      "image": "https://i.ibb.co/Rc5H0Hw/download-1.jpg",
       "date": "2023-11-30T16:45:00",
       "venue": "Medical Center, Maple Street",
       "services": ["Orthopedic Consultations", "Physical Therapy Sessions"],
@@ -91,7 +91,7 @@
     },
     {
       "campName": "CareLink Initiative",
-      "image": "url/to/carelink-initiative-image.jpg",
+      "image": "https://i.ibb.co/WyHvDDy/2564349.png",
       "date": "2023-12-08T08:15:00",
       "venue": "CareLink Center, Willow Street",
       "services": ["Diabetes Awareness", "Blood Sugar Testing"],
@@ -101,7 +101,7 @@
     },
     {
       "campName": "FreeHeal Network",
-      "image": "url/to/freeheal-network-image.jpg",
+      "image": "https://i.ibb.co/smnmnx4/41577-2004-Article-BFnri1486-Fig1-HTML.jpg",
       "date": "2023-12-12T14:45:00",
       "venue": "Wellness Pavilion, Sunflower Street",
       "services": ["Alternative Therapies", "Mindfulness Sessions"],

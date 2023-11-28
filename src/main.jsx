@@ -22,6 +22,7 @@ import PrivateRoute from './Providers/PrivateRoute';
 import Booked from './pages/Dashboard/Booked/Booked';
 import AddCamp from './AdminPages/AddCamp/AddCamp';
 import ManageCamps from './AdminPages/ManageCamps/ManageCamps';
+import UpdateCamp from './AdminPages/UpdateCamp/UpdateCamp';
 
 
 const router = createBrowserRouter([
@@ -68,6 +69,11 @@ const router = createBrowserRouter([
       {
         path:'manageCamp',
         element: <ManageCamps></ManageCamps>
+      },
+      {
+        path: 'updateCamp/:id',
+        element: <UpdateCamp></UpdateCamp>,
+        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       }
     ]
   }

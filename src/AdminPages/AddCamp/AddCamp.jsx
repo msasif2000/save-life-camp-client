@@ -59,7 +59,6 @@ const AddCamp = () => {
     };
     return (
         <div className="">
-            <div className="">
                 <div className="md-container mx-auto">
                     <div className="lg:p-12 md:p-6 p-4 space-y-6">
                         <h2 className="font-rancho text-4xl text-center">Create Camp Here</h2>
@@ -163,7 +162,6 @@ const AddCamp = () => {
                         <ToastContainer></ToastContainer>
                     </div>
                 </div>
-            </div>
         </div>
     );
 };
