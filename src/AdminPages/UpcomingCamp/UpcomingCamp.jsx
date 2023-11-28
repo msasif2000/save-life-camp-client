@@ -36,7 +36,7 @@ const UpcomingCamp = () => {
 
 
                     setTimeout(() => {
-                        navigate(location.state?.from ? location.state.from : '/upcomingCamp');
+                        navigate(location.state?.from ? location.state.from : '/');
                     }, 2000);
                 }
             })

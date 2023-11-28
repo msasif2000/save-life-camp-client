@@ -28,6 +28,7 @@ import AllUsers from './AdminPages/AllUsers/AllUsers';
 import Profile from './pages/Profile/Profile';
 import ManageBooking from './AdminPages/ManageBooking/ManageBooking';
 import UpcomingCamp from './AdminPages/UpcomingCamp/UpcomingCamp';
+import Contact from './pages/Contact/Contact';
 
 
 const router = createBrowserRouter([
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         path: '/joinCamp/:id',
         element: <PrivateRoute><CampRegistration></CampRegistration></PrivateRoute>,
         loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
+      },
+      {
+        path: '/contact',
+        element: <Contact></Contact>
       }
     ]
   },
