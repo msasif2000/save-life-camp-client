@@ -21,9 +21,8 @@ const DashBoard = () => {
     }
     return (
         <div className="flex md:container mx-auto">
-            <div className="w-64 min-h-screen bg-red-600 text-white pt-12">
+            <div className="w-68 min-h-screen bg-red-600 text-white pt-12">
                 <ul className="menu text-xl">
-
                     {
                         isAdmin ?
                             <>
@@ -32,6 +31,9 @@ const DashBoard = () => {
                                 </li>
                                 <li>
                                     <NavLink to='/dashboard/addCamp'><AiFillFolderAdd className="text-2xl" />Add Camp</NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to='/dashboard/upcomingCamp'><AiFillFolderAdd className="text-2xl" />Add Upcoming Camp</NavLink>
                                 </li>
                                 <li>
                                     <NavLink to='/dashboard/manageCamp'><BiCalendarEdit className="text-2xl" />Manage Camp</NavLink>

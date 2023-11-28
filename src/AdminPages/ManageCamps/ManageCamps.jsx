@@ -1,14 +1,15 @@
 import { AiFillEdit } from "react-icons/ai";
-import { axiosSecure } from "../../hooks/useAxiosSecure";
 import { MdDelete } from "react-icons/md";
 import useCamp from "../../hooks/useCamp";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const ManageCamps = () => {
     const [camps, refetch] = useCamp();
 
+    const axiosSecure = useAxiosSecure();
     const handleDelete = (id) => {
         Swal.fire({
             title: "Are you sure?",

@@ -1,12 +1,14 @@
 import { useState } from "react";
-import { axiosSecure } from "../../hooks/useAxiosSecure";
+
 import CampCard from "./CampCard";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 
 
 const AvailableCamps = () => {
 
     const [camps, setCamps] = useState([]);
 
+    const axiosSecure = useAxiosSecure();
     axiosSecure.get('/camp')
         .then(res => {
             //console.log(res.data);

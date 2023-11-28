@@ -27,6 +27,7 @@ import ErrorPage from './components/ErrorPage/ErrorPage';
 import AllUsers from './AdminPages/AllUsers/AllUsers';
 import Profile from './pages/Profile/Profile';
 import ManageBooking from './AdminPages/ManageBooking/ManageBooking';
+import UpcomingCamp from './AdminPages/UpcomingCamp/UpcomingCamp';
 
 
 const router = createBrowserRouter([
@@ -80,6 +81,11 @@ const router = createBrowserRouter([
         path: 'addCamp',
         element: <AddCamp></AddCamp>
       },
+      {
+        path: 'upcomingCamp',
+        element: <UpcomingCamp></UpcomingCamp>
+      }
+      ,
       {
         path: 'manageCamp',
         element: <ManageCamps></ManageCamps>

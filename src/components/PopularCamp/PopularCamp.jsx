@@ -1,25 +1,34 @@
+
 import { useState } from "react";
-import { axiosSecure } from "../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
 import CampCard from "../../pages/AvailableCamps/CampCard";
+import { Link } from "react-router-dom";
 
 
 const PopularCamp = () => {
-    const [camps, setCamps] = useState([]);
+    const axiosSecure = useAxiosSecure();
 
-    axiosSecure.get('/camp')
+    const [camps, setCamps] = useState([]);
+    axiosSecure.get('/popularCamp')
         .then(res => {
-            //console.log(res.data);
             setCamps(res.data);
         })
-        .catch(err => {
-            console.log(err);
-        })
-//console.log(camps);
+
+
+    //console.log(camps);
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-16">
-            {
-                camps.map(camp => <CampCard key={camps._id} camp={camp}></CampCard>)
-            }
+        <div>
+            <h2 className="text-4xl text-center font-bold mt-12">Our Popular Camp</h2>
+            <p className="text-xl text-center italic my-2">Register your desired camp now!</p>
+            <div className="divider bg-red-600"></div>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-4">
+                {
+                    camps.map(camp => <CampCard key={camps._id} camp={camp}></CampCard>)
+                }
+            </div>
+            <div className="flex justify-center my-4">
+                <Link to='/availableCamp'><button className="btn btn-sm bg-slate-200 text-red-600 border-2 border-red-600">See All Camps</button></Link>
+            </div>
         </div>
     );
 };
