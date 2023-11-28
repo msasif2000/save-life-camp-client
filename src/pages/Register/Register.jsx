@@ -4,6 +4,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form';
 import useAuth from "../../hooks/useAuth";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
@@ -11,33 +12,35 @@ const Register = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-
+    const axiosPublic = useAxiosPublic();
 
     const onSubmit = (data) => {
-        console.log(data);
+        //console.log(data);
         createUser(data.email, data.password)
             .then(result => {
-                console.log(result.user)
-                updateUserProfile(data.name, data.photoURL)
-                    .then(result => {
-                        console.log(result);
-                        reset();
-                        toast.success("Registration Successful & You're Logged in!", {
-                            position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-                        });
-                        navigate('/');
-                    })
-                    .catch(error => {
-                        console.log(error.message)
-                    })
+                //console.log(result.user)
+                if (result.user) {
+                    updateUserProfile(data.name, data.photoURL)
+                        .then(result => {
 
-                   
+                            const userInfo = { name: data.name, email: data.email, photoURL: data.photoURL };
+                            if (result) {
+                                axiosPublic.post('/users', userInfo)
+                                    .then(res => {
+                                        if (res.data.insertedId) {
+                                            reset();
+                                            toast.success("Registration Successful & You're Logged in!", {
+                                                position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                                            });
+                                            setTimeout(() => {
+                                                navigate(location.state?.from ? location.state.from : '/');
+                                            }, 2000);
+                                        }
+                                    })
+                            }
 
-
-
-                setTimeout(() => {
-                    navigate(location.state?.from ? location.state.from : '/');
-                }, 2000);
+                        })
+                }
             })
             .catch(error => {
                 console.log(error.message)
@@ -57,19 +60,28 @@ const Register = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
-                console.log(result.user)
-                toast.success("Login with Google Successful!", {
-                    position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-                });
+                //console.log(result.user)
+                const { displayName, email, photoURL } = result.user;
+                const userInfo = { name: displayName, email: email, photoURL: photoURL };
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        if (res.data.insertedId) {
+                            toast.success("You're Logged in!", {
+                                position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                            });
 
-
-                setTimeout(() => {
-                    navigate(location.state?.from ? location.state.from : '/');
-                }, 2000);
+                        }
+                        toast.success("You're Logged in!", {
+                            position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                        });
+                        setTimeout(() => {
+                            navigate(location.state?.from ? location.state.from : '/');
+                        }, 2000);
+                    })
             })
             .catch(error => {
                 console.log(error.message)
-                toast.error("Email or Password error!", {
+                toast.error("Google sign in error!", {
                     position: toast.POSITION.TOP_CENTER, autoClose: 1500,
                 });
 

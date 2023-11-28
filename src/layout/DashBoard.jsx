@@ -39,7 +39,7 @@ const DashBoard = () => {
                                     <NavLink to='/dashboard/manageBookings'><MdManageHistory className="text-2xl"/>Manage Bookings</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/dashboard/allUsers'><FaUsers className="text-2xl"/>All Users</NavLink>
+                                    <NavLink to='/dashboard/users'><FaUsers className="text-2xl"/>All Users</NavLink>
                                 </li>
                             </>
                             :

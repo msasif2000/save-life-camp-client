@@ -4,15 +4,14 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
-
-
-
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Login = () => {
     const { googleLogin, userLogin } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
+    const axiosPublic = useAxiosPublic();
     const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
@@ -48,29 +47,36 @@ const Login = () => {
 
     const handleGoogleLogin = () => {
         googleLogin()
-            .then(result => {
-                //console.log(result.user)
-                if (result) {
-                    toast.success("Login with Google Successful!", {
+        .then(result => {
+            //console.log(result.user)
+            const { displayName, email, photoURL } = result.user;
+            const userInfo = { name: displayName, email: email, photoURL: photoURL };
+            axiosPublic.post('/users', userInfo)
+                .then(res => {
+                    if (res.data.insertedId) {
+                        toast.success("You're Logged in!", {
+                            position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                        });
+
+                    }
+                    toast.success("You're Logged in!", {
                         position: toast.POSITION.TOP_CENTER, autoClose: 1500,
                     });
-                }
+                    setTimeout(() => {
+                        navigate(location.state?.from ? location.state.from : '/');
+                    }, 2000);
+                })
+        })
+        .catch(error => {
+            console.log(error.message)
+            toast.error("Google sign in error!", {
+                position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+            });
 
-
-                setTimeout(() => {
-                    navigate(location.state?.from ? location.state.from : '/');
-                }, 2000);
-            })
-            .catch(error => {
-                console.log(error.message)
-                toast.error("Email or Password error!", {
-                    position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-                });
-
-                setTimeout(() => {
-                    navigate(location.state?.from ? location.state.from : '/login');
-                }, 2000);
-            })
+            setTimeout(() => {
+                navigate(location.state?.from ? location.state.from : '/login');
+            }, 2000);
+        })
     }
 
 

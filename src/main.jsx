@@ -24,6 +24,7 @@ import AddCamp from './AdminPages/AddCamp/AddCamp';
 import ManageCamps from './AdminPages/ManageCamps/ManageCamps';
 import UpdateCamp from './AdminPages/UpdateCamp/UpdateCamp';
 import ErrorPage from './components/ErrorPage/ErrorPage';
+import AllUsers from './AdminPages/AllUsers/AllUsers';
 
 
 const router = createBrowserRouter([
@@ -57,11 +58,16 @@ const router = createBrowserRouter([
   },
   {
     path: 'dashboard',
-    element: <DashBoard></DashBoard>,
+    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
+      //user routes
       {
         path: 'joinedCamp',
         element: <Booked></Booked>
+      },
+      {
+        path: 'users',
+        element: <AllUsers></AllUsers>
       },
       //admin routes
       {
@@ -69,7 +75,7 @@ const router = createBrowserRouter([
         element: <AddCamp></AddCamp>
       },
       {
-        path:'manageCamp',
+        path: 'manageCamp',
         element: <ManageCamps></ManageCamps>
       },
       {
