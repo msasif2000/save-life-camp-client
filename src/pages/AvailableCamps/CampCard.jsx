@@ -36,11 +36,11 @@ const CampCard = ({ camp }) => {
         //queryClient.prefetchQuery(queryKey);
     }, [queryClient, queryKey]);
 
-    //console.log(`Camp ID: ${_id}, Participants: ${participants.length}`);
+
 
 
     return (
-        <div className="flex flex-col border-2 border-dotted border-red-600 p-4 transition-all hover:-translate-y-1 hover:scale-110 hover:bg-slate-200 duration-500">
+        <div className="flex flex-col border-2 border-dotted border-red-600 p-4 transition-all hover:-translate-y-1 hover:scale-105 hover:bg-slate-200 duration-300">
             <img src={image} alt="" className="h-56 w-full" />
             <p className="bg-red-600 text-white absolute  px-2 mr-4 ">Joined {participants.length} Peoples</p>
             <div >

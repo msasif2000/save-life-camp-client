@@ -23,7 +23,7 @@ const PopularCamp = () => {
             <div className="divider bg-red-600"></div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-4">
                 {
-                    camps.map(camp => <CampCard key={camps._id} camp={camp}></CampCard>)
+                    camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
                 }
             </div>
             <div className="flex justify-center my-4">
