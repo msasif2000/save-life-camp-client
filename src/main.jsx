@@ -23,12 +23,14 @@ import Booked from './pages/Dashboard/Booked/Booked';
 import AddCamp from './AdminPages/AddCamp/AddCamp';
 import ManageCamps from './AdminPages/ManageCamps/ManageCamps';
 import UpdateCamp from './AdminPages/UpdateCamp/UpdateCamp';
+import ErrorPage from './components/ErrorPage/ErrorPage';
 
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
