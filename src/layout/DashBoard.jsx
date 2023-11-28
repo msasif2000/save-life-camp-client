@@ -1,7 +1,7 @@
-import { BiCalendarEdit } from "react-icons/bi"; 
-import { AiFillFolderAdd } from "react-icons/ai"; 
-import { MdManageHistory } from "react-icons/md"; 
-import { FaUsers } from "react-icons/fa"; 
+import { BiCalendarEdit } from "react-icons/bi";
+import { AiFillFolderAdd } from "react-icons/ai";
+import { MdManageHistory } from "react-icons/md";
+import { FaUsers } from "react-icons/fa";
 import { BiLogOut } from "react-icons/bi";
 import { GiFrozenRing } from "react-icons/gi";
 import { GiCampingTent } from "react-icons/gi";
@@ -10,11 +10,12 @@ import { MdReviews } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import useAdmin from "../hooks/useAdmin";
 
 
 const DashBoard = () => {
-    const { user, userLogout } = useAuth();
-    const isAdmin = true;
+    const { userLogout } = useAuth();
+    const [isAdmin] = useAdmin();
     const handleLogout = () => {
         userLogout()
     }
@@ -27,25 +28,25 @@ const DashBoard = () => {
                         isAdmin ?
                             <>
                                 <li>
-                                    <NavLink to='/dashboard/admin'><img src={user?.photoURL} alt="" className="w-12 rounded-full" /> Admin Home</NavLink>
+                                    <h2 className="text-2xl text-red-200 font-bold">Admin DashBoard</h2>
                                 </li>
                                 <li>
                                     <NavLink to='/dashboard/addCamp'><AiFillFolderAdd className="text-2xl" />Add Camp</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/dashboard/manageCamp'><BiCalendarEdit className="text-2xl"/>Manage Camp</NavLink>
+                                    <NavLink to='/dashboard/manageCamp'><BiCalendarEdit className="text-2xl" />Manage Camp</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/dashboard/manageBookings'><MdManageHistory className="text-2xl"/>Manage Bookings</NavLink>
+                                    <NavLink to='/dashboard/manageBookings'><MdManageHistory className="text-2xl" />Manage Bookings</NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to='/dashboard/users'><FaUsers className="text-2xl"/>All Users</NavLink>
+                                    <NavLink to='/dashboard/users'><FaUsers className="text-2xl" />All Users</NavLink>
                                 </li>
                             </>
                             :
                             <>
                                 <li>
-                                    <NavLink to='/dashboard/profile'><img src={user?.photoURL} alt="" className="w-12 rounded-full" /> My Profile</NavLink>
+                                    <h2 className="text-2xl text-red-200 font-bold">User DashBoard</h2>
                                 </li>
                                 <li>
                                     <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Enrolled Camp</NavLink>
@@ -58,7 +59,7 @@ const DashBoard = () => {
                                 </li>
                             </>
                     }
-                     {/* <li>
+                    {/* <li>
                                     <NavLink to='/dashboard/profile'><img src={user?.photoURL} alt="" className="w-12 rounded-full" /> My Profile</NavLink>
                                 </li>
                                 <li>
@@ -81,7 +82,7 @@ const DashBoard = () => {
                         <NavLink to='/availableCamp'><GiCampingTent className="text-2xl" />Available Camp</NavLink>
                     </li>
                     <li onClick={handleLogout}>
-                        <NavLink to='/'><BiLogOut className="text-2xl" />logout</NavLink>
+                        <NavLink to='/'><BiLogOut className="text-2xl" />Sign Out</NavLink>
                     </li>
                 </ul>
             </div>

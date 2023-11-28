@@ -25,6 +25,8 @@ import ManageCamps from './AdminPages/ManageCamps/ManageCamps';
 import UpdateCamp from './AdminPages/UpdateCamp/UpdateCamp';
 import ErrorPage from './components/ErrorPage/ErrorPage';
 import AllUsers from './AdminPages/AllUsers/AllUsers';
+import Profile from './pages/Profile/Profile';
+import ManageBooking from './AdminPages/ManageBooking/ManageBooking';
 
 
 const router = createBrowserRouter([
@@ -60,6 +62,10 @@ const router = createBrowserRouter([
     path: 'dashboard',
     element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
+      {
+        path:'/dashboard',
+        element: <Profile></Profile>
+      },
       //user routes
       {
         path: 'joinedCamp',
@@ -82,6 +88,10 @@ const router = createBrowserRouter([
         path: 'updateCamp/:id',
         element: <UpdateCamp></UpdateCamp>,
         loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
+      },
+      {
+        path: 'manageBookings',
+        element: <ManageBooking></ManageBooking>
       }
     ]
   }
