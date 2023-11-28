@@ -31,7 +31,7 @@ const ManageBooking = () => {
                         if (res.data.deletedCount) {
                             Swal.fire(
                                 "Deleted!",
-                                "User has been deleted.",
+                                "Participants information has been deleted.",
                                 "success"
                             )
                             refetch();

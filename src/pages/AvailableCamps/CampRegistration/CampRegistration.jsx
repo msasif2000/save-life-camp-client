@@ -19,8 +19,6 @@ const CampRegistration = () => {
     //const { displayName, email, photoURL } = user?.user;
 
     const onSubmit = (data) => {
-
-
         if (user && user.email) {
             const participant = { campId: _id, ...data,campName: campName, campImg: image, campFee: campFee, date, venue };
             console.log(participant);
