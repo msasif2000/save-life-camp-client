@@ -19,7 +19,7 @@ const Contact = () => {
             <div className="flex items-center justify-center gap-1 text-xl">
                 <AiTwotoneMail className="text-3xl text-red-500" /> <span> info@savelifemedicalcamp.org</span>
             </div>
-            <div>
+            <div className="lg:flex w-full justify-evenly">
                 <div className="mt-8 bg-sky-300 p-4 ">
                     <h2 className="text-2xl text-center">For General Inquiries</h2>
                     <div className="flex items-center justify-center gap-1 text-xl">

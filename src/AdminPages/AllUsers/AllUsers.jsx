@@ -56,8 +56,8 @@ const AllUsers = () => {
             })
     }
     return (
-        <div>
-            <h1 className="text-3xl">Total Users : {users.length}</h1>
+        <div className="mt-8">
+            <h1 className="text-3xl text-center my-4">Total Users : {users.length}</h1>
 
             <div>
                 <div className="overflow-x-auto">
@@ -69,6 +69,7 @@ const AllUsers = () => {
                                     #ID
                                 </th>
                                 <th>NAME</th>
+                                <th>PHOTO</th>
                                 <th>Email</th>
                                 <th>ROLE</th>
                                 <th>ACTION</th>
@@ -82,6 +83,9 @@ const AllUsers = () => {
                                     </th>
                                     <td>
                                         <span className="">{user.name}</span>
+                                    </td>
+                                    <td>
+                                        <img src={user.photoURL} alt=""  className="h-16 w-16"/>
                                     </td>
                                     <td>{user.email}</td>
                                     <td>

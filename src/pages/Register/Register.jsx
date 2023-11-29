@@ -4,7 +4,9 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form';
 import useAuth from "../../hooks/useAuth";
-import useAxiosPublic from "../../hooks/useAxiosPublic";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
+
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors }, } = useForm();
@@ -12,7 +14,7 @@ const Register = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-    const axiosPublic = useAxiosPublic();
+    const axiosSecure = useAxiosSecure();
 
     const onSubmit = (data) => {
         //console.log(data);
@@ -21,24 +23,21 @@ const Register = () => {
                 //console.log(result.user)
                 if (result.user) {
                     updateUserProfile(data.name, data.photoURL)
-                        .then(result => {
-
+                        .then(() => {
                             const userInfo = { name: data.name, email: data.email, photoURL: data.photoURL };
-                            if (result) {
-                                axiosPublic.post('/users', userInfo)
-                                    .then(res => {
-                                        if (res.data.insertedId) {
-                                            reset();
-                                            toast.success("Registration Successful & You're Logged in!", {
-                                                position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-                                            });
-                                            setTimeout(() => {
-                                                navigate(location.state?.from ? location.state.from : '/');
-                                            }, 2000);
-                                        }
-                                    })
-                            }
+                            axiosSecure.post('/users', userInfo)
+                                .then(res => {
+                                    if (res.data.insertedId) {
 
+                                        toast.success("Registration Successful & You're Logged in!", {
+                                            position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                                        });
+                                        setTimeout(() => {
+                                            navigate(location.state?.from ? location.state.from : '/');
+                                        }, 2000);
+                                        reset();
+                                    }
+                                })
                         })
                 }
             })
@@ -63,20 +62,18 @@ const Register = () => {
                 //console.log(result.user)
                 const { displayName, email, photoURL } = result.user;
                 const userInfo = { name: displayName, email: email, photoURL: photoURL };
-                axiosPublic.post('/users', userInfo)
+                axiosSecure.post('/users', userInfo)
                     .then(res => {
                         if (res.data.insertedId) {
                             toast.success("You're Logged in!", {
                                 position: toast.POSITION.TOP_CENTER, autoClose: 1500,
                             });
+                            setTimeout(() => {
+                                navigate(location.state?.from ? location.state.from : '/');
+                            }, 2000);
 
                         }
-                        toast.success("You're Logged in!", {
-                            position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-                        });
-                        setTimeout(() => {
-                            navigate(location.state?.from ? location.state.from : '/');
-                        }, 2000);
+
                     })
             })
             .catch(error => {

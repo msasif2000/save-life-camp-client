@@ -16,7 +16,6 @@ import Home from './pages/Home/Home';
 import Register from './pages/Register/Register';
 import AvailableCamps from './pages/AvailableCamps/AvailableCamps';
 import CampRegistration from './pages/AvailableCamps/CampRegistration/CampRegistration';
-import { axiosSecure } from './hooks/useAxiosSecure';
 import DashBoard from './layout/DashBoard';
 import PrivateRoute from './Providers/PrivateRoute';
 import Booked from './pages/Dashboard/Booked/Booked';
@@ -29,6 +28,8 @@ import Profile from './pages/Profile/Profile';
 import ManageBooking from './AdminPages/ManageBooking/ManageBooking';
 import UpcomingCamp from './AdminPages/UpcomingCamp/UpcomingCamp';
 import Contact from './pages/Contact/Contact';
+import { axiosSecure } from './hooks/useAxiosSecure';
+import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 
 
 const router = createBrowserRouter([
@@ -103,6 +104,10 @@ const router = createBrowserRouter([
       {
         path: 'manageBookings',
         element: <ManageBooking></ManageBooking>
+      },
+      {
+        path: 'updateProfile',
+        element: <UpdateProfile></UpdateProfile>
       }
     ]
   }

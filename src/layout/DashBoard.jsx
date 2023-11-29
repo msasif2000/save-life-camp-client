@@ -14,6 +14,7 @@ import useAdmin from "../hooks/useAdmin";
 
 
 const DashBoard = () => {
+
     const { userLogout } = useAuth();
     const [isAdmin] = useAdmin();
     const handleLogout = () => {
@@ -77,7 +78,7 @@ const DashBoard = () => {
                                 <NavLink to='/availableCamp'><GiCampingTent className="text-2xl" />Available Camp</NavLink>
                             </li>
                             <li onClick={handleLogout}>
-                                <NavLink to='/'><BiLogOut className="text-2xl" />Sign Out</NavLink>
+                                <BiLogOut className="text-2xl" />Sign Out
                             </li>
                         </ul>
                     </div>
@@ -145,8 +146,10 @@ const DashBoard = () => {
                         <li>
                             <NavLink to='/availableCamp'><GiCampingTent className="text-2xl" />Available Camp</NavLink>
                         </li>
-                        <li onClick={handleLogout}>
-                            <NavLink to='/'><BiLogOut className="text-2xl" />Sign Out</NavLink>
+                        <li>
+                            <button onClick={handleLogout} className="flex items-center">
+                                <BiLogOut className="text-2xl" /><span>Sign Out</span>
+                            </button>
                         </li>
                     </ul>
                 </div>

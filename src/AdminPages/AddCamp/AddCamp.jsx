@@ -1,13 +1,13 @@
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { axiosSecure } from "../../hooks/useAxiosSecure";
 import { useLocation, useNavigate } from 'react-router-dom';
+import useAxiosSecure from '../../hooks/useAxiosSecure';
 
 
 const AddCamp = () => {
     const location = useLocation();
     const navigate = useNavigate();
-
+    const axiosSecure = useAxiosSecure();
 
     const handleNewCamp = e => {
         e.preventDefault();
@@ -59,109 +59,109 @@ const AddCamp = () => {
     };
     return (
         <div className="">
-                <div className="md-container mx-auto">
-                    <div className="lg:p-12 md:p-6 p-4 space-y-6">
-                        <h2 className="font-rancho text-4xl text-center">Create Camp Here</h2>
-                        <form onSubmit={handleNewCamp} className="font-raleway ">
-                            <div className="lg:flex justify-center gap-6">
-                                <div className="w-full flex-1">
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Camp Name</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="text" name="campName" placeholder="Enter Camp Name" className="input input-bordered w-full" />
-                                        </label>
-                                    </div>
-
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Venue</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="text" name="venue" placeholder="Enter Venue Location" className="input input-bordered w-full" />
-                                        </label>
-                                    </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Target Audience</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="text" name="audience" placeholder="Enter Target Audience" className="input input-bordered w-full" />
-                                        </label>
-                                    </div>
-                                    <div className="form-control" id="services">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Session Topics</span>
-                                        </label>
-                                        <label className="">
-                                            <button type="button" onClick={() => addInputField('services')} className="btn btn-sm btn-outline border-red-600 bg-sky-300">
-                                                Add Session Topic
-                                            </button>
-                                        </label>
-                                    </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Image link</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="photoURL" name="image" placeholder="Enter Image URL" className="input input-bordered w-full " />
-                                        </label>
-                                    </div>
+            <div className="md-container mx-auto">
+                <div className="lg:p-12 md:p-6 p-4 space-y-6">
+                    <h2 className="font-rancho text-4xl text-center">Create Camp Here</h2>
+                    <form onSubmit={handleNewCamp} className="font-raleway ">
+                        <div className="lg:flex justify-center gap-6">
+                            <div className="w-full flex-1">
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Camp Name</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="text" name="campName" placeholder="Enter Camp Name" className="input input-bordered w-full" />
+                                    </label>
                                 </div>
 
-
-                                <div className="flex-1">
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Date</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="datetime-local" name="date" placeholder="Select Date and Time" className="input input-bordered w-full" />
-                                        </label>
-                                    </div>
-
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Camp Fee</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="number" name="campFee" placeholder="Enter Camp Fee" className="input input-bordered w-full" />
-                                        </label>
-                                    </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Participants</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="number" name="participants" placeholder="Participants 0 initially" className="input input-bordered w-full" />
-                                        </label>
-                                    </div>
-                                    <div className="form-control" id="professionals">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Professionals</span>
-                                        </label>
-                                        <label className="">
-                                            <button type="button" onClick={() => addInputField('professionals')} className="btn btn-sm btn-outline border-red-600 bg-sky-300">
-                                                Add Professional
-                                            </button>
-                                        </label>
-                                    </div>
-                                    <div className="form-control">
-                                        <label className="label">
-                                            <span className="label-text font-bold">Write Details</span>
-                                        </label>
-                                        <label className="">
-                                            <input required type="text" name="details" placeholder="Write Description for Camp" className="input input-bordered w-full " />
-                                        </label>
-                                    </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Venue</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="text" name="venue" placeholder="Enter Venue Location" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Target Audience</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="text" name="audience" placeholder="Enter Target Audience" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                                <div className="form-control" id="services">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Session Topics</span>
+                                    </label>
+                                    <label className="">
+                                        <button type="button" onClick={() => addInputField('services')} className="btn btn-sm btn-outline border-red-600 bg-sky-300">
+                                            Add Session Topic
+                                        </button>
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Image link</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="photoURL" name="image" placeholder="Enter Image URL" className="input input-bordered w-full " />
+                                    </label>
                                 </div>
                             </div>
-                            <input type="submit" value="Create Camp" className="w-full mt-6 bg-red-600 text-white border-black border-dashed border-2 text-center p-2 text-2xl" />
-                        </form>
-                        <ToastContainer></ToastContainer>
-                    </div>
+
+
+                            <div className="flex-1">
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Date</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="datetime-local" name="date" placeholder="Select Date and Time" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Camp Fee</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="number" name="campFee" placeholder="Enter Camp Fee" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Participants</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="number" name="participants" placeholder="Participants 0 initially" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                                <div className="form-control" id="professionals">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Professionals</span>
+                                    </label>
+                                    <label className="">
+                                        <button type="button" onClick={() => addInputField('professionals')} className="btn btn-sm btn-outline border-red-600 bg-sky-300">
+                                            Add Professional
+                                        </button>
+                                    </label>
+                                </div>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Write Details</span>
+                                    </label>
+                                    <label className="">
+                                        <input required type="text" name="details" placeholder="Write Description for Camp" className="input input-bordered w-full " />
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" value="Create Camp" className="w-full mt-6 bg-red-600 text-white border-black border-dashed border-2 text-center p-2 text-2xl" />
+                    </form>
+                    <ToastContainer></ToastContainer>
                 </div>
+            </div>
         </div>
     );
 };

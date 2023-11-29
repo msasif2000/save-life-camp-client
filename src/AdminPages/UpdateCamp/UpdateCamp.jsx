@@ -1,13 +1,14 @@
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
-import { axiosSecure } from "../../hooks/useAxiosSecure";
+import useAxiosSecure from "../../hooks/useAxiosSecure";
+
 
 const UpdateCamp = () => {
     const camp = useLoaderData().data;
     const { _id, campName, venue, audience, services, image, date, campFee, participants, professionals, details } = camp;
     //console.log(camp);
-
+    const axiosSecure = useAxiosSecure();
 
     const location = useLocation();
     const navigate = useNavigate();
@@ -34,11 +35,11 @@ const UpdateCamp = () => {
         );
 
         const newCamp = { campName, venue, audience, services, image, date, campFee, participants, professionals, details };
-        console.log(newCamp);
+        //console.log(newCamp);
 
         axiosSecure.put(`/camp/${_id}`, newCamp)
             .then(res => {
-               // console.log(res.data);
+                // console.log(res.data);
                 if (res.data.modifiedCount) {
                     toast.success("Camp Information updated successfully!", {
                         position: toast.POSITION.TOP_CENTER, autoClose: 1500,
@@ -61,7 +62,7 @@ const UpdateCamp = () => {
         input.defaultValue = defaultValue;  // Set defaultValue
         input.className = 'input input-bordered w-full';
         container.appendChild(input);
-      };
+    };
     return (
         <div className="">
             <div className="md-container mx-auto">
@@ -147,7 +148,7 @@ const UpdateCamp = () => {
                                         <span className="label-text font-bold">Professionals</span>
                                     </label>
                                     <label className="">
-                                        <button type="button" onClick={() => addInputField('professionals' ,`${professionals}`)} className="btn btn-sm btn-outline border-red-600 bg-sky-300">
+                                        <button type="button" onClick={() => addInputField('professionals', `${professionals}`)} className="btn btn-sm btn-outline border-red-600 bg-sky-300">
                                             Add Professional
                                         </button>
                                     </label>

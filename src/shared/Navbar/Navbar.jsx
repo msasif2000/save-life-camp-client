@@ -1,20 +1,16 @@
 import { BiUserCircle } from "react-icons/bi";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
 import logo from '../../assets/logo.jpg'
 import useAuth from "../../hooks/useAuth";
 
+
 const Navbar = () => {
-    
     const { user, userLogout } = useAuth();
-const navigate = useNavigate();
+
     const handleLogout = () => {
         userLogout()
-            .then(() => {
-                navigate('/');
-            })
     }
-
 
     const navlinks =
         <>
@@ -39,7 +35,7 @@ const navigate = useNavigate();
         </>
     return (
         <div className=" ">
-            <div className="navbar  text-white">
+            <div className="navbar">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -61,8 +57,8 @@ const navigate = useNavigate();
                     {
                         user ?
                             <>
-                                <li><button onClick={handleLogout} className="btn btn-sm mr-2 border-2 border-red-600 text-xl">Sign Out</button></li>
-                                <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-16 w-16 rounded-full bg-red-600 p-1" /></Link>
+                                <li className="md:flex hidden"><button onClick={handleLogout} className="btn btn-sm mr-2 border-2 border-red-600 text-xl">Sign Out</button></li>
+                                <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-red-600 p-1" /></Link>
                             </>
                             :
                             <BiUserCircle className="text-red-600 text-4xl"></BiUserCircle>

@@ -42,6 +42,7 @@ const ManageBooking = () => {
     }
     return (
         <div>
+            <h1 className="text-3xl text-center my-4">Total Camp Bookings : {bookings.length}</h1>
             <div>
                 <div className="overflow-x-auto">
                     <table className="table min-w-full divide-y divide-gray-200">

@@ -47,22 +47,28 @@ const AuthProvider = ({ children }) => {
             if (currentUser) {
                 //get token
 
-                const userInfo = {email: currentUser.email};
+                const userInfo = { email: currentUser.email };
                 axiosPublic.post('/jwt', userInfo)
-                .then(res => {
-                    if(res.data.token){
-                        localStorage.setItem('token', res.data.token);
-                    }
-                })
+                    .then(res => {
+                        if (res.data.token) {
+                            localStorage.setItem('token', res.data.token);
+                        }
+                    })
                 setUser(currentUser);
                 setLoading(false);
             }
             else {
                 localStorage.removeItem('token');
+                setUser(null);
+                setLoading(false);
             }
         })
         return () => unsubscribed;
     }, [axiosPublic])
+
+
+
+
     const authInfo = {
         user,
         loading,

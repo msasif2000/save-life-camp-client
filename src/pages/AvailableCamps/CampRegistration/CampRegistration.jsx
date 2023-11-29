@@ -3,13 +3,13 @@ import useAuth from "../../../hooks/useAuth";
 import { useForm } from 'react-hook-form';
 import { BiTimeFive } from "react-icons/bi";
 import { ImLocation } from "react-icons/im";
-import { axiosSecure } from "../../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const CampRegistration = () => {
     const { register, handleSubmit, reset,  formState: { errors }, } = useForm();
-
+    const axiosSecure = useAxiosSecure();
     const camp = useLoaderData().data;
     const { _id, campName, image, campFee, date, venue } = camp;
     const location = useLocation();
