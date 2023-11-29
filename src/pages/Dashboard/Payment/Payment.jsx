@@ -11,7 +11,7 @@ const Payment = () => {
     return (
         <div className="mt-6">
             <h2 className="text-2xl text-center font-bold my-12">Pay your Camp Fees for Reserve a seat</h2>
-            <div className="px-20 bg-sky-300 p-8">
+            <div className="px-20 p-8">
                 <Elements stripe={stripePromise}>
                     <CheckoutForm participantInfo={participantInfo}></CheckoutForm>
                 </Elements>

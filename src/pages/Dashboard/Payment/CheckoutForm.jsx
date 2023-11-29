@@ -2,6 +2,9 @@ import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import useAuth from "../../../hooks/useAuth";
+import useBookedCamp from "../../../hooks/useBookedCamp";
+import Swal from "sweetalert2";
+import { useNavigate } from "react-router-dom";
 
 
 const CheckoutForm = ({ participantInfo }) => {
@@ -11,6 +14,8 @@ const CheckoutForm = ({ participantInfo }) => {
     const price = participantInfo?.campFee;
     //console.log(price);
 
+    const navigate = useNavigate();
+    const [, refetch] = useBookedCamp();
     const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const [error, setError] = useState('');
@@ -22,7 +27,7 @@ const CheckoutForm = ({ participantInfo }) => {
         if (price>0){
             axiosSecure.post('/create-payment-intent', { price })
             .then(res => {
-                console.log(res.data.clientSecret);
+                //console.log(res.data.clientSecret);
                 setClientSecret(res.data.clientSecret);
             })
         }
@@ -80,7 +85,7 @@ const CheckoutForm = ({ participantInfo }) => {
                     email: user?.email,
                     name: participantInfo?.name,
                     price: price,
-                   campNme: participantInfo?.campName, 
+                   campName: participantInfo?.campName, 
                    date: new Date(), 
                      transactionId: paymentIntent.id,
                     regId: participantInfo?._id,
@@ -89,17 +94,29 @@ const CheckoutForm = ({ participantInfo }) => {
 
                 }
                const res =await axiosSecure.post('/payment', payment);
-                console.log(res);
+                //console.log(res);
+                refetch();
+                if(res.data?.paymentResult?.insertedId){
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: `Payment Successful!`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    navigate('/dashboard/paymentHistory')
+                }
             }
         }
     }
     return (
         <form onSubmit={handleSubmit}>
-            <CardElement options={{
+            <CardElement className="input input-bordered p-4" options={{
                 style: {
                     base: {
+                        border: '1px solid gray',
                         fontSize: '16px',
-                        color: 'black',
+                        color: 'blue',
                         '::placeholder': {
                             color: 'black',
                         },

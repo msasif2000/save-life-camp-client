@@ -68,13 +68,13 @@ const Register = () => {
                             toast.success("You're Logged in!", {
                                 position: toast.POSITION.TOP_CENTER, autoClose: 1500,
                             });
-                            setTimeout(() => {
-                                navigate(location.state?.from ? location.state.from : '/');
-                            }, 2000);
-
                         }
 
                     })
+
+                setTimeout(() => {
+                    navigate(location.state?.from ? location.state.from : '/');
+                }, 2000);
             })
             .catch(error => {
                 console.log(error.message)

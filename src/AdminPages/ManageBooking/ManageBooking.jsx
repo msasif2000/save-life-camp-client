@@ -1,5 +1,4 @@
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
 
@@ -14,32 +13,19 @@ const ManageBooking = () => {
         }
     })
 
+    const handleAcceptPayment = id => {
+        axiosSecure.patch(`/payment/${id}`)
+            .then(() => {
+                    Swal.fire(
+                        "Updated!",
+                        "Payment has been accepted.",
+                        "success"
+                    )
+                    refetch();
 
-    const handleDelete = id => {
-        Swal.fire({
-            title: "Are you sure?",
-            text: "You won't be able to revert this!",
-            icon: "warning",
-            showCancelButton: true,
-            confirmButtonColor: "#3085d6",
-            cancelButtonColor: "#d33",
-            confirmButtonText: "Yes, delete it!"
-        }).then((result) => {
-            if (result.isConfirmed) {
-                axiosSecure.delete(`/bookings/${id}`)
-                    .then(res => {
-                        if (res.data.deletedCount) {
-                            Swal.fire(
-                                "Deleted!",
-                                "Participants information has been deleted.",
-                                "success"
-                            )
-                            refetch();
-                        }
-                    })
-            }
-        });
+            })
     }
+
     return (
         <div>
             <h1 className="text-3xl text-center my-4">Total Camp Bookings : {bookings.length}</h1>
@@ -56,8 +42,7 @@ const ManageBooking = () => {
                                 <th>EMAIL</th>
                                 <th>CAMP NAME</th>
                                 <th>CAMP FEE</th>
-                                <th>PAYMENT</th>
-                                <th>ACTION</th>
+                                <th>PAYMENT STATUS</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -72,15 +57,20 @@ const ManageBooking = () => {
                                     </td>
                                     <td>{booking.email}</td>
                                     <td>{booking.campName}</td>
-                                    <td>{booking.campFee}</td>
-                                    <td>PAID</td>
-                                    <td className="flex gap-1">
-                                        <button onClick={() => handleDelete(booking._id)} className="btn btn-sm bg-red-600 px-1 text-white"><MdDelete className="text-2xl"></MdDelete> </button>
+                                    <td>{booking.price}</td>
+                                    <td>
+                                        {
+                                            booking.status === 'pending' ?                                                                                 
+                                                <button onClick={() => handleAcceptPayment(booking._id)} className="btn btn-sm bg-red-600 text-white">
+                                                    {booking.status}
+                                                </button>
+                                                :
+                                                <button className="btn btn-sm bg-green-600 text-white">{booking.status}</button>
+                                        }
+                                       
                                     </td>
-
                                 </tr>)
                             }
-                            {/* row 1 */}
 
                         </tbody>
                     </table>

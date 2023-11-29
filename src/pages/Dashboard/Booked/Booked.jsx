@@ -40,8 +40,8 @@ const Booked = () => {
                     <h2 className="text-3xl text-center">
                         You have initially registered these sessions but not paid yet
                     </h2>
-                    <h2 className="text-xl text-center text-red-600">
-                        Please pay the camp fee to confirm your registration
+                    <h2 className="text-xl text-center text-red-600 mb-8">
+                        Please pay the camp fee to confirm your registration earlier
                     </h2>
 
                 </div>

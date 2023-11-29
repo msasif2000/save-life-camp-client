@@ -1,3 +1,4 @@
+import { FcHome } from "react-icons/fc";
 import { BiCalendarEdit } from "react-icons/bi";
 import { AiFillFolderAdd } from "react-icons/ai";
 import { MdManageHistory } from "react-icons/md";
@@ -34,7 +35,7 @@ const DashBoard = () => {
                                 isAdmin ?
                                     <>
                                         <li>
-                                            <h2 className="text-2xl text-red-200 font-bold">Admin DashBoard</h2>
+                                            <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
                                         </li>
                                         <li>
                                             <NavLink to='/dashboard/addCamp'><AiFillFolderAdd className="text-2xl" />Add Camp</NavLink>
@@ -55,7 +56,7 @@ const DashBoard = () => {
                                     :
                                     <>
                                         <li>
-                                            <h2 className="text-2xl text-red-200 font-bold">User DashBoard</h2>
+                                            <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />User DashBoard</h2>
                                         </li>
                                         <li>
                                             <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
@@ -90,7 +91,7 @@ const DashBoard = () => {
                             isAdmin ?
                                 <>
                                     <li>
-                                        <h2 className="text-2xl text-red-200 font-bold">Admin DashBoard</h2>
+                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/addCamp'><AiFillFolderAdd className="text-2xl" />Add Camp</NavLink>
@@ -111,7 +112,7 @@ const DashBoard = () => {
                                 :
                                 <>
                                     <li>
-                                        <h2 className="text-2xl text-red-200 font-bold">User DashBoard</h2>
+                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />User DashBoard</h2>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
@@ -124,18 +125,6 @@ const DashBoard = () => {
                                     </li>
                                 </>
                         }
-                        {/* <li>
-                                    <NavLink to='/dashboard/profile'><img src={user?.photoURL} alt="" className="w-12 rounded-full" /> My Profile</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Enrolled Camp</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Add Review</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to='/dashboard/payment'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
-                                </li> */}
 
                         <div className="divider"></div>
 

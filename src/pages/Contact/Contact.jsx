@@ -6,8 +6,8 @@ const Contact = () => {
     return (
         <div>
             <div className="text-center">
-                <h2 className="text-3xl">SAVE LIFE MEDICAL CAMP</h2>
-                <h3>#123 Health Street <br />Cityville, Medtown</h3>
+                <h2 className="text-3xl font-bold">SAVE LIFE MEDICAL CAMP</h2>
+                <h3 className="italic">#123 Health Street <br />Cityville, Medtown</h3>
             </div>
             <div className="mt-16">
                 <h2 className="text-3xl text-center">Our Contact Information</h2>

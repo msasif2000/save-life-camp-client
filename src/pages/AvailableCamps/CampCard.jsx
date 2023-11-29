@@ -4,37 +4,16 @@ import { ImLocation } from "react-icons/im";
 import { BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { useQueryClient, useQuery } from "@tanstack/react-query";
-import { useEffect, useMemo } from "react";
 
 const CampCard = ({ camp }) => {
     const { user } = useAuth();
-    const axiosSecure = useAxiosSecure();
-    const { _id, campName, image, date, campFee, venue, services, professionals, audience, details } = camp;
+    const { _id, campName, image, date, campFee, venue, services, professionals, audience, details, participants } = camp;
 
     //console.log(_id);
 
-    const queryClient = useQueryClient();
-    const queryKey = useMemo(() => ['participants', _id], [_id]);
 
-    // Fetch participants data for each camp
-    const { data: participants = [] } = useQuery({
-        queryKey,
-        queryFn: async () => {
-            try {
-                const res = await axiosSecure.get(`/perCampPart/${_id}`);
-                return res.data;
-            } catch (error) {
-                // console.error(`Error fetching participants:`, error);
-                return [];
-            }
-        }
-    });
 
-    useEffect(() => {
-        //queryClient.prefetchQuery(queryKey);
-    }, [queryClient, queryKey]);
+
 
 
 
@@ -42,7 +21,7 @@ const CampCard = ({ camp }) => {
     return (
         <div className="flex flex-col shadow-md shadow-red-600 p-4 transition-all hover:-translate-y-1 hover:scale-105 hover:bg-slate-200 duration-300">
             <img src={image} alt="" className="h-56 w-full" />
-            <p className="bg-red-600 text-white absolute  px-2 mr-4 ">Joined {participants.length} Peoples</p>
+            <p className="bg-red-600 text-white absolute  px-2 mr-4 ">Joined {participants} Peoples</p>
             <div >
                 <div className="flex items-center justify-between">
                     <p className="font-bold text-3xl py-1">{campName}</p>

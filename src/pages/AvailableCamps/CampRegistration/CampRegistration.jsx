@@ -34,7 +34,6 @@ const CampRegistration = () => {
                             timer: 1500
                         });
                         reset();
-
                         navigate('/dashboard/joinedCamp');
                     }
                 })
