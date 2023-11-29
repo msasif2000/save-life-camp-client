@@ -23,7 +23,7 @@ const ManageCamps = () => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/bookings/${id}`)
                     .then(() => {
-                       // console.log(res.data);
+                        // console.log(res.data);
                     })
                 axiosSecure.delete(`/camp/${id}`)
                     .then(res => {
@@ -69,7 +69,11 @@ const ManageCamps = () => {
                                     <td>
                                         <span className="">{camp.campName}</span>
                                     </td>
-                                    <td>{camp.date}</td>
+                                    <td>
+                                        {camp.date.split('T')[0]}
+                                        <br />
+                                        {camp.date.split('T')[1].split('.')[0]}
+                                    </td>
                                     <td>{camp.venue}</td>
                                     <td className="flex gap-1">
                                         <Link to={`/dashboard/updateCamp/${camp._id}`}><button className="btn btn-sm bg-green-500 px-1 text-white"><AiFillEdit className="text-2xl" /></button></Link>

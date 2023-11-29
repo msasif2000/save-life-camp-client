@@ -11,7 +11,8 @@ const UpcomingCard = ({ camp }) => {
                         <span className="font-bold  text-center">Session Topic</span>
                         {camp.services?.map((serv, index) => (<p className="flex items-center gap-1" key={index}><MdTopic /> {serv}</p>))}
                     </div>
-                    <p>Possible Date: <span className="italic font-bold ">{camp.date}</span></p>
+                    <p className="flex gap-2">Possible Date: <span className="italic font-bold ">{ camp.date.split('T')[0]} <br />
+                                    {camp.date.split('T')[1].split('.')[0]}</span></p>
                     <p>Venue: <span className="italic font-bold ">{camp.venue}</span></p>
                     <p>Target Audience: <span className="italic font-bold ">{camp.audience}</span></p>
                     <p>Fee: <span className="italic font-bold text-red-600">{camp.campFee} tk</span></p>

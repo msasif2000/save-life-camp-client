@@ -32,6 +32,7 @@ import { axiosSecure } from './hooks/useAxiosSecure';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 import Review from './pages/Dashboard/Review/Review';
 import Payment from './pages/Dashboard/Payment/Payment';
+import PaymentHistory from './pages/Dashboard/PaymentHistory/PaymentHistory';
 
 
 const router = createBrowserRouter([
@@ -79,6 +80,11 @@ const router = createBrowserRouter([
       {
         path: 'joinedCamp',
         element: <Booked></Booked>
+      },
+
+      {
+        path: 'paymentHistory',
+        element: <PaymentHistory></PaymentHistory>
       },
       {
         path: 'review/:id',

@@ -58,13 +58,13 @@ const DashBoard = () => {
                                             <h2 className="text-2xl text-red-200 font-bold">User DashBoard</h2>
                                         </li>
                                         <li>
-                                            <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Enrolled Camp</NavLink>
+                                            <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
                                         </li>
                                         <li>
                                             <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Add Review</NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to='/dashboard/payment'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
+                                            <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
                                         </li>
                                     </>
                             }
@@ -114,13 +114,13 @@ const DashBoard = () => {
                                         <h2 className="text-2xl text-red-200 font-bold">User DashBoard</h2>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Enrolled Camp</NavLink>
+                                        <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Add Review</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/payment'><GiWallet className="text-2xl"></GiWallet>Payment</NavLink>
+                                        <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
                                     </li>
                                 </>
                         }

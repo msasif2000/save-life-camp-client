@@ -8,10 +8,10 @@ const CheckoutForm = ({ participantInfo }) => {
     const stripe = useStripe();
     const elements = useElements();
 
-    const {user} = useAuth();
     const price = participantInfo?.campFee;
     //console.log(price);
 
+    const {user} = useAuth();
     const axiosSecure = useAxiosSecure();
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
@@ -60,14 +60,8 @@ const CheckoutForm = ({ participantInfo }) => {
             payment_method: {
                 card: card,
                 billing_details: {
-                    name: user?.name || 'anonymous',
-                    email: user?.email || 'anonymous',
-                    address: {
-                        city: user?.city,
-                        country: user?.country,
-                        line1: user?.address,
-                        postal_code: user?.zipCode
-                    }
+                    name: participantInfo?.name || 'anonymous',
+                    email: participantInfo?.email || 'anonymous',
                 }
             }
         })  
@@ -80,6 +74,22 @@ const CheckoutForm = ({ participantInfo }) => {
             if(paymentIntent?.status === 'succeeded'){
                 setError('');
                 setTransactionId(paymentIntent.id);
+
+
+                const payment ={ 
+                    email: user?.email,
+                    name: participantInfo?.name,
+                    price: price,
+                   campNme: participantInfo?.campName, 
+                   date: new Date(), 
+                     transactionId: paymentIntent.id,
+                    regId: participantInfo?._id,
+                    campId: participantInfo?.campId,
+                    status: 'pending'
+
+                }
+               const res =await axiosSecure.post('/payment', payment);
+                console.log(res);
             }
         }
     }

@@ -66,7 +66,8 @@ const CampRegistration = () => {
                             <h1 className="text-5xl font-bold my-6">Registration for <span className="text-red-600">{campName}</span> Camp</h1>
                             <img src={image} alt="" className="h-[350px] w-full shadow-red-600 shadow-2xl" />
                             <p className="text-xl my-4 font-bold">Camp Fee: <span className="text-red-600">{campFee} tk</span> only</p>
-                            <p className="flex gap-1 justify-center"><BiTimeFive className="text-red-600 text-2xl" /> {date}</p>
+                            <p className="flex gap-1 justify-center"><BiTimeFive className="text-red-600 text-2xl" />{ date.split('T')[0]} <br />
+                                    {date.split('T')[1].split('.')[0]}</p>
                             <p className="flex gap-1 justify-center"><ImLocation className="text-red-600 text-2xl" /> {venue}</p>
                             <p></p>
                         </div>

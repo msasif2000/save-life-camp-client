@@ -62,7 +62,8 @@ const CampCard = ({ camp }) => {
                 <p className="bg-sky-300 p-2 h-52">{details}</p>
 
                 <div className=" my-2">
-                    <p className="flex gap-2 "><BiTimeFive className="text-red-600 text-2xl" /><span className="text-red-600 bold">{date}</span></p>
+                    <p className="flex gap-2 items-center"><BiTimeFive className="text-red-600 text-2xl" /><span className="text-red-600 bold">{ date.split('T')[0]} <br />
+                                    {date.split('T')[1].split('.')[0]}</span></p>
                     <p className="flex gap-2 text-right justify-end"><span className="text-red-600 bold">{venue}</span><ImLocation className="text-red-600 text-2xl" /></p>
                 </div>
 
