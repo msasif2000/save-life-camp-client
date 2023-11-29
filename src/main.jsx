@@ -30,6 +30,7 @@ import UpcomingCamp from './AdminPages/UpcomingCamp/UpcomingCamp';
 import Contact from './pages/Contact/Contact';
 import { axiosSecure } from './hooks/useAxiosSecure';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
+import Review from './pages/Dashboard/Review/Review';
 
 
 const router = createBrowserRouter([
@@ -108,6 +109,12 @@ const router = createBrowserRouter([
       {
         path: 'updateProfile',
         element: <UpdateProfile></UpdateProfile>
+      },
+
+      {
+        path: 'review/:id',
+        element: <Review></Review>,
+        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       }
     ]
   }

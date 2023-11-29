@@ -1,8 +1,37 @@
+import { GrStatusGood } from "react-icons/gr";
+import { MdDelete } from "react-icons/md";
 import useBookedCamp from "../../../hooks/useBookedCamp";
+import Swal from "sweetalert2";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 const Booked = () => {
-    const [bookings] = useBookedCamp();
-
+    const [bookings, refetch] = useBookedCamp();
+    const axiosSecure = useAxiosSecure();
+    const handleDeleteRegistration = (id) => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You could not participate in this session!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                axiosSecure.delete(`/joinedCamp/${id}`)
+                    .then(res => {
+                        if (res.data.deletedCount) {
+                            Swal.fire(
+                                "Deleted!",
+                                "Your registered camp has been deleted.",
+                                "success"
+                            )
+                            refetch();
+                        }
+                    })
+            }
+        });
+    }
     return (
         <div>
             <div className="flex justify-evenly items-center mt-4">
@@ -20,6 +49,8 @@ const Booked = () => {
                             <th>Date </th>
                             <th>Venue</th>
                             <th>Email</th>
+                            <th>PAYMENT STATUS</th>
+                            <th>ACTION</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -33,6 +64,12 @@ const Booked = () => {
                                 <td>{item.date}</td>
                                 <td>{item.venue}</td>
                                 <td>{item.email}</td>
+                                <td>
+                                    <button className="btn btn-sm bg-green-600 px-1"><GrStatusGood className="text-2xl text-white" /></button>
+                                </td>
+                                <td>
+                                    <button onClick={() => handleDeleteRegistration(item._id)} className="btn btn-sm bg-red-600 px-1"><MdDelete className="text-2xl text-white" /></button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>

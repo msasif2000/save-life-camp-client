@@ -21,10 +21,10 @@ const CampRegistration = () => {
     const onSubmit = (data) => {
         if (user && user.email) {
             const participant = { campId: _id, ...data,campName: campName, campImg: image, campFee: campFee, date, venue };
-            console.log(participant);
+            //console.log(participant);
             axiosSecure.post('/participants', participant)
                 .then(res => {
-                    console.log(res);
+                    ///console.log(res);
                     if (res.data.insertedId) {
                         Swal.fire({
                             position: "top-end",

@@ -34,10 +34,10 @@ const UpdateProfile = () => {
         const mobile = form.mobile.value;
 
         const updatedUser = { name, email, address, photoURL: image, dob, mobile };
-
+        
         axiosSecure.put(`/users/${user.email}`, updatedUser)
             .then(res => {
-                if (res.data.modifiedCount) {
+                if (res.data) {
                     toast.success("Profile Updated Successfully!", {
                         position: toast.POSITION.TOP_CENTER, autoClose: 1500,
                     });
