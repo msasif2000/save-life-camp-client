@@ -120,7 +120,7 @@ const DashBoard = () => {
                                         <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Add Review</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/payment'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
+                                        <NavLink to='/dashboard/payment'><GiWallet className="text-2xl"></GiWallet>Payment</NavLink>
                                     </li>
                                 </>
                         }

@@ -31,6 +31,7 @@ import Contact from './pages/Contact/Contact';
 import { axiosSecure } from './hooks/useAxiosSecure';
 import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 import Review from './pages/Dashboard/Review/Review';
+import Payment from './pages/Dashboard/Payment/Payment';
 
 
 const router = createBrowserRouter([
@@ -80,13 +81,25 @@ const router = createBrowserRouter([
         element: <Booked></Booked>
       },
       {
-        path: 'users',
-        element: <AllUsers></AllUsers>
+        path: 'review/:id',
+        element: <Review></Review>,
+        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       },
+      
+      {
+        path:'payment/:id',
+        element: <Payment></Payment>, 
+        loader: ({ params }) => axiosSecure(`/participants/${params.id}`)
+      },
+
       //admin routes
       {
         path: 'addCamp',
         element: <AddCamp></AddCamp>
+      },
+      {
+        path: 'users',
+        element: <AllUsers></AllUsers>
       },
       {
         path: 'upcomingCamp',
@@ -111,11 +124,7 @@ const router = createBrowserRouter([
         element: <UpdateProfile></UpdateProfile>
       },
 
-      {
-        path: 'review/:id',
-        element: <Review></Review>,
-        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
-      }
+      
     ]
   }
 ]);

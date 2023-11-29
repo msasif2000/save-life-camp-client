@@ -22,7 +22,7 @@ const Profile = () => {
 
 
     return (
-        <div className="flex flex-col items-center justify-center gap-6 pt-20 border-red-600 border-4 h-full w-full">
+        <div className="flex flex-col items-center justify-center gap-6 pt-8 border-red-600 border-4 h-full w-full">
             <img src={currentUser?.photoURL} alt="" className="h-40 w-40"/>
             <p>Email: <span className="text-blue-700">{currentUser?.email}</span></p>
             <p>Name: <span className="italic">{currentUser?.name}</span></p>
