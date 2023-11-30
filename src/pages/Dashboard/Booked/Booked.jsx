@@ -4,6 +4,7 @@ import useBookedCamp from "../../../hooks/useBookedCamp";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
 
 const Booked = () => {
     const [bookings, refetch] = useBookedCamp();
@@ -45,6 +46,9 @@ const Booked = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | JOINED CAMP</title>
+            </Helmet>
             <div className="flex justify-evenly items-center mt-4">
                 <div>
                     <h2 className="text-3xl text-center">

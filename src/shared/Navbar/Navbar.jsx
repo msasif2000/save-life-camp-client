@@ -61,7 +61,7 @@ const Navbar = () => {
                                 <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-red-600 p-1" /></Link>
                             </>
                             :
-                            <BiUserCircle className="text-red-600 text-4xl"></BiUserCircle>
+                            <Link to='/login'><BiUserCircle className="text-red-600 text-4xl"></BiUserCircle></Link>
 
                     }
                 </div>

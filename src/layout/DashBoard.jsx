@@ -12,6 +12,7 @@ import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import useAdmin from "../hooks/useAdmin";
+import { Helmet } from "react-helmet";
 
 
 const DashBoard = () => {
@@ -23,7 +24,9 @@ const DashBoard = () => {
     }
     return (
         <div className="md:flex md:container mx-auto">
-
+            <Helmet>
+                <title>SAVE LIFE | DASHBOARD</title>
+            </Helmet>
             <div className="md:w-1/4 md:flex-shrink-0">
                 <div className="navbar-start md:hidden">
                     <div className="dropdown">
@@ -62,7 +65,7 @@ const DashBoard = () => {
                                             <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
                                         </li>
                                         <li>
-                                            <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Add Review</NavLink>
+                                            <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Review history</NavLink>
                                         </li>
                                         <li>
                                             <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
@@ -118,7 +121,7 @@ const DashBoard = () => {
                                         <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
                                     </li>
                                     <li>
-                                        <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Add Review</NavLink>
+                                        <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Review History</NavLink>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>

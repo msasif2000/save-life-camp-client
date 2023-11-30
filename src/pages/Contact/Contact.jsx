@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet";
 import { AiTwotoneMail } from "react-icons/ai";
 import { BiPhoneCall } from "react-icons/bi";
 
@@ -5,6 +6,9 @@ import { BiPhoneCall } from "react-icons/bi";
 const Contact = () => {
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | Contact</title>
+            </Helmet>
             <div className="text-center">
                 <h2 className="text-3xl font-bold">SAVE LIFE MEDICAL CAMP</h2>
                 <h3 className="italic">#123 Health Street <br />Cityville, Medtown</h3>

@@ -2,6 +2,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
+import { Helmet } from 'react-helmet';
 
 
 const AddCamp = () => {
@@ -59,6 +60,9 @@ const AddCamp = () => {
     };
     return (
         <div className="">
+            <Helmet>
+                <title>SAVE LIFE | ADD CAMP</title>
+            </Helmet>
             <div className="md-container mx-auto">
                 <div className="lg:p-12 md:p-6 p-4 space-y-6">
                     <h2 className="font-rancho text-4xl text-center">Create Camp Here</h2>

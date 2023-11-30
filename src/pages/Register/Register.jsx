@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'
 import { useForm } from 'react-hook-form';
 import useAuth from "../../hooks/useAuth";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 
 
@@ -91,6 +92,9 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | SIGN UP</title>
+            </Helmet>
             <div className="flex ">
                 <div className="hero min-h-screen mt-4 lg:w-4/5 md:w-5/6 mx-auto">
                     <div className="hero-content flex-col w-full">

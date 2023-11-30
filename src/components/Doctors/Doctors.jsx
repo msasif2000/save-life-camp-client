@@ -16,19 +16,22 @@ const Doctors = () => {
 
     return (
         <div>
-             <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
+            <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
             <h2 className="text-4xl text-center font-bold ">Meet Our Doctors</h2>
             <p className="text-xl text-center italic my-2">They are highly qualified to train your physical and mental health!</p>
             <div className="divider"></div>
 
             <Swiper
-                slidesPerView={4}
+                slidesPerView={1}   // Default for mobile
                 spaceBetween={30}
-                pagination={{
-                    clickable: true,
-                }}
+                pagination={{ clickable: true }}
                 modules={[Pagination]}
                 className="mySwiper max-w-7xl mx-auto"
+                breakpoints={{
+                    640: { slidesPerView: 2 },   // Show 2 slides on tablets
+                    768: { slidesPerView: 2 },   // Show 2 slides on larger tablets
+                    1024: { slidesPerView: 4 },  // Show 4 slides on desktop
+                }}
             >
                 {doctors.map(doctor => (
                     <SwiperSlide key={doctor._id}>

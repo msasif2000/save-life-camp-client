@@ -5,6 +5,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -83,6 +84,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | LOGIN</title>
+            </Helmet>
             <div className="">
                 <div className="hero min-h-screen  lg:w-4/5 md:w-5/6 mx-auto">
                     <div className="hero-content flex-col mx-auto w-full">

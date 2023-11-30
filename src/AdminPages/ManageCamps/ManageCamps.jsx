@@ -4,6 +4,7 @@ import useCamp from "../../hooks/useCamp";
 import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 
 const ManageCamps = () => {
@@ -37,6 +38,9 @@ const ManageCamps = () => {
     }
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | MANAGE CAMPS</title>
+            </Helmet>
             <div className="flex justify-evenly items-center mt-4">
                 <h2 className="text-3xl">Number of total organized camps:  {camps.length}</h2>
             </div>

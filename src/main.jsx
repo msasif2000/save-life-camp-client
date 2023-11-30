@@ -1,5 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
+import { HelmetProvider } from 'react-helmet-async';
 import {
   createBrowserRouter,
   RouterProvider,
@@ -67,7 +68,7 @@ const router = createBrowserRouter([
       {
         path: 'detailsCamp/:id',
         element: <CampDetails></CampDetails>,
-        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`) 
+        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       },
       {
         path: '/contact',
@@ -94,9 +95,8 @@ const router = createBrowserRouter([
         element: <PaymentHistory></PaymentHistory>
       },
       {
-        path: 'review/:id',
+        path: 'review',
         element: <Review></Review>,
-        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       },
       {
         path: 'addReview/:id',
@@ -151,7 +151,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
       <QueryClientProvider client={new QueryClient()}>
-        <RouterProvider router={router} />
+        <HelmetProvider>
+          <RouterProvider router={router} />
+        </HelmetProvider>
       </QueryClientProvider>
     </AuthProvider>
   </React.StrictMode>,

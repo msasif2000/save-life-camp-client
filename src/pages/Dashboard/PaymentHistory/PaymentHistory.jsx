@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import usePaidCamp from "../../../hooks/usePaidCamp";
+import { Helmet } from "react-helmet";
 
 
 const PaymentHistory = () => {
@@ -8,6 +9,9 @@ const PaymentHistory = () => {
     refetch();
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | PAYMENT HISTORY</title>
+            </Helmet>
             <div className="flex justify-evenly items-center mt-4">
                 <div>
                     <h2 className="text-3xl text-center py-8">

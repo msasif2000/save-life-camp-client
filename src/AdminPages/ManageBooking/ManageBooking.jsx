@@ -1,6 +1,7 @@
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import Swal from "sweetalert2";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 const ManageBooking = () => {
     const axiosSecure = useAxiosSecure();
@@ -28,6 +29,9 @@ const ManageBooking = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>SAVE LIFE | BOOKINGS</title>
+            </Helmet>
             <h1 className="text-3xl text-center my-4">Total Camp Bookings : {bookings.length}</h1>
             <div>
                 <div className="overflow-x-auto">

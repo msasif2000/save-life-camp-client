@@ -8,7 +8,7 @@ import b5 from '../../assets/banner/b5.jpg';
 
 const Banner = () => {
     return (
-        <Carousel autoPlay={true} axis={"vertical"} dynamicHeight={400} showThumbs={false} infiniteLoop={true} interval={2000} className="w-full mt-4 text-center mx-auto rounded-lg md:rounded-none">
+        <Carousel autoPlay={true} axis={"vertical"} dynamicHeight={400} showThumbs={false} infiniteLoop={true} interval={3000} className="w-full mt-4 text-center mx-auto rounded-lg md:rounded-none">
             <div>
                 <img src={b1} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
             </div>

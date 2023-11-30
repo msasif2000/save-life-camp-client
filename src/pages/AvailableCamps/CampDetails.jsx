@@ -1,11 +1,13 @@
 import { Link, useLoaderData } from "react-router-dom";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const CampDetails = () => {
     const camp = useLoaderData().data;
 
     const { _id, campName, venue, audience, services, image, date, campFee, participants, professionals, details } = camp;
+    const today = new Date();
     const axiosSecure = useAxiosSecure();
     const [reviews, setReviews] = useState([]);
 
@@ -16,6 +18,9 @@ const CampDetails = () => {
 
     return (
         <div className="container mx-auto p-6 mt-4">
+            <Helmet>
+                <title>SL| CAMP DETAILS</title>
+            </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                     <img src={image} alt={campName} className="w-full h-auto rounded" />
@@ -43,9 +48,15 @@ const CampDetails = () => {
                     <p className="text-gray-600 mb-2">
                         Participants: <span className="font-bold">{participants}</span>
                     </p>
+                    <div className="flex justify-end pb-0">
+                        {
+                            today < new Date(date) ?
 
-                    <div>
-                        <Link to={`/joinCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">Join Camp</button></Link>
+                                <Link to={`/joinCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">Join Camp</button></Link>
+
+                                :
+                                ''
+                        }
                     </div>
                 </div>
 

@@ -5,6 +5,7 @@ import { BiTimeFive } from "react-icons/bi";
 import { ImLocation } from "react-icons/im";
 import Swal from "sweetalert2";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
+import { Helmet } from "react-helmet";
 
 
 const CampRegistration = () => {
@@ -58,11 +59,14 @@ const CampRegistration = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>SL| CAMP REGISTRATION</title>
+            </Helmet>
             <div className="flex ">
-                <div className="hero min-h-screen mt-4 lg:w-4/5 md:w-5/6 mx-auto">
+                <div className="hero min-h-screen mt-4  mx-auto">
                     <div className="hero-content  w-full">
                         <div className="text-center">
-                            <h1 className="text-5xl font-bold my-6">Registration for <span className="text-red-600">{campName}</span> Camp</h1>
+                            <h1 className="lg:text-5xl text-3xl font-bold my-6">Registration for <span className="text-red-600">{campName}</span> Camp</h1>
                             <img src={image} alt="" className="h-[350px] w-full shadow-red-600 shadow-2xl" />
                             <p className="text-xl my-4 font-bold">Camp Fee: <span className="text-red-600">{campFee} tk</span> only</p>
                             <p className="flex gap-1 justify-center"><BiTimeFive className="text-red-600 text-2xl" />{date.split('T')[0]} <br />

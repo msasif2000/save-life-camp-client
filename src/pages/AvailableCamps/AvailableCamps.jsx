@@ -1,6 +1,7 @@
 import CampCard from "./CampCard";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
+import { Helmet } from "react-helmet";
 
 
 const AvailableCamps = () => {
@@ -17,7 +18,10 @@ const AvailableCamps = () => {
     refetch();
     
     return (
-        <div>
+        <div className="lg:px-0 md:px-2 px-1">
+            <Helmet>
+                <title>SAVE LIFE | CAMPS</title>
+            </Helmet>
             <h2 className="text-3xl mt-4 text-center">These are our scheduled campaign</h2>
             <p className="mt-4 text-center">You must register and pay to join with us. </p>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 my-12">

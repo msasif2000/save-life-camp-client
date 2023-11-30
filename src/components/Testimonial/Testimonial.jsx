@@ -17,12 +17,12 @@ const Testimonial = () => {
     //console.log(reviews);
     return (
         <div>
-             <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
+            <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
             <h2 className="text-4xl text-center font-bold">Testimonials </h2>
             <p className="text-xl text-center italic my-2">What our beautiful participants saying about SAVE LIFE MEDICAL CAMP!</p>
             <div className="divider"></div>
             <div className="bg-sky-200 mt-8 p-12">
-                <Swiper navigation={true} modules={[Navigation]} className="mySwiper" autoplay={{ delay: 3000 }} loop={true}>
+                <Swiper navigation={true} modules={[Navigation]} className="mySwiper" autoplay={{ delay: 3000, disableOnInteraction: false }} loop={true}>
                     {
                         reviews.map(review => <SwiperSlide key={review._id} >
                             <div className="text-center flex flex-col justify-center items-center gap-6">

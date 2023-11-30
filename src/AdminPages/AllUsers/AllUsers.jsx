@@ -3,6 +3,7 @@ import { useQuery } from "@tanstack/react-query";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { MdDelete } from "react-icons/md";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const AllUsers = () => {
@@ -57,8 +58,10 @@ const AllUsers = () => {
     }
     return (
         <div className="mt-8">
+            <Helmet>
+                <title>SAVE LIFE | USERS</title>
+            </Helmet>
             <h1 className="text-3xl text-center my-4">Total Users : {users.length}</h1>
-
             <div>
                 <div className="overflow-x-auto">
                     <table className="table min-w-full divide-y divide-red-500">
@@ -85,7 +88,7 @@ const AllUsers = () => {
                                         <span className="">{user.name}</span>
                                     </td>
                                     <td>
-                                        <img src={user.photoURL} alt=""  className="h-16 w-16"/>
+                                        <img src={user.photoURL} alt=""  className="h-12 w-12 rounded-2xl "/>
                                     </td>
                                     <td>{user.email}</td>
                                     <td>
