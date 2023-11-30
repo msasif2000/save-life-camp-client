@@ -81,8 +81,10 @@ const DashBoard = () => {
                             <li>
                                 <NavLink to='/availableCamp'><GiCampingTent className="text-2xl" />Available Camp</NavLink>
                             </li>
-                            <li onClick={handleLogout}>
-                                <BiLogOut className="text-2xl" />Sign Out
+                            <li>
+                                <button onClick={handleLogout} className="flex items-center btn btn-sm">
+                                    <BiLogOut className="text-2xl" /><span>Sign Out</span>
+                                </button>
                             </li>
                         </ul>
                     </div>

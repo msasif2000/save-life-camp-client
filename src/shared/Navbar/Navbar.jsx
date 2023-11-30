@@ -36,7 +36,7 @@ const Navbar = () => {
     return (
         <div className=" ">
             <div className="navbar">
-                <div className="navbar-start">
+                <div className="navbar-start w-3/5">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="red"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -57,7 +57,7 @@ const Navbar = () => {
                     {
                         user ?
                             <>
-                                <li className="md:flex hidden"><button onClick={handleLogout} className="btn btn-sm mr-2 border-2 border-red-600 text-xl">Sign Out</button></li>
+                                <li className="list-none"><button onClick={handleLogout} className="btn btn-sm md:mr-2 mr-1 border-2 border-red-600 text-sm md:text-xl">Sign Out</button></li>
                                 <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-red-600 p-1" /></Link>
                             </>
                             :

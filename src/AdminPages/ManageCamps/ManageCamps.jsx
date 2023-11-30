@@ -41,7 +41,7 @@ const ManageCamps = () => {
             <Helmet>
                 <title>SAVE LIFE | MANAGE CAMPS</title>
             </Helmet>
-            <div className="flex justify-evenly items-center mt-4">
+            <div className="text-center mt-4">
                 <h2 className="text-3xl">Number of total organized camps:  {camps.length}</h2>
             </div>
             <div>
