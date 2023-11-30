@@ -3,8 +3,9 @@ import usePaidCamp from "../../../hooks/usePaidCamp";
 
 
 const PaymentHistory = () => {
-    const [paidCamps] = usePaidCamp();
+    const [paidCamps, refetch] = usePaidCamp();
     const today = new Date();
+    refetch();
     return (
         <div>
             <div className="flex justify-evenly items-center mt-4">

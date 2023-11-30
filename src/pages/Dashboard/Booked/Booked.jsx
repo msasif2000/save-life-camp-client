@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Booked = () => {
     const [bookings, refetch] = useBookedCamp();
     const axiosSecure = useAxiosSecure();
-    const handleDeleteRegistration = (id) => {
+    const handleDeleteRegistration = (id, campId) => {
         Swal.fire({
             title: "Are you sure?",
             text: "You could not participate in this session!",
@@ -21,15 +21,25 @@ const Booked = () => {
             if (result.isConfirmed) {
                 axiosSecure.delete(`/joinedCamp/${id}`)
                     .then(res => {
+                        axiosSecure.patch(`/participantsNumber/${campId}`, { type: 'decrement' })
+                            .then(() => {
+                                //console.log(res.data);
+
+                                refetch();
+
+                            })
+                        refetch();
                         if (res.data.deletedCount) {
                             Swal.fire(
                                 "Deleted!",
                                 "Your registered camp has been deleted.",
                                 "success"
                             )
-                            refetch();
+
                         }
                     })
+
+
             }
         });
     }
@@ -77,7 +87,7 @@ const Booked = () => {
                                     <Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-sm bg-sky-600 text-white">Pay</button></Link>
                                 </td>
                                 <td>
-                                    <button onClick={() => handleDeleteRegistration(item._id)} className="btn btn-sm bg-red-600 px-1"><MdDelete className="text-2xl text-white" /></button>
+                                    <button onClick={() => handleDeleteRegistration(item._id, item.campId)} className="btn btn-sm bg-red-600 px-1"><MdDelete className="text-2xl text-white" /></button>
                                 </td>
                             </tr>
                         ))}

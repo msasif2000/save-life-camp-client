@@ -1,4 +1,5 @@
 import Banner from "../../components/Banner/Banner";
+import Doctors from "../../components/Doctors/Doctors";
 import PopularCamp from "../../components/PopularCamp/PopularCamp";
 import PreviousCamp from "../../components/PreviousCamp/PreviousCamp";
 import Testimonial from "../../components/Testimonial/Testimonial";
@@ -11,6 +12,7 @@ const Home = () => {
             <PopularCamp></PopularCamp>
             <Upcoming></Upcoming>
             <PreviousCamp></PreviousCamp>
+            <Doctors></Doctors>
             <Testimonial></Testimonial>
         </div>
     );

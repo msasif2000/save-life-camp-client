@@ -1,31 +1,25 @@
-import { useState } from "react";
-import useAuth from "../../hooks/useAuth";
+
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from "react-router-dom";
+import useUser from "../../hooks/useUser";
 
 
 const UpdateProfile = () => {
     const location = useLocation();
     const navigate = useNavigate();
 
-
-    const { user } = useAuth();
+const [currentUser, refetch] = useUser();
     //console.log(user);
     const axiosSecure = useAxiosSecure();
-    const [currentUser, setCurrentUser] = useState();
-    axiosSecure.get(`/users/${user.email}`)
-        .then(res => {
-            if (res.data) {
-                setCurrentUser(res.data);
-            }
-        })
+
 
     const handleUpdateProfile = e => {
         e.preventDefault();
 
         const form = e.target;
+
         const name = form.name.value;
         const email = form.email.value;
         const address = form.address.value;
@@ -35,14 +29,15 @@ const UpdateProfile = () => {
 
         const updatedUser = { name, email, address, photoURL: image, dob, mobile };
         
-        axiosSecure.put(`/users/${user.email}`, updatedUser)
+        axiosSecure.patch(`/users/${currentUser._id}`, updatedUser)
             .then(res => {
                 if (res.data) {
                     toast.success("Profile Updated Successfully!", {
                         position: toast.POSITION.TOP_CENTER, autoClose: 1500,
                     });
+                    refetch();
                     setTimeout(() => {
-                        navigate(location.state?.from ? location.state.from : '/');
+                        navigate(location.state?.from ? location.state.from : '/dashboard');
                     }, 2000);
                 }
             })

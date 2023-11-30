@@ -18,9 +18,11 @@ const PopularCamp = () => {
     //console.log(camps);
     return (
         <div>
-            <h2 className="text-4xl text-center font-bold mt-12">Our Popular Camp</h2>
+            <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
+            <h2 className="text-4xl text-center font-bold">Our Popular Camp</h2>
             <p className="text-xl text-center italic my-2">Register your desired camp now!</p>
-            <div className="divider bg-red-600"></div>
+
+            <div className="divider"></div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-8">
                 {
                     camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)

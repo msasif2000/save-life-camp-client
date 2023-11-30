@@ -55,7 +55,8 @@ const CheckoutForm = ({ participantInfo }) => {
             setError(error.message);
         }
         else {
-            console.log(paymentMethod);
+            //console.log(paymentMethod);
+            paymentMethod;
             setError('');
         }
 
@@ -71,11 +72,11 @@ const CheckoutForm = ({ participantInfo }) => {
             }
         })
         if (confirmError) {
-            console.log(confirmError.message);
+            //console.log(confirmError.message);
             setError(confirmError.message);
         }
         else {
-            console.log(paymentIntent);
+            //console.log(paymentIntent);
             if (paymentIntent?.status === 'succeeded') {
                 setError('');
                 setTransactionId(paymentIntent.id);
@@ -94,6 +95,7 @@ const CheckoutForm = ({ participantInfo }) => {
                     campId: participantInfo?.campId,
                     status: 'pending'
                 }
+               // console.log(payment);
                 const res = await axiosSecure.post('/payment', payment);
                 //console.log(res);
                 refetch();

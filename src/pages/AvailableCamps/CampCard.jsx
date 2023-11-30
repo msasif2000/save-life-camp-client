@@ -7,7 +7,7 @@ import useAuth from "../../hooks/useAuth";
 
 const CampCard = ({ camp }) => {
     const { user } = useAuth();
-    const { _id, campName, image, date, campFee, venue, services, professionals, audience, details, participants } = camp;
+    const { _id, campName, image, date, campFee, venue, services, professionals, audience,  participants } = camp;
 
     //console.log(_id);
     //const today = new Date();
@@ -32,7 +32,6 @@ const CampCard = ({ camp }) => {
                 </div>
 
                 <p className="bg-red-600 flex gap-1 text-white p-2"><span>Target Audience: </span> <span className="font-bold">{audience}</span></p>
-                <p className="bg-sky-300 p-2 h-52">{details}</p>
 
                 <div className=" my-2">
                     <p className="flex gap-2 items-center"><BiTimeFive className="text-red-600 text-2xl" /><span className="text-red-600 bold">{ date.split('T')[0]} <br />

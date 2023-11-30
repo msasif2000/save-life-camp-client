@@ -34,6 +34,7 @@ import Review from './pages/Dashboard/Review/Review';
 import Payment from './pages/Dashboard/Payment/Payment';
 import PaymentHistory from './pages/Dashboard/PaymentHistory/PaymentHistory';
 import AddReview from './pages/Dashboard/Review/AddReview';
+import CampDetails from './pages/AvailableCamps/CampDetails';
 
 
 const router = createBrowserRouter([
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
         loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
       },
       {
+        path: 'detailsCamp/:id',
+        element: <CampDetails></CampDetails>,
+        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`) 
+      },
+      {
         path: '/contact',
         element: <Contact></Contact>
       }
@@ -74,7 +80,7 @@ const router = createBrowserRouter([
     element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
     children: [
       {
-        path:'/dashboard',
+        path: '/dashboard',
         element: <Profile></Profile>
       },
       //user routes
@@ -96,12 +102,13 @@ const router = createBrowserRouter([
         path: 'addReview/:id',
         element: <AddReview></AddReview>
       },
-      
+
       {
-        path:'payment/:id',
-        element: <Payment></Payment>, 
+        path: 'payment/:id',
+        element: <Payment></Payment>,
         loader: ({ params }) => axiosSecure(`/participants/${params.id}`)
       },
+
 
       //admin routes
       {
@@ -135,7 +142,7 @@ const router = createBrowserRouter([
         element: <UpdateProfile></UpdateProfile>
       },
 
-      
+
     ]
   }
 ]);

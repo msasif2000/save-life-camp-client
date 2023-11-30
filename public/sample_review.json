@@ -124,4 +124,103 @@
         "professionals": ["Endocrinologist Robinson", "Diabetes Educator Moore"],
         "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
       }
+,
+
+
+
+
+
+
+
+
+
+    {
+      "name": "Dr. Smith",
+      "designation": "General Practitioner",
+      "qualification": "MD in General Medicine",
+      "workingPlace": "City Medical Center",
+      "specialization": "General Check-ups, Immunization, Dental Care",
+      "image": "https://i.ibb.co/MV3KN0G/doctor-employs-modern-communication-tools-using-his-phone-to-address-medical-inquiries-doctor-employ.jpg"
+    },
+    {
+      "name": "Dr. Rodriguez",
+      "designation": "Cardiologist",
+      "qualification": "MD in Cardiology",
+      "workingPlace": "HeartCare Hospital",
+      "specialization": "Blood Pressure Screening, Nutritional Counseling",
+      "image": "https://i.ibb.co/P4MjrQ5/male-doctor-stethoscope-cardiologist-holding-red-heart-sign-portrait-senior-happy-smiling-standing-h.jpg"
+    },
+    {
+      "name": "Psyciatrist Green",
+      "designation": "Psychiatrist",
+      "qualification": "MD in Psychiatry",
+      "workingPlace": "MindWell Clinic",
+      "specialization": "Mental Health Counseling, Stress Management Workshops",
+      "image": "https://i.ibb.co/Zm14Drc/1251103-sd-me-mental-health-essay-fadi-ncc-008.jpg"
+    },
+    {
+      "name": "Dr. Miller",
+      "designation": "Primary Care Physician",
+      "qualification": "MD in Internal Medicine",
+      "workingPlace": "Community Health Clinic",
+      "specialization": "Primary Care, Eye Check-ups",
+      "image": "https://i.ibb.co/fdm8HS6/eye-doctor-oculist-in-clinic-snellen-chart-in-background-2-H3-TJCK.jpg"
+    },
+    {
+      "name": "Fitness Trainer Carter",
+      "designation": "Fitness Trainer",
+      "qualification": "Certified Fitness Instructor",
+      "workingPlace": "Wellness Gym",
+      "specialization": "Wellness Workshops, Fitness Assessments",
+      "image": "https://i.ibb.co/sR0q4dN/a-cartoon-illustration-of-a-personal-trainer-with-a-sign-MEG845.jpg"
+    },
+    {
+      "name": "Dr. Davis",
+      "designation": "OB-GYN Specialist",
+      "qualification": "MD in Obstetrics and Gynecology",
+      "workingPlace": "Hope Women's Clinic",
+      "specialization": "Women's Health Check-ups, Family Planning Consultations",
+      "image": "https://i.ibb.co/T4TCJ7L/136318593-studio-shot-of-young-man-doctor-holding-clipboard-while-giving-handshake.jpg"
+    },
+    {
+      "name": "Dr. Turner",
+      "designation": "Infectious Disease Specialist",
+      "qualification": "MD in Infectious Diseases",
+      "workingPlace": "AidSphere Health Center",
+      "specialization": "HIV/AIDS Awareness, Testing and Counseling",
+      "image": "https://i.ibb.co/CVfJ6qp/stock-photo-healthcare-workers-medical-insurance-and-covid-19-concept-handsome-doctor-in-glasses-and.jpg"
+    },
+    {
+      "name": "Dr. Garcia",
+      "designation": "Pediatrician",
+      "qualification": "MD in Pediatrics",
+      "workingPlace": "Community Pediatric Clinic",
+      "specialization": "Pediatric Care, Immunization for Children",
+      "image": "https://i.ibb.co/7vQkv35/old-doctor-uniform-standing-hall-1157-33382.jpg"
+    },
+    {
+      "name": "Dr. Hernandez",
+      "designation": "Orthopedic Specialist",
+      "qualification": "MD in Orthopedics",
+      "workingPlace": "OrthoCare Hospital",
+      "specialization": "Orthopedic Consultations, Physical Therapy Sessions",
+      "image": "https://i.ibb.co/pLtR1Dp/positive-handsome-afro-american-doctor-smiling-while-standing-against-white-wall-376548-604.jpg"
+    },
+    {
+      "name": "Dr. Robinson",
+      "designation": "Endocrinologist",
+      "qualification": "MD in Endocrinology",
+      "workingPlace": "DiabetesCare Center",
+      "specialization": "Diabetes Awareness, Blood Sugar Testing",
+      "image": "https://i.ibb.co/XCnYGXW/praying-god-male-young-doctor-with-stethoscope-face-mask-white-studio-155003-30061.jpg"
+    },
+    {
+      "name": "Alternative Therapist Turner",
+      "designation": "Alternative Therapist",
+      "qualification": "Certified Alternative Medicine Practitioner",
+      "workingPlace": "FreeHeal Wellness Center",
+      "specialization": "Alternative Therapies, Mindfulness Sessions",
+      "image": "https://i.ibb.co/qjxfNB2/doctor-online-senior-medic-talking-client-laptop-computer-from-his-office-mature-male-therapist-expl.jpg"
+    }
   ]
+  
