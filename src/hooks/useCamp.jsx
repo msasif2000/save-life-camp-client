@@ -1,15 +1,15 @@
-import useAuth from "./useAuth";
+
 import useAxiosSecure from "./useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 
 const useCamp = () => {
     const axiosSecure = useAxiosSecure();
-    const { user } = useAuth();
+
     //tanstack query
     const { refetch, data: camps = [] } = useQuery({
-        queryKey: ['camps', user?.email],
+        queryKey: ['camps'],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/camp`);
+            const res = await axiosSecure.get('/camp');
             return res.data;
         }
     })

@@ -109,4 +109,46 @@
       "audience": "All Ages",
       "details": "FreeHeal Network offers alternative therapies and mindfulness sessions for individuals of all ages. Our dedicated alternative therapist, Turner, and mindfulness coach, Allen, are here to guide you on a path to healing. Join us for a day of free healing and well-being!"
     }
+    ,
+    {
+      "campName": "WellnessWave",
+      "image": "https://i.ibb.co/ZMnJpV7/download-2.jpg",
+      "date": "2023-12-22T11:00:00",
+      "venue": "Wellness Center, Oceanfront",
+      "services": ["Yoga Sessions", "Nutrition Seminars"],
+      "professionals": ["Yoga Instructor Turner", "Nutritionist Davis"],
+      "audience": "All Ages",
+      "details": "WellnessWave invites you to experience the soothing waves of wellness. Join us for invigorating yoga sessions and enlightening nutrition seminars. Our dedicated professionals, including Yoga Instructor Turner and Nutritionist Davis, are here to guide you towards a healthier and more balanced life!"
+    },
+    {
+      "campName": "HeartHealth Expo",
+      "image": "https://i.ibb.co/QQWkBT4/download-3.jpg",
+      "date": "2023-12-10T09:30:00",
+      "venue": "Expo Center, Harmony Street",
+      "services": ["Cardiac Screenings", "Heart-Healthy Cooking Demos"],
+      "professionals": ["Cardiologist Martinez", "Chef Johnson"],
+      "audience": "Adults",
+      "details": "HeartHealth Expo is your gateway to a healthier heart. Participate in life-saving cardiac screenings and learn heart-healthy cooking tips from Chef Johnson. Our expert team, led by Cardiologist Martinez, is here to empower you on your journey to heart health!"
+    },
+    {
+      "campName": "JoyfulSmiles Clinic",
+      "image": "https://i.ibb.co/GF7Q70k/download-4.jpg",
+      "date": "2023-12-18T14:15:00",
+      "venue": "Smiles Clinic, Sunshine Avenue",
+      "services": ["Dental Check-ups", "Oral Hygiene Workshops"],
+      "professionals": ["Dentist Rodriguez", "Dental Hygienist White"],
+      "audience": "Children and Families",
+      "details": "JoyfulSmiles Clinic is your destination for brighter smiles. Bring your family for dental check-ups and join our engaging oral hygiene workshops. Dentist Rodriguez and Dental Hygienist White are here to ensure joyful smiles for children and families!"
+    },
+    {
+      "campName": "SeniorCare Summit",
+      "image": "https://i.ibb.co/njDQp62/download-5.jpg",
+      "date": "2023-12-05T13:45:00",
+      "venue": "SeniorCare Community Center, Oakwood Lane",
+      "services": ["Geriatric Health Screenings", "Memory Care Seminars"],
+      "professionals": ["Geriatric Specialist Brown", "Memory Care Expert Turner"],
+      "audience": "Seniors",
+      "details": "SeniorCare Summit focuses on the well-being of our cherished seniors. Attend geriatric health screenings and enlightening memory care seminars. Geriatric Specialist Brown and Memory Care Expert Turner are here to ensure a fulfilling and healthy senior life!"
+    }
+
 ]

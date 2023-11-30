@@ -87,6 +87,7 @@ const CheckoutForm = ({ participantInfo }) => {
                     price: price,
                    campName: participantInfo?.campName, 
                    date: new Date(), 
+                   campDate: participantInfo?.date,
                      transactionId: paymentIntent.id,
                     regId: participantInfo?._id,
                     campId: participantInfo?.campId,

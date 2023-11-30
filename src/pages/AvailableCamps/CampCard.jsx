@@ -10,13 +10,7 @@ const CampCard = ({ camp }) => {
     const { _id, campName, image, date, campFee, venue, services, professionals, audience, details, participants } = camp;
 
     //console.log(_id);
-
-
-
-
-
-
-
+    const today = new Date();
 
     return (
         <div className="flex flex-col shadow-md shadow-red-600 p-4 transition-all hover:-translate-y-1 hover:scale-105 hover:bg-slate-200 duration-300">
@@ -51,7 +45,12 @@ const CampCard = ({ camp }) => {
                         user ?
                             <>
                                 <Link to={`/detailsCamp/${_id}`}><button className="btn bg-red-600 text-white">See Details</button></Link>
-                                <Link to={`/joinCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">Join Camp</button></Link>
+                                {
+                                    today > new Date(date) ?
+                                        ''
+                                        :
+                                        <Link to={`/joinCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">Join Camp</button></Link>
+                                }
                             </>
                             :
                             <>

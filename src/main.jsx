@@ -33,6 +33,7 @@ import UpdateProfile from './pages/UpdateProfile/UpdateProfile';
 import Review from './pages/Dashboard/Review/Review';
 import Payment from './pages/Dashboard/Payment/Payment';
 import PaymentHistory from './pages/Dashboard/PaymentHistory/PaymentHistory';
+import AddReview from './pages/Dashboard/Review/AddReview';
 
 
 const router = createBrowserRouter([
@@ -90,6 +91,10 @@ const router = createBrowserRouter([
         path: 'review/:id',
         element: <Review></Review>,
         loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
+      },
+      {
+        path: 'addReview/:id',
+        element: <AddReview></AddReview>
       },
       
       {

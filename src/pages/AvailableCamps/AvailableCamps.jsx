@@ -1,28 +1,30 @@
-import { useState } from "react";
-
 import CampCard from "./CampCard";
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import { useQuery } from "@tanstack/react-query";
 
 
 const AvailableCamps = () => {
 
-    const [camps, setCamps] = useState([]);
 
     const axiosSecure = useAxiosSecure();
-    axiosSecure.get('/camp')
-        .then(res => {
-            //console.log(res.data);
-            setCamps(res.data);
-        })
-        .catch(() => {
-         //   console.log(err);
-        })
-//console.log(camps);
+    const { data: camps = [], refetch } = useQuery({
+        queryKey: ['camps'],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/camp');
+            return res.data;
+        }
+    })
+    refetch();
+    
     return (
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 my-16">
-            {
-                camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
-            }
+        <div>
+            <h2 className="text-3xl mt-4 text-center">These are our scheduled campaign</h2>
+            <p className="mt-4 text-center">You must register and pay to join with us. </p>
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 my-12">
+                {
+                    camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
+                }
+            </div>
         </div>
     );
 };

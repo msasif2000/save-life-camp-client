@@ -19,7 +19,7 @@ const AddCamp = () => {
         const image = form.image.value;
         const date = form.date.value;
         const campFee = form.campFee.value;
-        const participants = form.participants.value;
+        const participants = parseInt(form.participants.value);
         const details = form.details.value;
 
         const services = Array.from(form.querySelectorAll('input[name="services"]')).map(
