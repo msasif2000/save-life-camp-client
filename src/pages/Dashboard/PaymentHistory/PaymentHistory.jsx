@@ -45,7 +45,7 @@ const PaymentHistory = () => {
                                             <>
                                                 {
                                                     new Date(item?.campDate) < today ?
-                                                        <Link to={`/dashboard/addReview/${item._id}`}><button className="btn btn-xl text-white bg-green-600 ">Add Review</button></Link>
+                                                        <Link to={`/dashboard/addReview/${item.campId}`}><button className="btn btn-xl text-white bg-green-600 ">Add Review</button></Link>
                                                         :
                                                         <button disabled className="btn btn- text-white bg-red-600 ">Will Enable</button>
                                                 }
