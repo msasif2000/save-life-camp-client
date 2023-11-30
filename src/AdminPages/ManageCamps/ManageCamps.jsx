@@ -21,10 +21,6 @@ const ManageCamps = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                axiosSecure.delete(`/bookings/${id}`)
-                    .then(() => {
-                        // console.log(res.data);
-                    })
                 axiosSecure.delete(`/camp/${id}`)
                     .then(res => {
                         if (res.data.deletedCount) {

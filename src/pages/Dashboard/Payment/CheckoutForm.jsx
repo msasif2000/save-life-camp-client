@@ -1,10 +1,10 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import { useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
-import useAuth from "../../../hooks/useAuth";
 import useBookedCamp from "../../../hooks/useBookedCamp";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
+import useUser from "../../../hooks/useUser";
 
 
 const CheckoutForm = ({ participantInfo }) => {
@@ -16,20 +16,20 @@ const CheckoutForm = ({ participantInfo }) => {
 
     const navigate = useNavigate();
     const [, refetch] = useBookedCamp();
-    const {user} = useAuth();
+    const [currentUser] = useUser();
     const axiosSecure = useAxiosSecure();
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
-    const [transactionId, setTransactionId] = useState(''); 
+    const [transactionId, setTransactionId] = useState('');
 
 
     useEffect(() => {
-        if (price>0){
+        if (price > 0) {
             axiosSecure.post('/create-payment-intent', { price })
-            .then(res => {
-                //console.log(res.data.clientSecret);
-                setClientSecret(res.data.clientSecret);
-            })
+                .then(res => {
+                    //console.log(res.data.clientSecret);
+                    setClientSecret(res.data.clientSecret);
+                })
         }
     }, [axiosSecure, price])
 
@@ -61,7 +61,7 @@ const CheckoutForm = ({ participantInfo }) => {
 
 
         //confirm payment
-        const {paymentIntent, error: confirmError} = await stripe.confirmCardPayment(clientSecret, {
+        const { paymentIntent, error: confirmError } = await stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
                 billing_details: {
@@ -69,35 +69,35 @@ const CheckoutForm = ({ participantInfo }) => {
                     email: participantInfo?.email || 'anonymous',
                 }
             }
-        })  
-        if(confirmError){
+        })
+        if (confirmError) {
             console.log(confirmError.message);
             setError(confirmError.message);
         }
-        else{
+        else {
             console.log(paymentIntent);
-            if(paymentIntent?.status === 'succeeded'){
+            if (paymentIntent?.status === 'succeeded') {
                 setError('');
                 setTransactionId(paymentIntent.id);
 
 
-                const payment ={ 
-                    email: user?.email,
+                const payment = {
+                    email: currentUser?.email,
                     name: participantInfo?.name,
                     price: price,
-                   campName: participantInfo?.campName, 
-                   date: new Date(), 
-                   campDate: participantInfo?.date,
-                     transactionId: paymentIntent.id,
+                    campName: participantInfo?.campName,
+                    date: new Date(),
+                    campDate: participantInfo?.date,
+                    transactionId: paymentIntent.id,
                     regId: participantInfo?._id,
+                    userId: currentUser?._id,
                     campId: participantInfo?.campId,
                     status: 'pending'
-
                 }
-               const res =await axiosSecure.post('/payment', payment);
+                const res = await axiosSecure.post('/payment', payment);
                 //console.log(res);
                 refetch();
-                if(res.data?.paymentResult?.insertedId){
+                if (res.data?.paymentResult?.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",

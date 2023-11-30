@@ -1,6 +1,7 @@
 import Banner from "../../components/Banner/Banner";
 import PopularCamp from "../../components/PopularCamp/PopularCamp";
 import PreviousCamp from "../../components/PreviousCamp/PreviousCamp";
+import Testimonial from "../../components/Testimonial/Testimonial";
 import Upcoming from "../../components/Upcoming/Upcoming";
 
 const Home = () => {
@@ -10,6 +11,7 @@ const Home = () => {
             <PopularCamp></PopularCamp>
             <Upcoming></Upcoming>
             <PreviousCamp></PreviousCamp>
+            <Testimonial></Testimonial>
         </div>
     );
 };

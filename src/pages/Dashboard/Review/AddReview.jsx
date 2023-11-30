@@ -30,6 +30,7 @@ const AddReview = () => {
             const review = {
                 campId: id,
                 ...e,
+                userImg: user.photoURL,
                 email: camps.email,
                 campName: camps.campName,
                 image: camps.image,

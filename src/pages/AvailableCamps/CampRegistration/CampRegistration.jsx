@@ -24,8 +24,8 @@ const CampRegistration = () => {
             //console.log(participant);
             axiosSecure.post('/participants', participant)
                 .then(res => {
-                    ///console.log(res);
-                    if (res.data.insertedId) {
+                   // console.log(res);
+                    if (res.data.result.insertedId) {
                         Swal.fire({
                             position: "top-end",
                             icon: "success",
