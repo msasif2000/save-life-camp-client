@@ -1,8 +1,8 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+
 import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 
 const UpcomingCamp = () => {
     const location = useLocation();
@@ -31,14 +31,18 @@ const UpcomingCamp = () => {
         axiosSecure.post('/upcomingCamp', upcomingCamp)
             .then(res => {
                 if (res.data.insertedId) {
-                    toast.success("Upcoming Camp Information inserted successfully!", {
-                        position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                    Swal.fire({
+                        title: 'Upcoming Camp Created Successfully.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
                     });
 
+                    navigate(location.state?.from ? location.state.from : '/');
 
-                    setTimeout(() => {
-                        navigate(location.state?.from ? location.state.from : '/');
-                    }, 2000);
                 }
             })
     }
@@ -140,7 +144,6 @@ const UpcomingCamp = () => {
                         </div>
                         <input type="submit" value="Create Upcoming Camp" className="w-full mt-6 bg-red-600 text-white border-black border-dashed border-2 text-center p-2 text-2xl" />
                     </form>
-                    <ToastContainer></ToastContainer>
                 </div>
             </div>
         </div>

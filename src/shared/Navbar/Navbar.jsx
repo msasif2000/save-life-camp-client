@@ -16,12 +16,10 @@ const Navbar = () => {
         <>
             <li className=""><NavLink to='/'>Home</NavLink></li>
             <li className=""><NavLink to='/availableCamp'>Available Camp</NavLink></li>
-            {
-                user ?
-                    <li className=""><NavLink to='/dashboard'>Dashboard</NavLink></li>
-                    :
-                    <li className=""><NavLink to='/login'>Dashboard</NavLink></li>
-            }
+
+
+            <li className=""><NavLink to='/dashboard'>Dashboard</NavLink></li>
+
             <li className=""><NavLink to='/contact'>Contact Us</NavLink></li>
             {
                 user ?

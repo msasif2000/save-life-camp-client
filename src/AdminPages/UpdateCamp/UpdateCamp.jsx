@@ -1,7 +1,6 @@
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import useAxiosSecure from "../../hooks/useAxiosSecure";
+import Swal from "sweetalert2";
 
 
 const UpdateCamp = () => {
@@ -41,14 +40,18 @@ const UpdateCamp = () => {
             .then(res => {
                 // console.log(res.data);
                 if (res.data.modifiedCount) {
-                    toast.success("Camp Information updated successfully!", {
-                        position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                    Swal.fire({
+                        title: 'Camp Updated Successfully.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
                     });
 
+                    navigate(location.state?.from ? location.state.from : '/availableCamp');
 
-                    setTimeout(() => {
-                        navigate(location.state?.from ? location.state.from : '/availableCamp');
-                    }, 2000);
                 }
             })
     }
@@ -165,7 +168,6 @@ const UpdateCamp = () => {
                         </div>
                         <input type="submit" value="Update Camp" className="w-full mt-6 bg-sky-300  border-black border-double border-4 text-center p-2 text-2xl" />
                     </form>
-                    <ToastContainer></ToastContainer>
                 </div>
             </div>
         </div>

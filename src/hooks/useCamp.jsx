@@ -7,9 +7,9 @@ const useCamp = () => {
 
     //tanstack query
     const { refetch, data: camps = [] } = useQuery({
-        queryKey: ['camps'],
+        queryKey: ['manageCamp'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/camp');
+            const res = await axiosSecure.get('/manageCamp');
             return res.data;
         }
     })

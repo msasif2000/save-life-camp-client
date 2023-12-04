@@ -1,9 +1,8 @@
 
 import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from "react-router-dom";
 import useUser from "../../hooks/useUser";
+import Swal from "sweetalert2";
 
 
 const UpdateProfile = () => {
@@ -32,13 +31,19 @@ const [currentUser, refetch] = useUser();
         axiosSecure.patch(`/users/${currentUser._id}`, updatedUser)
             .then(res => {
                 if (res.data) {
-                    toast.success("Profile Updated Successfully!", {
-                        position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                    Swal.fire({
+                        title: 'Profile Updated Successfully.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
                     });
                     refetch();
-                    setTimeout(() => {
+             
                         navigate(location.state?.from ? location.state.from : '/dashboard');
-                    }, 2000);
+           
                 }
             })
 
@@ -102,7 +107,6 @@ const [currentUser, refetch] = useUser();
                         </div>
                         <input type="submit" value="Update Profile" className="w-full mt-6 bg-sky-300  border-black border-double border-4 text-center p-2 text-2xl" />
                     </form>
-                    <ToastContainer></ToastContainer>
                 </div>
             </div>
         </div>

@@ -1,20 +1,22 @@
 import CampCard from "./CampCard";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useQuery } from "@tanstack/react-query";
 import { Helmet } from "react-helmet";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const AvailableCamps = () => {
 
 
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = useAxiosPublic();
     const { data: camps = [], refetch } = useQuery({
         queryKey: ['camps'],
         queryFn: async () => {
-            const res = await axiosSecure.get('/camp');
+            const res = await axiosPublic.get('/camp');
             return res.data;
         }
     })
+
+   // console.log(camps);
     refetch();
     
     return (

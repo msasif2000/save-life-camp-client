@@ -29,9 +29,7 @@ const PreviousCampCard = ({ camp }) => {
                     <Link to={`/detailsCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">See Details</button></Link>
                 </div>
 
-                <div className=" ">
-                                
-                </div>
+
             </div>
         </div>
     );

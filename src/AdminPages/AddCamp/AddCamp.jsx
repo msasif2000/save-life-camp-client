@@ -1,8 +1,7 @@
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import { useLocation, useNavigate } from 'react-router-dom';
 import useAxiosSecure from '../../hooks/useAxiosSecure';
 import { Helmet } from 'react-helmet';
+import Swal from 'sweetalert2';
 
 
 const AddCamp = () => {
@@ -32,19 +31,23 @@ const AddCamp = () => {
         );
 
         const newCamp = { campName, venue, audience, services, image, date, campFee, participants, professionals, details };
-        console.log(newCamp);
+        //console.log(newCamp);
 
         axiosSecure.post('/camp', newCamp)
             .then(res => {
                 if (res.data.insertedId) {
-                    toast.success("Camp Information inserted successfully!", {
-                        position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+                   Swal.fire({
+                        title: 'Camp Created Successfully.',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        }
                     });
-
-
-                    setTimeout(() => {
+            
                         navigate(location.state?.from ? location.state.from : '/availableCamp');
-                    }, 2000);
+                    
                 }
             })
     }
@@ -138,7 +141,7 @@ const AddCamp = () => {
                                         <span className="label-text font-bold">Participants</span>
                                     </label>
                                     <label className="">
-                                        <input required type="number" name="participants" placeholder="Participants 0 initially" className="input input-bordered w-full" />
+                                        <input required type="number" name="participants" defaultValue={0} className="input input-bordered w-full" />
                                     </label>
                                 </div>
                                 <div className="form-control" id="professionals">
@@ -163,7 +166,6 @@ const AddCamp = () => {
                         </div>
                         <input type="submit" value="Create Camp" className="w-full mt-6 bg-red-600 text-white border-black border-dashed border-2 text-center p-2 text-2xl" />
                     </form>
-                    <ToastContainer></ToastContainer>
                 </div>
             </div>
         </div>

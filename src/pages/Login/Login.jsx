@@ -1,11 +1,10 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { FcGoogle } from "react-icons/fc";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import Swal from "sweetalert2";
 import useAuth from "../../hooks/useAuth";
 import useAxiosPublic from "../../Hooks/useAxiosPublic";
 import { Helmet } from "react-helmet";
+import { useState } from "react";
 
 
 const Login = () => {
@@ -14,25 +13,42 @@ const Login = () => {
     const navigate = useNavigate();
 
     const axiosPublic = useAxiosPublic();
-    const from = location.state?.from?.pathname || "/";
+    // const from = location.state?.from?.pathname || "/";
 
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
         const password = e.target.password.value;
-        userLogin(email, password)
-            .then(result => {
-                if (result) {
-                    Swal.fire({
-                        title: 'User Login Successful.',
-                        showClass: {
-                            popup: 'animate__animated animate__fadeInDown'
-                        },
-                        hideClass: {
-                            popup: 'animate__animated animate__fadeOutUp'
-                        }
-                    });
-                    navigate(from, { replace: true });
+        const role = e.target.role.value;
+        //console.log(email, password, role);
+        axiosPublic.get(`/usersLogin?email=${email}&role=${role}`)
+            .then(res => {
+                if (res.data) {
+                    userLogin(email, password)
+                        .then(result => {
+                            if (result) {
+                                Swal.fire({
+                                    title: 'User Login Successful.',
+                                    showClass: {
+                                        popup: 'animate__animated animate__fadeInDown'
+                                    },
+                                    hideClass: {
+                                        popup: 'animate__animated animate__fadeOutUp'
+                                    }
+                                });
+                                navigate(location.state?.from ? location.state.from : '/dashboard');
+                            }
+                        })
+                        .catch(error => {
+                            console.log(error.message)
+                            Swal.fire({
+                                icon: 'error',
+                                title: 'Oops...',
+                                text: 'check email and password again!',
+                                footer: '<a href="/login">Sign in again?</a>'
+                            });
+
+                        })
                 }
             })
             .catch(error => {
@@ -40,48 +56,87 @@ const Login = () => {
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops...',
-                    text: 'check email and password again!',
-                    footer: '<a href="/register">Create an account?</a>'
+                    text: 'check email and role again!',
+                    footer: '<a href="/login">Sign in again?</a>'
                 });
-            
+
             })
+
     }
 
-    const handleGoogleLogin = () => {
-        googleLogin()
-        .then(result => {
-            //console.log(result.user)
-            const { displayName, email, photoURL } = result.user;
-            const userInfo = { name: displayName, email: email, photoURL: photoURL };
-            axiosPublic.post('/users', userInfo)
-                .then(res => {
-                    if (res.data.insertedId) {
-                        toast.success("You're Logged in!", {
-                            position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-                        });
+    const [selectedRole, setSelectedRole] = useState(null);
 
-                    }
-                    toast.success("You're Logged in!", {
-                        position: toast.POSITION.TOP_CENTER, autoClose: 1500,
+    const handleRoleSelection = async () => {
+        const { value: role } = await Swal.fire({
+            title: 'Select Your Role',
+            input: 'select',
+            inputOptions: {
+                'admin': 'Admin',
+                'user': 'User',
+                'professional': 'Professional',
+            },
+            inputPlaceholder: 'Select your role',
+            showCancelButton: true,
+            inputValidator: (value) => {
+                if (!value) {
+                    return 'Role cannot be empty';
+                }
+            },
+        });
+    
+        if (role) {
+            setSelectedRole(role.toLowerCase());
+        }
+    };
+    
+    const handleGoogleLogin = async () => {
+        // Prompt the user to select a role
+        await handleRoleSelection();
+    
+        if (selectedRole) {
+            // Continue with Google login
+            googleLogin()
+                .then((result) => {
+                    const { displayName, email, photoURL } = result.user;
+                    const userInfo = { name: displayName, email, photoURL, role: selectedRole };
+                    axiosPublic.post('/users', userInfo).then((res) => {
+                        if (res.data.insertedId) {
+                            Swal.fire({
+                                title: 'Account Created!',
+                                text: 'You are Logged in',
+                                icon: 'success',
+                                confirmButtonText: 'Ok',
+                            }).then((result) => {
+                                if (result.isConfirmed) {
+                                    navigate(
+                                        location.state?.from ? location.state.from : '/dashboard'
+                                    );
+                                }
+                            });
+                        }
                     });
-                    setTimeout(() => {
-                        navigate(location.state?.from ? location.state.from : '/');
-                    }, 2000);
+    
+                    navigate(location.state?.from ? location.state.from : '/dashboard');
                 })
-        })
-        .catch(error => {
-            console.log(error.message)
-            toast.error("Google sign in error!", {
-                position: toast.POSITION.TOP_CENTER, autoClose: 1500,
-            });
-
-            setTimeout(() => {
-                navigate(location.state?.from ? location.state.from : '/login');
-            }, 2000);
-        })
-    }
-
-
+                .catch((error) => {
+                    console.log(error.message);
+                    Swal.fire({
+                        title: 'Error!',
+                        text: error.message,
+                        icon: 'error',
+                        confirmButtonText: 'Ok',
+                    }).then((result) => {
+                        if (result.isConfirmed) {
+                            navigate(location.state?.from ? location.state.from : '/login');
+                        }
+                    });
+                });
+        } else {
+            // Handle if the user cancels the role selection
+            console.log('Role selection canceled');
+        }
+    };
+    
     return (
         <div>
             <Helmet>
@@ -95,6 +150,25 @@ const Login = () => {
                         </div>
                         <div className="card flex-shrink-2 w-full max-w-sm border-4 border-x-transparent shadow-2xl shadow-red-600 border-red-600">
                             <form onSubmit={handleLogin} className="card-body">
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text font-bold">Please Select Your Role</span>
+                                    </label>
+                                    <div required className="flex items-center gap-4 ml-2">
+                                        <label>
+                                            <input type="radio" name='role' value="admin" className="mr-2" required />
+                                            Admin
+                                        </label>
+                                        <label>
+                                            <input type="radio" name='role' value="user" className="mr-2" required />
+                                            User
+                                        </label>
+                                        <label>
+                                            <input type="radio" name='role' value="professional" className="mr-2" required />
+                                            Professional
+                                        </label>
+                                    </div>
+                                </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Email</span>
@@ -132,7 +206,6 @@ const Login = () => {
                         </div>
                     </div>
                 </div>
-                <ToastContainer />
             </div>
         </div>
     );

@@ -64,7 +64,7 @@ const CampRegistration = () => {
             </Helmet>
             <div className="flex ">
                 <div className="hero min-h-screen mt-4  mx-auto">
-                    <div className="hero-content  w-full">
+                    <div className="hero-content flex flex-col  md:flex-row w-full">
                         <div className="text-center">
                             <h1 className="lg:text-5xl text-3xl font-bold my-6">Registration for <span className="text-red-600">{campName}</span> Camp</h1>
                             <img src={image} alt="" className="h-[350px] w-full shadow-red-600 shadow-2xl" />

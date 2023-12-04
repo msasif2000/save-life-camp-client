@@ -1,33 +1,21 @@
 import { Link } from "react-router-dom";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
-import { useState } from "react";
-import useAuth from "../../hooks/useAuth";
 import usePaidCamp from "../../hooks/usePaidCamp";
-import useAdmin from "../../hooks/useAdmin";
+import useUser from "../../hooks/useUser";
+
 
 
 
 const Profile = () => {
-    const [isAdmin] = useAdmin();
-    const { user } = useAuth();
     const [paidCamps] = usePaidCamp();
-    //console.log(user);
-    const axiosSecure = useAxiosSecure();
-    const [currentUser, setCurrentUser] = useState();
-    axiosSecure.get(`/users/${user?.email}`)
-        .then(res => {
-            //console.log(res.data);
-            if (res.data) {
-                setCurrentUser(res.data);
-            }
-        })
-    //console.log(currentUser);
+    const [currentUser, refetch] = useUser();
+    const role = currentUser?.role;
+   // console.log(currentUser);
 
-
+    refetch();
     return (
         <div className="flex flex-col items-center justify-center gap-6  h-full w-full pb-6">
             {
-                isAdmin ?
+                role === 'admin' ?
                     <h1 className="text-3xl text-center font-bold">Admin Profile</h1>
                     :
                     <h2 className="mt-4 text-2xl">  WELCOME <span className="text-blue-600">{currentUser?.name}</span> to your PROFILE</h2>
@@ -41,7 +29,7 @@ const Profile = () => {
                     <p>Address: <span className="italic">{currentUser?.address}</span></p>
                     <p>Date of Birth: <span className="italic">{currentUser?.dob}</span></p>
                     {
-                        isAdmin ?
+                         role === 'admin'?
                             ''
                             :
                             <div className="mb-4">
@@ -50,7 +38,7 @@ const Profile = () => {
                     }
                 </div>
                 {
-                    isAdmin ?
+                    role === 'admin' ?
                         <>
                             <div>
                                 <div></div>

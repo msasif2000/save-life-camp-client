@@ -36,7 +36,7 @@ import Payment from './pages/Dashboard/Payment/Payment';
 import PaymentHistory from './pages/Dashboard/PaymentHistory/PaymentHistory';
 import AddReview from './pages/Dashboard/Review/AddReview';
 import CampDetails from './pages/AvailableCamps/CampDetails';
-
+import { axiosPublic } from './Hooks/useAxiosPublic';
 
 const router = createBrowserRouter([
   {
@@ -63,12 +63,12 @@ const router = createBrowserRouter([
       {
         path: '/joinCamp/:id',
         element: <PrivateRoute><CampRegistration></CampRegistration></PrivateRoute>,
-        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
+        loader: ({ params }) => axiosPublic(`/joinCamp/${params.id}`)
       },
       {
         path: 'detailsCamp/:id',
         element: <CampDetails></CampDetails>,
-        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
+        loader: ({ params }) => axiosPublic(`/joinCamp/${params.id}`)
       },
       {
         path: '/contact',
@@ -130,8 +130,8 @@ const router = createBrowserRouter([
       },
       {
         path: 'updateCamp/:id',
-        element: <UpdateCamp></UpdateCamp>,
-        loader: ({ params }) => axiosSecure(`/joinCamp/${params.id}`)
+        element: <PrivateRoute><UpdateCamp></UpdateCamp></PrivateRoute>,
+        loader: ({ params }) => axiosPublic(`/joinCamp/${params.id}`)
       },
       {
         path: 'manageBookings',

@@ -1,17 +1,17 @@
 import { Link, useLoaderData } from "react-router-dom";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import { useState } from "react";
 import { Helmet } from "react-helmet";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const CampDetails = () => {
     const camp = useLoaderData().data;
 
     const { _id, campName, venue, audience, services, image, date, campFee, participants, professionals, details } = camp;
     const today = new Date();
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = useAxiosPublic()
     const [reviews, setReviews] = useState([]);
 
-    axiosSecure.get(`/reviews/${_id}`)
+    axiosPublic.get(`/reviews/${_id}`)
         .then(res => {
             setReviews(res.data);
         });

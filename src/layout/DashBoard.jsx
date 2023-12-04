@@ -11,14 +11,15 @@ import { MdReviews } from "react-icons/md";
 import { FaHome } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import useAdmin from "../hooks/useAdmin";
 import { Helmet } from "react-helmet";
+import useUser from "../hooks/useUser";
 
 
 const DashBoard = () => {
 
     const { userLogout } = useAuth();
-    const [isAdmin] = useAdmin();
+    const [currentUser] = useUser();
+    const role = currentUser?.role;
     const handleLogout = () => {
         userLogout()
     }
@@ -35,7 +36,7 @@ const DashBoard = () => {
                         </label>
                         <ul tabIndex={0} className="sty menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-red-600 rounded-box w-52 ">
                             {
-                                isAdmin ?
+                                role==='admin' ?
                                     <>
                                         <li>
                                             <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
@@ -93,7 +94,7 @@ const DashBoard = () => {
 
                     <ul className="menu text-xl">
                         {
-                            isAdmin ?
+                            role ==='admin' ?
                                 <>
                                     <li>
                                         <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>

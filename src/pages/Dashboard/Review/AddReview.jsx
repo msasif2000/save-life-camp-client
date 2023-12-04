@@ -1,21 +1,23 @@
 import { useNavigate, useParams } from "react-router-dom";
-import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { useForm } from "react-hook-form";
 import { useQuery } from "@tanstack/react-query";
 import Swal from "sweetalert2";
 import useAuth from "../../../hooks/useAuth";
+import useAxiosPublic from "../../../Hooks/useAxiosPublic";
+import useAxiosSecure from "../../../hooks/useAxiosSecure";
 
 
 const AddReview = () => {
     const { id } = useParams();
     //console.log(id);
     const { user } = useAuth();
+    const axiosPublic = useAxiosPublic();
     const axiosSecure = useAxiosSecure();
     const navigate = useNavigate();
     const { data: camps = [], refetch } = useQuery({
         queryKey: ['camps', id],
         queryFn: async () => {
-            const res = await axiosSecure.get(`/joinCamp/${id}`);
+            const res = await axiosPublic.get(`/joinCamp/${id}`);
             return res.data;
         }
     })

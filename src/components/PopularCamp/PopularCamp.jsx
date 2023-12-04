@@ -1,15 +1,15 @@
 
 import { useState } from "react";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import CampCard from "../../pages/AvailableCamps/CampCard";
 import { Link } from "react-router-dom";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const PopularCamp = () => {
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = useAxiosPublic();
 
     const [camps, setCamps] = useState([]);
-    axiosSecure.get('/popularCamp')
+    axiosPublic.get('/popularCamp')
         .then(res => {
             setCamps(res.data);
         })

@@ -1,7 +1,8 @@
 import axios from "axios";
 
-const axiosPublic = axios.create({
-    baseURL: 'https://save-life-server-beta.vercel.app',
+export const axiosPublic = axios.create({
+    //   baseURL: 'http://localhost:5000',
+    baseURL: 'https://save-life-server-gilt.vercel.app',
 })
 
 const useAxiosPublic = () => {

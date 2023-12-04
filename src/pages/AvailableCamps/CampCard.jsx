@@ -3,15 +3,16 @@ import { BsFilePerson } from "react-icons/bs";
 import { ImLocation } from "react-icons/im";
 import { BiTimeFive } from "react-icons/bi";
 import { Link } from "react-router-dom";
-import useAdmin from "../../hooks/useAdmin";
-//import useAuth from "../../hooks/useAuth";
+import useAuth from "../../hooks/useAuth";
+import useUser from "../../hooks/useUser";
 
 const CampCard = ({ camp }) => {
-    // const { user } = useAuth();
+    const { user } = useAuth();
     const { _id, campName, image, date, campFee, venue, services, professionals, audience, participants } = camp;
 
     //console.log(_id);
-    const [isAdmin] = useAdmin();
+    const [currentUser] = useUser();
+    const role= currentUser?.role;
     const today = new Date();
 
     return (
@@ -44,11 +45,23 @@ const CampCard = ({ camp }) => {
                 <div className="flex justify-between m-2">
 
                     {
-                        isAdmin ?
-                            <>
-                                <Link to={`/detailsCamp/${_id}`}><button  className="btn bg-red-600 text-white">See Details</button></Link>
+                        user ?
 
-                            </>
+                            role === 'admin' ?
+                                <>
+                                    <Link to={`/detailsCamp/${_id}`}><button className="btn bg-red-600 text-white">See Details</button></Link>
+
+                                </>
+                                :
+                                <>
+                                    <Link to={`/detailsCamp/${_id}`}><button className="btn bg-red-600 text-white">See Details</button></Link>
+                                    {
+                                        today > new Date(date) ?
+                                            ''
+                                            :
+                                            <Link to={`/joinCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">Join Camp</button></Link>
+                                    }
+                                </>
                             :
                             <>
                                 <Link to={`/detailsCamp/${_id}`}><button className="btn bg-red-600 text-white">See Details</button></Link>

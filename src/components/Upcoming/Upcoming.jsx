@@ -1,13 +1,13 @@
 import { useState } from "react";
-import useAxiosSecure from "../../hooks/useAxiosSecure";
 import UpcomingCard from "../../pages/Home/UpcomingCard";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 
 const Upcoming = () => {
     const [upcoming, setUpcoming] = useState([]);
-    const axiosSecure = useAxiosSecure();
+    const axiosPublic = useAxiosPublic();
 
-    axiosSecure.get('/upcomingCamp')
+    axiosPublic.get('/upcomingCamp')
         .then(res => {
             setUpcoming(res.data);
         })
