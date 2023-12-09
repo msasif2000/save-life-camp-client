@@ -12,3 +12,12 @@ SAVE LIFE is an active medical campaigner group. it is the official website of S
 - Users can see their Payment History and review History, update their profile, and they can delete a registered camp before payment but not after payment
 - Admin panel can change all of information or functionalities and can make anyone Admin as their wishes.
 - User information, every registration, and payment systems are stored in the database secured way
+
+### Website Link
+https://save-life-medical-camp.web.app/
+
+
+# These are the tools I used in the project:
+#### Frontend: JavaScript, React, HTML, CSS, Tailwind CSS
+#### Backend: Node.js, Express.js
+#### Other tools: Git, Visual Studio Code
