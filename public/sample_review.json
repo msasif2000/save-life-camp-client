@@ -1,130 +1,206 @@
 [
-    {
-      "campName": "AidSphere",
-      "professionals": ["Infectious Disease Specialist Turner", "Counselor Martinez"],
-      "review": "AidSphere is doing remarkable work in HIV/AIDS awareness. Specialist Turner and Counselor Martinez provided valuable information and support. Joining the sphere for a healthier community!"
-    },
-    {
-      "campName": "CommunityCure",
-      "professionals": ["Pediatrician Garcia", "Nurse Thompson"],
-      "review": "CommunityCure focuses on pediatric care. Pediatrician Garcia and Nurse Thompson ensured the health and immunization of children. A day of care and community cure for young ones!"
-    },
-    {
-      "campName": "MediMission",
-      "professionals": ["Orthopedic Specialist Hernandez", "Physical Therapist White"],
-      "review": "MediMission excels in orthopedic care. Specialist Hernandez and Physical Therapist White addressed orthopedic needs for seniors and adults. A mission towards better orthopedic health!"
-    },
-    {
-      "campName": "CareLink Initiative",
-      "professionals": ["Endocrinologist Robinson", "Diabetes Educator Moore"],
-      "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
-    },
-    {
-      "campName": "FreeHeal Network",
-      "professionals": ["Alternative Therapist Turner", "Mindfulness Coach Allen"],
-      "review": "FreeHeal Network offers alternative therapies and mindfulness sessions for all ages. Alternative Therapist Turner and Mindfulness Coach Allen are dedicated to guiding individuals on a path to healing. A day of free healing and well-being!"
-    },
-    {
-      "campName": "MediCareConnect",
-      "professionals": ["Dr. Smith", "Nurse Johnson", "Dentist Brown"],
-      "review": "MediCareConnect provided exceptional healthcare services. The team, including Dr. Smith, Nurse Johnson, and Dentist Brown, demonstrated a commitment to promoting health for all ages. A compassionate day of care!"
-    },
-    {
-      "campName": "HealthHub Outreach",
-      "professionals": ["Dr. Rodriguez", "Nutritionist White"],
-      "review": "Attended the HealthHub Outreach camp and received top-notch services from Dr. Rodriguez and Nutritionist White. Convenient blood pressure screening and nutritional counseling at your doorstep!"
-    },
-    {
-      "campName": "HealTogether",
-      "professionals": ["Psychiatrist Green", "Therapist Taylor"],
-      "review": "HealTogether camp was a transformative experience. Psychiatric counseling by Dr. Green and therapeutic sessions with Therapist Taylor greatly contributed to mental well-being. Grateful for their expertise!"
-    },
-    {
-      "campName": "CompassionCare",
-      "professionals": ["Dr. Miller", "Optometrist Harris"],
-      "review": "Received compassionate care at CompassionCare. Dr. Miller and Optometrist Harris provided thorough primary care and eye check-ups for seniors. A caring team dedicated to senior health!"
-    },
-    {
-      "campName": "WellBeingWave",
-      "professionals": ["Fitness Trainer Carter", "Wellness Coach Watson"],
-      "review": "WellBeingWave is a wave of wellness! Fitness workshops by Trainer Carter and wellness guidance by Coach Watson were exceptional. Engaging activities for young adults on the journey to well-being!"
-    },
-    {
-      "campName": "HopeHealth Express",
-      "professionals": ["OB-GYN Davis", "Family Planner Allen"],
-      "review": "HopeHealth Express focuses on women's health. OB-GYN Davis and Family Planner Allen provided comprehensive check-ups and family planning consultations. A day filled with hope and health!"
-    },
-    {
-      "campName": "AidSphere",
-      "professionals": ["Infectious Disease Specialist Turner", "Counselor Martinez"],
-      "review": "AidSphere is doing incredible work in HIV/AIDS awareness. Specialist Turner and Counselor Martinez provided valuable information and support. Joining the sphere for a healthier community!"
-    },
-    {
-      "campName": "CommunityCure",
-      "professionals": ["Pediatrician Garcia", "Nurse Thompson"],
-      "review": "CommunityCure focuses on pediatric care. Pediatrician Garcia and Nurse Thompson ensured the health and immunization of children. A day of care and community cure for young ones!"
-    },
-    {
-      "campName": "MediMission",
-      "professionals": ["Orthopedic Specialist Hernandez", "Physical Therapist White"],
-      "review": "MediMission excels in orthopedic care. Specialist Hernandez and Physical Therapist White addressed orthopedic needs for seniors and adults. A mission towards better orthopedic health!"
-    },
-    {
-      "campName": "CareLink Initiative",
-      "professionals": ["Endocrinologist Robinson", "Diabetes Educator Moore"],
-      "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
-    },
-    {
-        "campName": "MediCareConnect",
-        "professionals": ["Dr. Smith", "Nurse Johnson", "Dentist Brown"],
-        "review": "Great experience at the MediCareConnect camp! The healthcare professionals, including Dr. Smith, Nurse Johnson, and Dentist Brown, provided excellent services. Highly recommended!"
-      },
-      {
-        "campName": "HealthHub Outreach",
-        "professionals": ["Dr. Rodriguez", "Nutritionist White"],
-        "review": "Attended the HealthHub Outreach camp and received top-notch services from Dr. Rodriguez and Nutritionist White. Convenient blood pressure screening and nutritional counseling at your doorstep!"
-      },
-      {
-        "campName": "HealTogether",
-        "professionals": ["Psychiatrist Green", "Therapist Taylor"],
-        "review": "HealTogether camp was a transformative experience. Psychiatric counseling by Dr. Green and therapeutic sessions with Therapist Taylor greatly contributed to mental well-being. Grateful for their expertise!"
-      },
-      {
-        "campName": "CompassionCare",
-        "professionals": ["Dr. Miller", "Optometrist Harris"],
-        "review": "Received compassionate care at CompassionCare. Dr. Miller and Optometrist Harris provided thorough primary care and eye check-ups for seniors. A caring team dedicated to senior health!"
-      },
-      {
-        "campName": "WellBeingWave",
-        "professionals": ["Fitness Trainer Carter", "Wellness Coach Watson"],
-        "review": "WellBeingWave is a wave of wellness! Fitness workshops by Trainer Carter and wellness guidance by Coach Watson were exceptional. Engaging activities for young adults on the journey to well-being!"
-      },
-      {
-        "campName": "HopeHealth Express",
-        "professionals": ["OB-GYN Davis", "Family Planner Allen"],
-        "review": "HopeHealth Express focuses on women's health. OB-GYN Davis and Family Planner Allen provided comprehensive check-ups and family planning consultations. A day filled with hope and health!"
-      },
-      {
-        "campName": "AidSphere",
-        "professionals": ["Infectious Disease Specialist Turner", "Counselor Martinez"],
-        "review": "AidSphere is doing incredible work in HIV/AIDS awareness. Specialist Turner and Counselor Martinez provided valuable information and support. Joining the sphere for a healthier community!"
-      },
-      {
-        "campName": "CommunityCure",
-        "professionals": ["Pediatrician Garcia", "Nurse Thompson"],
-        "review": "CommunityCure focuses on pediatric care. Pediatrician Garcia and Nurse Thompson ensured the health and immunization of children. A day of care and community cure for young ones!"
-      },
-      {
-        "campName": "MediMission",
-        "professionals": ["Orthopedic Specialist Hernandez", "Physical Therapist White"],
-        "review": "MediMission excels in orthopedic care. Specialist Hernandez and Physical Therapist White addressed orthopedic needs for seniors and adults. A mission towards better orthopedic health!"
-      },
-      {
-        "campName": "CareLink Initiative",
-        "professionals": ["Endocrinologist Robinson", "Diabetes Educator Moore"],
-        "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
-      }
-,
+  {
+    "campName": "AidSphere",
+    "professionals": [
+      "Infectious Disease Specialist Turner",
+      "Counselor Martinez"
+    ],
+    "review": "AidSphere is doing remarkable work in HIV/AIDS awareness. Specialist Turner and Counselor Martinez provided valuable information and support. Joining the sphere for a healthier community!"
+  },
+  {
+    "campName": "CommunityCure",
+    "professionals": [
+      "Pediatrician Garcia",
+      "Nurse Thompson"
+    ],
+    "review": "CommunityCure focuses on pediatric care. Pediatrician Garcia and Nurse Thompson ensured the health and immunization of children. A day of care and community cure for young ones!"
+  },
+  {
+    "campName": "MediMission",
+    "professionals": [
+      "Orthopedic Specialist Hernandez",
+      "Physical Therapist White"
+    ],
+    "review": "MediMission excels in orthopedic care. Specialist Hernandez and Physical Therapist White addressed orthopedic needs for seniors and adults. A mission towards better orthopedic health!"
+  },
+  {
+    "campName": "CareLink Initiative",
+    "professionals": [
+      "Endocrinologist Robinson",
+      "Diabetes Educator Moore"
+    ],
+    "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
+  },
+  {
+    "campName": "FreeHeal Network",
+    "professionals": [
+      "Alternative Therapist Turner",
+      "Mindfulness Coach Allen"
+    ],
+    "review": "FreeHeal Network offers alternative therapies and mindfulness sessions for all ages. Alternative Therapist Turner and Mindfulness Coach Allen are dedicated to guiding individuals on a path to healing. A day of free healing and well-being!"
+  },
+  {
+    "campName": "MediCareConnect",
+    "professionals": [
+      "Dr. Smith",
+      "Nurse Johnson",
+      "Dentist Brown"
+    ],
+    "review": "MediCareConnect provided exceptional healthcare services. The team, including Dr. Smith, Nurse Johnson, and Dentist Brown, demonstrated a commitment to promoting health for all ages. A compassionate day of care!"
+  },
+  {
+    "campName": "HealthHub Outreach",
+    "professionals": [
+      "Dr. Rodriguez",
+      "Nutritionist White"
+    ],
+    "review": "Attended the HealthHub Outreach camp and received top-notch services from Dr. Rodriguez and Nutritionist White. Convenient blood pressure screening and nutritional counseling at your doorstep!"
+  },
+  {
+    "campName": "HealTogether",
+    "professionals": [
+      "Psychiatrist Green",
+      "Therapist Taylor"
+    ],
+    "review": "HealTogether camp was a transformative experience. Psychiatric counseling by Dr. Green and therapeutic sessions with Therapist Taylor greatly contributed to mental well-being. Grateful for their expertise!"
+  },
+  {
+    "campName": "CompassionCare",
+    "professionals": [
+      "Dr. Miller",
+      "Optometrist Harris"
+    ],
+    "review": "Received compassionate care at CompassionCare. Dr. Miller and Optometrist Harris provided thorough primary care and eye check-ups for seniors. A caring team dedicated to senior health!"
+  },
+  {
+    "campName": "WellBeingWave",
+    "professionals": [
+      "Fitness Trainer Carter",
+      "Wellness Coach Watson"
+    ],
+    "review": "WellBeingWave is a wave of wellness! Fitness workshops by Trainer Carter and wellness guidance by Coach Watson were exceptional. Engaging activities for young adults on the journey to well-being!"
+  },
+  {
+    "campName": "HopeHealth Express",
+    "professionals": [
+      "OB-GYN Davis",
+      "Family Planner Allen"
+    ],
+    "review": "HopeHealth Express focuses on women's health. OB-GYN Davis and Family Planner Allen provided comprehensive check-ups and family planning consultations. A day filled with hope and health!"
+  },
+  {
+    "campName": "AidSphere",
+    "professionals": [
+      "Infectious Disease Specialist Turner",
+      "Counselor Martinez"
+    ],
+    "review": "AidSphere is doing incredible work in HIV/AIDS awareness. Specialist Turner and Counselor Martinez provided valuable information and support. Joining the sphere for a healthier community!"
+  },
+  {
+    "campName": "CommunityCure",
+    "professionals": [
+      "Pediatrician Garcia",
+      "Nurse Thompson"
+    ],
+    "review": "CommunityCure focuses on pediatric care. Pediatrician Garcia and Nurse Thompson ensured the health and immunization of children. A day of care and community cure for young ones!"
+  },
+  {
+    "campName": "MediMission",
+    "professionals": [
+      "Orthopedic Specialist Hernandez",
+      "Physical Therapist White"
+    ],
+    "review": "MediMission excels in orthopedic care. Specialist Hernandez and Physical Therapist White addressed orthopedic needs for seniors and adults. A mission towards better orthopedic health!"
+  },
+  {
+    "campName": "CareLink Initiative",
+    "professionals": [
+      "Endocrinologist Robinson",
+      "Diabetes Educator Moore"
+    ],
+    "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
+  },
+  {
+    "campName": "MediCareConnect",
+    "professionals": [
+      "Dr. Smith",
+      "Nurse Johnson",
+      "Dentist Brown"
+    ],
+    "review": "Great experience at the MediCareConnect camp! The healthcare professionals, including Dr. Smith, Nurse Johnson, and Dentist Brown, provided excellent services. Highly recommended!"
+  },
+  {
+    "campName": "HealthHub Outreach",
+    "professionals": [
+      "Dr. Rodriguez",
+      "Nutritionist White"
+    ],
+    "review": "Attended the HealthHub Outreach camp and received top-notch services from Dr. Rodriguez and Nutritionist White. Convenient blood pressure screening and nutritional counseling at your doorstep!"
+  },
+  {
+    "campName": "HealTogether",
+    "professionals": [
+      "Psychiatrist Green",
+      "Therapist Taylor"
+    ],
+    "review": "HealTogether camp was a transformative experience. Psychiatric counseling by Dr. Green and therapeutic sessions with Therapist Taylor greatly contributed to mental well-being. Grateful for their expertise!"
+  },
+  {
+    "campName": "CompassionCare",
+    "professionals": [
+      "Dr. Miller",
+      "Optometrist Harris"
+    ],
+    "review": "Received compassionate care at CompassionCare. Dr. Miller and Optometrist Harris provided thorough primary care and eye check-ups for seniors. A caring team dedicated to senior health!"
+  },
+  {
+    "campName": "WellBeingWave",
+    "professionals": [
+      "Fitness Trainer Carter",
+      "Wellness Coach Watson"
+    ],
+    "review": "WellBeingWave is a wave of wellness! Fitness workshops by Trainer Carter and wellness guidance by Coach Watson were exceptional. Engaging activities for young adults on the journey to well-being!"
+  },
+  {
+    "campName": "HopeHealth Express",
+    "professionals": [
+      "OB-GYN Davis",
+      "Family Planner Allen"
+    ],
+    "review": "HopeHealth Express focuses on women's health. OB-GYN Davis and Family Planner Allen provided comprehensive check-ups and family planning consultations. A day filled with hope and health!"
+  },
+  {
+    "campName": "AidSphere",
+    "professionals": [
+      "Infectious Disease Specialist Turner",
+      "Counselor Martinez"
+    ],
+    "review": "AidSphere is doing incredible work in HIV/AIDS awareness. Specialist Turner and Counselor Martinez provided valuable information and support. Joining the sphere for a healthier community!"
+  },
+  {
+    "campName": "CommunityCure",
+    "professionals": [
+      "Pediatrician Garcia",
+      "Nurse Thompson"
+    ],
+    "review": "CommunityCure focuses on pediatric care. Pediatrician Garcia and Nurse Thompson ensured the health and immunization of children. A day of care and community cure for young ones!"
+  },
+  {
+    "campName": "MediMission",
+    "professionals": [
+      "Orthopedic Specialist Hernandez",
+      "Physical Therapist White"
+    ],
+    "review": "MediMission excels in orthopedic care. Specialist Hernandez and Physical Therapist White addressed orthopedic needs for seniors and adults. A mission towards better orthopedic health!"
+  },
+  {
+    "campName": "CareLink Initiative",
+    "professionals": [
+      "Endocrinologist Robinson",
+      "Diabetes Educator Moore"
+    ],
+    "review": "CareLink Initiative is diabetes-friendly. Endocrinologist Robinson and Diabetes Educator Moore provided awareness and testing. Joining the initiative for support and education!"
+  },
 
 
 
@@ -134,93 +210,184 @@
 
 
 
-    {
-      "name": "Dr. Smith",
-      "designation": "General Practitioner",
-      "qualification": "MD in General Medicine",
-      "workingPlace": "City Medical Center",
-      "specialization": "General Check-ups, Immunization, Dental Care",
-      "image": "https://i.ibb.co/MV3KN0G/doctor-employs-modern-communication-tools-using-his-phone-to-address-medical-inquiries-doctor-employ.jpg"
-    },
-    {
-      "name": "Dr. Rodriguez",
-      "designation": "Cardiologist",
-      "qualification": "MD in Cardiology",
-      "workingPlace": "HeartCare Hospital",
-      "specialization": "Blood Pressure Screening, Nutritional Counseling",
-      "image": "https://i.ibb.co/P4MjrQ5/male-doctor-stethoscope-cardiologist-holding-red-heart-sign-portrait-senior-happy-smiling-standing-h.jpg"
-    },
-    {
-      "name": "Psyciatrist Green",
-      "designation": "Psychiatrist",
-      "qualification": "MD in Psychiatry",
-      "workingPlace": "MindWell Clinic",
-      "specialization": "Mental Health Counseling, Stress Management Workshops",
-      "image": "https://i.ibb.co/Zm14Drc/1251103-sd-me-mental-health-essay-fadi-ncc-008.jpg"
-    },
-    {
-      "name": "Dr. Miller",
-      "designation": "Primary Care Physician",
-      "qualification": "MD in Internal Medicine",
-      "workingPlace": "Community Health Clinic",
-      "specialization": "Primary Care, Eye Check-ups",
-      "image": "https://i.ibb.co/fdm8HS6/eye-doctor-oculist-in-clinic-snellen-chart-in-background-2-H3-TJCK.jpg"
-    },
-    {
-      "name": "Fitness Trainer Carter",
-      "designation": "Fitness Trainer",
-      "qualification": "Certified Fitness Instructor",
-      "workingPlace": "Wellness Gym",
-      "specialization": "Wellness Workshops, Fitness Assessments",
-      "image": "https://i.ibb.co/sR0q4dN/a-cartoon-illustration-of-a-personal-trainer-with-a-sign-MEG845.jpg"
-    },
-    {
-      "name": "Dr. Davis",
-      "designation": "OB-GYN Specialist",
-      "qualification": "MD in Obstetrics and Gynecology",
-      "workingPlace": "Hope Women's Clinic",
-      "specialization": "Women's Health Check-ups, Family Planning Consultations",
-      "image": "https://i.ibb.co/T4TCJ7L/136318593-studio-shot-of-young-man-doctor-holding-clipboard-while-giving-handshake.jpg"
-    },
-    {
-      "name": "Dr. Turner",
-      "designation": "Infectious Disease Specialist",
-      "qualification": "MD in Infectious Diseases",
-      "workingPlace": "AidSphere Health Center",
-      "specialization": "HIV/AIDS Awareness, Testing and Counseling",
-      "image": "https://i.ibb.co/CVfJ6qp/stock-photo-healthcare-workers-medical-insurance-and-covid-19-concept-handsome-doctor-in-glasses-and.jpg"
-    },
-    {
-      "name": "Dr. Garcia",
-      "designation": "Pediatrician",
-      "qualification": "MD in Pediatrics",
-      "workingPlace": "Community Pediatric Clinic",
-      "specialization": "Pediatric Care, Immunization for Children",
-      "image": "https://i.ibb.co/7vQkv35/old-doctor-uniform-standing-hall-1157-33382.jpg"
-    },
-    {
-      "name": "Dr. Hernandez",
-      "designation": "Orthopedic Specialist",
-      "qualification": "MD in Orthopedics",
-      "workingPlace": "OrthoCare Hospital",
-      "specialization": "Orthopedic Consultations, Physical Therapy Sessions",
-      "image": "https://i.ibb.co/pLtR1Dp/positive-handsome-afro-american-doctor-smiling-while-standing-against-white-wall-376548-604.jpg"
-    },
-    {
-      "name": "Dr. Robinson",
-      "designation": "Endocrinologist",
-      "qualification": "MD in Endocrinology",
-      "workingPlace": "DiabetesCare Center",
-      "specialization": "Diabetes Awareness, Blood Sugar Testing",
-      "image": "https://i.ibb.co/XCnYGXW/praying-god-male-young-doctor-with-stethoscope-face-mask-white-studio-155003-30061.jpg"
-    },
-    {
-      "name": "Alternative Therapist Turner",
-      "designation": "Alternative Therapist",
-      "qualification": "Certified Alternative Medicine Practitioner",
-      "workingPlace": "FreeHeal Wellness Center",
-      "specialization": "Alternative Therapies, Mindfulness Sessions",
-      "image": "https://i.ibb.co/qjxfNB2/doctor-online-senior-medic-talking-client-laptop-computer-from-his-office-mature-male-therapist-expl.jpg"
-    }
-  ]
-  
+
+
+
+
+  {
+    "name": "Dr. Smith",
+    "designation": "General Practitioner",
+    "qualification": "MD in General Medicine",
+    "workingPlace": "City Medical Center",
+    "specialization": "General Check-ups, Immunization, Dental Care",
+    "experiences":  "5 years in General Medicine and 2 years in Immunization and 3 years in Dental Care",
+    "reg_No": "MD12345",
+    "chamber_time": "Monday to Friday, 9:00 AM - 5:00 PM",
+    "education": "MD in General Medicine",
+    "researchTopic": "Impact of Immunization on Public Health",
+    "mobile_No": "+1 123-456-7890",
+    "room_No": "203",
+    "image": "https://i.ibb.co/MV3KN0G/doctor-employs-modern-communication-tools-using-his-phone-to-address-medical-inquiries-doctor-employ.jpg",
+    "email": "dsmt@gmail.com"
+  },
+  {
+    "name": "Dr. Rodriguez",
+    "designation": "Cardiologist",
+    "qualification": "MD in Cardiology",
+    "workingPlace": "HeartCare Hospital",
+    "specialization": "Blood Pressure Screening, Nutritional Counseling",
+    "experiences":"8 years in Cardiology",
+    "reg_No": "MD67890",
+    "chamber_time": "Monday to Wednesday, 10:00 AM - 6:00 PM",
+    "education": "MD in Cardiology",
+    "researchTopic": "Nutritional Counseling for Cardiovascular Health",
+    "mobile_No": "+1 234-567-8901",
+    "room_No": "305",
+    "image": "https://i.ibb.co/P4MjrQ5/male-doctor-stethoscope-cardiologist-holding-red-heart-sign-portrait-senior-happy-smiling-standing-h.jpg",
+    "email": "drod@gmail.com"
+  },
+  {
+    "name": "Psyciatrist Green",
+    "designation": "Psychiatrist",
+    "qualification": "MD in Psychiatry",
+    "workingPlace": "MindWell Clinic",
+    "specialization": "Mental Health Counseling, Stress Management Workshops",
+    "experiences":"6 years in Psychiatry",
+    "reg_No": "MD54321",
+    "chamber_time": "Tuesday and Thursday, 11:00 AM - 7:00 PM",
+    "education": "MD in Psychiatry",
+    "researchTopic": "Impact of Stress Management on Mental Health",
+    "mobile_No": "+1 345-678-9012",
+    "room_No": "102",
+    "image": "https://i.ibb.co/Zm14Drc/1251103-sd-me-mental-health-essay-fadi-ncc-008.jpg",
+    "email": "dgrn@gmail.com"
+  },
+  {
+    "name": "Dr. Miller",
+    "designation": "Primary Care Physician",
+    "qualification": "MD in Internal Medicine",
+    "workingPlace": "Community Health Clinic",
+    "specialization": "Primary Care, Eye Check-ups",
+    "experiences": "7 years in Internal Medicine and 3 years in Eye Check-ups",
+    "reg_No": "MD13579",
+    "chamber_time": "Monday, Wednesday, and Friday, 8:00 AM - 4:00 PM",
+    "education": "MD in Internal Medicine",
+    "researchTopic": "Advances in Primary Care Practices",
+    "mobile_No": "+1 456-789-0123",
+    "room_No": "401",
+    "image": "https://i.ibb.co/fdm8HS6/eye-doctor-oculist-in-clinic-snellen-chart-in-background-2-H3-TJCK.jpg",
+    "email": "dmlr@gmail.com"
+  },
+  {
+    "name": "Fitness Trainer Carter",
+    "designation": "Fitness Trainer",
+    "qualification": "Certified Fitness Instructor",
+    "workingPlace": "Wellness Gym",
+    "specialization": "Wellness Workshops, Fitness Assessments",
+    "experiences":"10 years in Fitness Training",
+    "reg_No": "CF78901",
+    "chamber_time": "Monday to Saturday, 6:00 AM - 8:00 PM",
+    "education": "Certified Fitness Instructor",
+    "researchTopic": "Impact of Wellness Workshops on Lifestyle",
+    "mobile_No": "+1 567-890-1234",
+    "room_No": "Gym Floor",
+    "image": "https://i.ibb.co/sR0q4dN/a-cartoon-illustration-of-a-personal-trainer-with-a-sign-MEG845.jpg",
+    "email": "fcrt@gmail.com"
+  },
+  {
+    "name": "Dr. Davis",
+    "designation": "OB-GYN Specialist",
+    "qualification": "MD in Obstetrics and Gynecology",
+    "workingPlace": "Hope Women's Clinic",
+    "specialization": "Women's Health Check-ups, Family Planning Consultations",
+    "experiences":"9 years in Obstetrics and Gynecology",
+    "reg_No": "MD11223",
+    "chamber_time": "Thursday and Friday, 9:00 AM - 5:00 PM",
+    "education": "MD in Obstetrics and Gynecology",
+    "researchTopic": "Advances in Family Planning Methods",
+    "mobile_No": "+1 678-901-2345",
+    "room_No": "302",
+    "image": "https://i.ibb.co/T4TCJ7L/136318593-studio-shot-of-young-man-doctor-holding-clipboard-while-giving-handshake.jpg",
+    "email": "ddav@gmail.com"
+  },
+  {
+    "name": "Dr. Turner",
+    "designation": "Infectious Disease Specialist",
+    "qualification": "MD in Infectious Diseases",
+    "workingPlace": "AidSphere Health Center",
+    "specialization": "HIV/AIDS Awareness, Testing and Counseling",
+    "experiences": "7 years in Infectious Diseases",
+    "reg_No": "MD45678",
+    "chamber_time": "Wednesday and Friday, 10:00 AM - 6:00 PM",
+    "education": "MD in Infectious Diseases",
+    "researchTopic": "Impact of Counseling on Infectious Disease Patients",
+    "mobile_No": "+1 789-012-3456",
+    "room_No": "201",
+    "image": "https://i.ibb.co/CVfJ6qp/stock-photo-healthcare-workers-medical-insurance-and-covid-19-concept-handsome-doctor-in-glasses-and.jpg",
+    "email": "dtrn@gmail.com"
+  },
+  {
+    "name": "Dr. Garcia",
+    "designation": "Pediatrician",
+    "qualification": "MD in Pediatrics",
+    "workingPlace": "Community Pediatric Clinic",
+    "specialization": "Pediatric Care, Immunization for Children",
+    "experiences": "8 years in Pediatrics",
+    "reg_No": "MD78901",
+    "chamber_time": "Monday and Thursday, 9:00 AM - 5:00 PM",
+    "education": "MD in Pediatrics",
+    "researchTopic": "Impact of Immunization on Child Health",
+    "mobile_No": "+1 901-234-5678",
+    "room_No": "101",
+    "image": "https://i.ibb.co/7vQkv35/old-doctor-uniform-standing-hall-1157-33382.jpg",
+    "email": "dgrc@gmail.com"
+  },
+  {
+    "name": "Dr. Hernandez",
+    "designation": "Orthopedic Specialist",
+    "qualification": "MD in Orthopedics",
+    "workingPlace": "OrthoCare Hospital",
+    "specialization": "Orthopedic Consultations, Physical Therapy Sessions",
+    "experiences":  "6 years in Orthopedics and 3 years in Physical Therapy Sessions",
+    "reg_No": "MD23456",
+    "chamber_time": "Tuesday and Saturday, 11:00 AM - 7:00 PM",
+    "education": "MD in Orthopedics",
+    "researchTopic": "Advancements in Orthopedic Consultations",
+    "mobile_No": "+1 234-567-8901",
+    "room_No": "402",
+    "image": "https://i.ibb.co/pLtR1Dp/positive-handsome-afro-american-doctor-smiling-while-standing-against-white-wall-376548-604.jpg",
+    "email": "dhrz@gmail.com"
+  },
+  {
+    "name": "Dr. Robinson",
+    "designation": "Endocrinologist",
+    "qualification": "MD in Endocrinology",
+    "workingPlace": "DiabetesCare Center",
+    "specialization": "Diabetes Awareness, Blood Sugar Testing",
+    "experiences":"9 years in Endocrinology",
+    "reg_No": "MD56789",
+    "chamber_time": "Thursday and Saturday, 9:00 AM - 5:00 PM",
+    "education": "MD in Endocrinology",
+    "researchTopic": "Advances in Blood Sugar Testing Techniques",
+    "mobile_No": "+1 345-678-9012",
+    "room_No": "303",
+    "image": "https://i.ibb.co/XCnYGXW/praying-god-male-young-doctor-with-stethoscope-face-mask-white-studio-155003-30061.jpg",
+    "email": "drbn@gmail.com"
+  },
+  {
+    "name": "Alternative Therapist Turner",
+    "designation": "Alternative Therapist",
+    "qualification": "Certified Alternative Medicine Practitioner",
+    "workingPlace": "FreeHeal Wellness Center",
+    "specialization": "Alternative Therapies, Mindfulness Sessions",
+    "experiences": "12 years in Alternative Therapies and 8 years in Mindfulness Sessions",
+    "reg_No": "CAP12345",
+    "chamber_time": "Monday to Friday, 9:00 AM - 6:00 PM",
+    "education": "Certified Alternative Medicine Practitioner",
+    "researchTopic": "Impact of Mindfulness on Mental Well-being",
+    "mobile_No": "+1 456-789-0123",
+    "room_No": "Alternative Therapy Room",
+    "image": "https://i.ibb.co/qjxfNB2/doctor-online-senior-medic-talking-client-laptop-computer-from-his-office-mature-male-therapist-expl.jpg",
+    "email": "ttrn@gmail.com"
+  }
+]

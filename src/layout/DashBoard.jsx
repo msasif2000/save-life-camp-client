@@ -36,7 +36,7 @@ const DashBoard = () => {
                         </label>
                         <ul tabIndex={0} className="sty menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-red-600 rounded-box w-52 ">
                             {
-                                role==='admin' ?
+                                role === 'admin' ?
                                     <>
                                         <li>
                                             <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
@@ -59,18 +59,40 @@ const DashBoard = () => {
                                     </>
                                     :
                                     <>
-                                        <li>
-                                            <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />User DashBoard</h2>
-                                        </li>
-                                        <li>
-                                            <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Review history</NavLink>
-                                        </li>
-                                        <li>
-                                            <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
-                                        </li>
+                                        {
+                                            role === 'professional' ?
+                                                <>
+                                                    <li>
+                                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />Professional DashBoard</h2>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/nextCamp'><GiFrozenRing className="text-2xl" />Next Camp</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/prevCamp'><MdReviews className="text-2xl"></MdReviews>Previous Camp</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
+                                                    </li>
+                                                </>
+                                                :
+                                                <>
+                                                    <li>
+                                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />User DashBoard</h2>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Review history</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
+                                                    </li>
+                                                </>
+
+                                        }
+
                                     </>
                             }
                             <div className="divider"></div>
@@ -94,7 +116,7 @@ const DashBoard = () => {
 
                     <ul className="menu text-xl">
                         {
-                            role ==='admin' ?
+                            role === 'admin' ?
                                 <>
                                     <li>
                                         <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>

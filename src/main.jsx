@@ -37,6 +37,7 @@ import PaymentHistory from './pages/Dashboard/PaymentHistory/PaymentHistory';
 import AddReview from './pages/Dashboard/Review/AddReview';
 import CampDetails from './pages/AvailableCamps/CampDetails';
 import { axiosPublic } from './Hooks/useAxiosPublic';
+import DoctorsViewProfile from './components/Doctors/DoctorsViewProfile';
 
 const router = createBrowserRouter([
   {
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
       {
         path: '/contact',
         element: <Contact></Contact>
+      },
+      {
+        path: '/doctorsProfile/:id',
+        element: <DoctorsViewProfile></DoctorsViewProfile>,
+        loader: ({ params }) => axiosPublic(`/doctors/${params.id}`)
       }
     ]
   },
