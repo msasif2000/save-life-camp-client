@@ -36,7 +36,7 @@ import Payment from './pages/Dashboard/Payment/Payment';
 import PaymentHistory from './pages/Dashboard/PaymentHistory/PaymentHistory';
 import AddReview from './pages/Dashboard/Review/AddReview';
 import CampDetails from './pages/AvailableCamps/CampDetails';
-import { axiosPublic } from './Hooks/useAxiosPublic';
+import { axiosPublic } from './hooks/useAxiosPublic';
 import DoctorsViewProfile from './components/Doctors/DoctorsViewProfile';
 
 const router = createBrowserRouter([

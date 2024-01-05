@@ -18,7 +18,7 @@ import useUser from "../hooks/useUser";
 const DashBoard = () => {
 
     const { userLogout } = useAuth();
-    const [currentUser] = useUser();
+    const [currentUser] = useUser();   
     const role = currentUser?.role;
     const handleLogout = () => {
         userLogout()

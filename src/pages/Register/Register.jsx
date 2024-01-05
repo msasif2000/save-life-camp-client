@@ -4,7 +4,7 @@ import { useForm } from 'react-hook-form';
 import useAuth from "../../hooks/useAuth";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
 
 
