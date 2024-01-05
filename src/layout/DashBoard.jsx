@@ -24,11 +24,11 @@ const DashBoard = () => {
         userLogout()
     }
     return (
-        <div className="md:flex md:container mx-auto">
+        <div className="md:flex">
             <Helmet>
                 <title>SAVE LIFE | DASHBOARD</title>
             </Helmet>
-            <div className="md:w-1/4 md:flex-shrink-0">
+            <div className="md:w-2/5 lg:w-1/6 md:flex-shrink-0">
                 <div className="navbar-start md:hidden">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
