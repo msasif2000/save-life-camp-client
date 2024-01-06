@@ -164,7 +164,7 @@ const AddCamp = () => {
                                 </div>
                             </div>
                         </div>
-                        <input type="submit" value="Create Camp" className="w-full mt-6 bg-red-600 text-white border-black border-dashed border-2 text-center p-2 text-2xl" />
+                        <input type="submit" value="Create Camp" className="w-full mt-6 bg-red-600 text-white  text-center p-2 text-2xl" />
                     </form>
                 </div>
             </div>

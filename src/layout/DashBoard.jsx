@@ -28,7 +28,7 @@ const DashBoard = () => {
             <Helmet>
                 <title>SAVE LIFE | DASHBOARD</title>
             </Helmet>
-            <div className="md:w-2/5 lg:w-1/6 md:flex-shrink-0">
+            <div className="md:w-2/5 lg:w-1/4 xxl-w-1/6 md:flex-shrink-0">
                 <div className="navbar-start md:hidden">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -39,7 +39,7 @@ const DashBoard = () => {
                                 role === 'admin' ?
                                     <>
                                         <li>
-                                            <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
+                                            <h2 className="text-2xl text-red-800 font-bold bg-white my-2"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
                                         </li>
                                         <li>
                                             <NavLink to='/dashboard/addCamp'><AiFillFolderAdd className="text-2xl" />Add Camp</NavLink>
@@ -63,7 +63,7 @@ const DashBoard = () => {
                                             role === 'professional' ?
                                                 <>
                                                     <li>
-                                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />Professional DashBoard</h2>
+                                                        <h2 className="text-2xl text-red-800 font-bold bg-white my-2"><FcHome className="text-2xl" />Professional DashBoard</h2>
                                                     </li>
                                                     <li>
                                                         <NavLink to='/dashboard/nextCamp'><GiFrozenRing className="text-2xl" />Next Camp</NavLink>
@@ -78,7 +78,7 @@ const DashBoard = () => {
                                                 :
                                                 <>
                                                     <li>
-                                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />User DashBoard</h2>
+                                                        <h2 className="text-2xl text-red-800 font-bold bg-white my-2"><FcHome className="text-2xl" />User DashBoard</h2>
                                                     </li>
                                                     <li>
                                                         <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
@@ -119,7 +119,7 @@ const DashBoard = () => {
                             role === 'admin' ?
                                 <>
                                     <li>
-                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
+                                        <h2 className="text-2xl text-red-800 font-bold bg-white my-2"><FcHome className="text-2xl" />ADMIN DashBoard</h2>
                                     </li>
                                     <li>
                                         <NavLink to='/dashboard/addCamp'><AiFillFolderAdd className="text-2xl" />Add Camp</NavLink>
@@ -139,18 +139,41 @@ const DashBoard = () => {
                                 </>
                                 :
                                 <>
-                                    <li>
-                                        <h2 className="text-2xl text-red-800 font-bold bg-white"><FcHome className="text-2xl" />User DashBoard</h2>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Review History</NavLink>
-                                    </li>
-                                    <li>
-                                        <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
-                                    </li>
+                                    
+                                    {
+                                            role === 'professional' ?
+                                                <>
+                                                    <li>
+                                                        <h2 className="text-2xl text-red-800 font-bold bg-white my-2"><FcHome className="text-2xl" />Professional DashBoard</h2>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/nextCamp'><GiFrozenRing className="text-2xl" />Next Camp</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/prevCamp'><MdReviews className="text-2xl"></MdReviews>Previous Camp</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
+                                                    </li>
+                                                </>
+                                                :
+                                                <>
+                                                    <li>
+                                                        <h2 className="text-2xl text-red-800 font-bold bg-white my-2"><FcHome className="text-2xl" />User DashBoard</h2>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/joinedCamp'><GiFrozenRing className="text-2xl" />Registered Camp</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/review'><MdReviews className="text-2xl"></MdReviews>Review history</NavLink>
+                                                    </li>
+                                                    <li>
+                                                        <NavLink to='/dashboard/paymentHistory'><GiWallet className="text-2xl"></GiWallet>Payment History</NavLink>
+                                                    </li>
+                                                </>
+
+                                        }
+
                                 </>
                         }
 
