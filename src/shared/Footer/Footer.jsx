@@ -1,11 +1,11 @@
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo1.jpg'
 
 const Footer = () => {
     return (
         <div>
             <footer className="footer p-10 text-base-content flex flex-wrap">
                 <aside className='  mx-auto'>
-                    <img src={logo} alt="" className='h-28 w-28 rounded-lg' />
+                    <img src={logo} alt="" className='h-20 w-28 rounded-lg' />
                     <p className='text-xl'>SAVE LIFE MEDICAL CAMP <br /> <span className='italic text-sm'>Make Yourself Healthy</span></p>
                 </aside>
                 <nav className=' mx-auto'>

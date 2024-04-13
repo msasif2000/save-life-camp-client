@@ -8,5 +8,5 @@
     transition: all 0.3s ease-in-out;
 }
 .sty a.active{
-    color: rgb(255, 25, 0);
+    color: #8CC63E;
 }

@@ -1,7 +1,7 @@
 import { BiUserCircle } from "react-icons/bi";
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
-import logo from '../../assets/logo.jpg'
+import logo from '../../assets/logo1.jpg'
 import useAuth from "../../hooks/useAuth";
 
 
@@ -44,7 +44,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex items-center gap-2">
-                        <img src={logo} alt="" className="h-12 w-12" />
+                        <img src={logo} alt="" className="h-10 w-12" />
                         <a className="flex flex-col text-center"><span className="text-red-600 text-2xl font-bold">SAVE LIFE</span>  <span className="text-red-800 font-semibold">Medical Camp</span></a>
                     </div>
                 </div>

@@ -11,6 +11,11 @@ export default {
       lg: '1024px',
       xxl: '1536px',
     },
+    colors: { 
+      prime: "#8CC63E", 
+      second: "#407A01",
+      third: "#FFFE03",
+    },
     extend: {},
   },
   plugins: [require("daisyui")],
