@@ -10,7 +10,7 @@ export default {
       prime: "#8CC63E", 
       second: "#407A01",
       third: "#FFFE03",
-      green: "#71AB23",
+      grn: "#71AB23",
       white: "#FFFFFF",
     },
   },
