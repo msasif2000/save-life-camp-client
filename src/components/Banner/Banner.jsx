@@ -10,19 +10,19 @@ const Banner = () => {
     return (
         <Carousel autoPlay={true} axis={"vertical"} dynamicHeight={400} showThumbs={false} infiniteLoop={true} interval={3000} className="w-full mt-4 text-center mx-auto rounded-lg md:rounded-none">
             <div>
-                <img src={b1} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
+                <img src={b1} className="w-full 2xl:h-[600px] xl:h-[500px] md:h-[450px] h-[280px]"/>
             </div>
             <div>
-                <img src={b2} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
+                <img src={b2} className="w-full 2xl:h-[600px] xl:h-[500px] md:h-[450px] h-[280px]"/>
             </div>
             <div>
-                <img src={b3} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
+                <img src={b3} className="w-full 2xl:h-[600px] xl:h-[500px] md:h-[450px] h-[280px]"/>
             </div>
             <div>
-                <img src={b4} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
+                <img src={b4} className="w-full 2xl:h-[600px] xl:h-[500px] md:h-[450px] h-[280px]"/>
             </div>
             <div>
-                <img src={b5} className="w-full lg:h-[600px] md:h-[450px] h-[280px]"/>
+                <img src={b5} className="w-full 2xl:h-[600px] xl:h-[500px] md:h-[450px] h-[280px]"/>
             </div>
         </Carousel>
     );

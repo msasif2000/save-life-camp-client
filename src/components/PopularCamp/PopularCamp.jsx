@@ -2,7 +2,7 @@
 import { useState } from "react";
 import CampCard from "../../pages/AvailableCamps/CampCard";
 import { Link } from "react-router-dom";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 const PopularCamp = () => {
@@ -18,7 +18,7 @@ const PopularCamp = () => {
     //console.log(camps);
     return (
         <div>
-            <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
+            <div className="divider mt-12 shadow-xl shadow-third "></div>
             <h2 className="text-4xl text-center font-bold">Our Popular Camp</h2>
             <p className="text-xl text-center italic my-2">Register your desired camp now!</p>
 

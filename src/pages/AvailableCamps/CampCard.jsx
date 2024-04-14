@@ -16,9 +16,9 @@ const CampCard = ({ camp }) => {
     const today = new Date();
 
     return (
-        <div className="flex flex-col shadow-md shadow-sky-600  transition-all hover:-translate-y-1 hover:scale-105 hover:bg-slate-200 duration-300">
+        <div className="flex flex-col shadow-xl shadow-third  transition-all hover:-translate-y-1 hover:scale-105 hover:bg-slate-200 duration-300">
             <img src={image} alt="" className="h-56 w-full" />
-            <p className="bg-red-600 text-white absolute  px-2 mr-4 ">Joined {participants} Peoples</p>
+            <p className="bg-third text-second absolute  px-2 mr-4 ">Joined {participants} Peoples</p>
             <div >
                 <div className="flex items-center justify-between py-1">
                     <p className="font-bold lg:text-3xl text-2xl  py-1 pl-2">{campName}</p>

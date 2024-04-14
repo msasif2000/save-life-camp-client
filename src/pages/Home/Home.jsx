@@ -8,7 +8,7 @@ import Upcoming from "../../components/Upcoming/Upcoming";
 
 const Home = () => {
     return (
-        <div className="lg:px-0 px-2">
+        <div className="max-w-screen-lg mx-auto lg:px-0 px-2">
             <Helmet>
                 <title>SAVE LIFE | HOME</title>
             </Helmet>
