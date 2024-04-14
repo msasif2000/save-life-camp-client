@@ -28,7 +28,7 @@ const PopularCamp = () => {
                     camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
                 }
             </div>
-            <div className="flex justify-center my-4">
+            <div className="flex justify-center my-8">
                 <Link to='/availableCamp'><button className="btn btn-sm bg-slate-200 text-red-600 border-2 border-red-600">See Available Camps</button></Link>
             </div>
         </div>

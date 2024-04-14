@@ -27,7 +27,7 @@ const Navbar = () => {
                     :
                     <>
                         <li><NavLink to='/login'>Sign in</NavLink></li>
-                        <button className="rounded-xl border-2 border-red-600 "><li><NavLink to='/register'>Sign up</NavLink></li></button>
+                        <button className="rounded-xl border-2 border-prime "><li><NavLink to='/register'>Sign up</NavLink></li></button>
                     </>
             }
         </>
@@ -59,7 +59,7 @@ const Navbar = () => {
                             <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-prime p-1" /></Link>
                         </>
                         :
-                        <Link to='/login'><BiUserCircle className="text-red-600 text-4xl"></BiUserCircle></Link>
+                        <Link to='/login'><BiUserCircle className="text-second text-4xl"></BiUserCircle></Link>
 
                 }
             </div>
