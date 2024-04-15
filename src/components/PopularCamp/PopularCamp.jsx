@@ -1,3 +1,4 @@
+import { BiRightTopArrowCircle } from "react-icons/bi"; 
 
 import { useState } from "react";
 import CampCard from "../../pages/AvailableCamps/CampCard";
@@ -18,18 +19,18 @@ const PopularCamp = () => {
     //console.log(camps);
     return (
         <div>
-            <div className="divider mt-12 shadow-xl shadow-third "></div>
+            <div className="divider mt-12"></div>
             <h2  data-aos="fade-right" className="text-4xl text-center font-bold">Our Popular Camp</h2>
             <p  data-aos="fade-left" className="text-xl text-center italic my-2">Register your desired camp now!</p>
 
-            <div className="divider"></div>
-            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-8">
+            {/* <div className="divider"></div> */}
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-16">
                 {
                     camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
                 }
             </div>
-            <div className="flex justify-center my-8">
-                <Link to='/availableCamp'><button className="btn btn-sm bg-slate-200 text-red-600 border-2 border-red-600">See Available Camps</button></Link>
+            <div className="flex justify-end my-8">
+                <Link to='/availableCamp'><button className="btn bg-grn border-2 text-white hover:bg-second"><BiRightTopArrowCircle  className="text-2xl"/>Available Camps</button></Link>
             </div>
         </div>
     );

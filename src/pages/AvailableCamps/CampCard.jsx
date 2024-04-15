@@ -25,12 +25,12 @@ const CampCard = ({ camp }) => {
 
     return (
 
-            <div data-aos="zoom-in-right" className="flex relative flex-col shadow-lg  transition-all hover:-translate-y-1 hover:scale-105 bg-green-200 hover:bg-slate-300 duration-300 rounded-br-3xl rounded-tl-3xl">
+            <div data-aos="zoom-in-right" className="flex relative flex-col shadow-lg text-white  transition-all hover:-translate-y-1 hover:scale-105 bg-second hover:bg-grn duration-300 rounded-br-3xl rounded-tl-3xl">
                 <img src={image} alt="" className="h-56 w-full rounded-tl-3xl" />
-                <p className="bg-third text-second absolute  px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
+                <p className="bg-third absolute  px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
                 <div className="flex items-center justify-between py-1">
-                    <p className="font-bold lg:text-3xl text-2xl  py-1 pl-2">{campName}</p>
-                    <p className="bg-third p-1 rounded font-bold mr-1 flex">{campFee} <span>tk</span></p>
+                    <p data-aos="fade-right" className="font-bold lg:text-3xl text-2xl  py-1 pl-2">{campName}</p>
+                    <p data-aos="fade-left" className="bg-third p-1 rounded font-bold mr-1 flex gap-[1px]">{campFee} <span>tk</span></p>
                 </div>
                 <div className="flex flex-col px-4">
                     {services?.map((serv, index) => (<p className="flex items-center gap-1" key={index}><MdTopic /> {serv}</p>))}
@@ -43,23 +43,23 @@ const CampCard = ({ camp }) => {
 
                 <p className="flex items-center gap-1  px-2 text-center"><span><FcPodiumWithAudience className="text-2xl" /></span> <span className="font-bold">{audience}</span></p>
 
-                <div  data-aos="fade-left" className="mb-8 mx-2">
-                    <p className="flex gap-2 items-center pr-4"><BiTimeFive className="text-2xl" /><span className="">{date.split('T')[0]},
+                <dispatchEvent className="mb-8 mx-2">
+                    <p data-aos="fade-right" className="flex gap-2 items-center pr-4"><BiTimeFive className="text-2xl" /><span className="">{date.split('T')[0]},
                         {date.split('T')[1].split('.')[0]}</span></p>
-                    <p className="flex gap-2 text-right justify-end"><span className=" bold">{venue}</span><ImLocation className="text-2xl" /></p>
-                </div>
+                    <p data-aos="fade-left" className="flex gap-2 text-right justify-end"><span className=" bold">{venue}</span><ImLocation className="text-2xl" /></p>
+                </dispatchEvent>
 
-                <div className="absolute -bottom-4 left-0 right-0">
+                <div data-aos="fade-left" className="absolute -bottom-4 left-0 right-0">
                     <div className="flex justify-between">
                         {
                             user && role === 'admin' ? (
-                                <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-second rounded-br-lg rounded-tl-lg bg-prime text-white font-bold">See Details</button></Link>
+                                <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-grn rounded-br-lg rounded-tl-lg bg-prime text-grn font-bold">See Details</button></Link>
                             ) : (
                                 <>
-                                    <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-second rounded-br-lg rounded-tl-lg bg-prime text-white font-bold">See Details</button></Link>
+                                    <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-grn rounded-br-lg rounded-tl-lg bg-prime text-grn font-bold">See Details</button></Link>
                                     {
                                         today > new Date(date) ? null : (
-                                            <Link to={`/joinCamp/${_id}`}><button className="p-2 border-r-4 border-prime rounded-br-lg rounded-tl-lg bg-third font-bold mr-5">Join Camp</button></Link>
+                                            <Link to={`/joinCamp/${_id}`}><button className="p-2 border-r-4 border-second rounded-br-lg rounded-tl-lg bg-third font-bold mr-5">Join Camp</button></Link>
                                         )
                                     }
                                 </>
