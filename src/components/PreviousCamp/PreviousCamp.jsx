@@ -1,17 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PreviousCampCard from "./PreviousCampCard";
 import { Link } from "react-router-dom";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 
 const PreviousCamp = () => {
     const axiosPublic = useAxiosPublic()
 
     const [camps, setCamps] = useState([]);
-    axiosPublic.get('/previousCamp')
+    useEffect(() => {
+        axiosPublic.get('/previousCamp')
         .then(res => {
             setCamps(res.data);
         })
+    }, [axiosPublic])
 
 
     //console.log(camps);

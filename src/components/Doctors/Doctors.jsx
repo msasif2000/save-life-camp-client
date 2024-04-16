@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -10,10 +10,12 @@ const Doctors = () => {
     const axiosPublic = useAxiosPublic();
 
     const [doctors, setDoctors] = useState([]);
-    axiosPublic.get('/doctors')
+    useEffect(() => {
+        axiosPublic.get('/doctors')
         .then(res => {
             setDoctors(res.data);
-        });
+        }, [axiosPublic]);
+    })
 
     return (
         <div>

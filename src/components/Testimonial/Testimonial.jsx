@@ -1,19 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const Testimonial = () => {
     const [reviews, setReviews] = useState([]);
     const axiosPublic = useAxiosPublic();
 
-    axiosPublic.get('/reviews')
+    useEffect(() => {
+        axiosPublic.get('/reviews')
         .then(res => {
             setReviews(res.data);
 
         })
+    }, [axiosPublic])
     //console.log(reviews);
     return (
         <div>

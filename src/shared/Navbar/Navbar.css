@@ -8,5 +8,6 @@
     transition: all 0.3s ease-in-out;
 }
 .sty a.active{
-    color: #8CC63E;
+    color: #AFFC41;
+    border-bottom: #3C1642 2px solid;
 }

@@ -1,7 +1,7 @@
 import { Link, useLoaderData } from "react-router-dom";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
-import useAxiosPublic from "../../Hooks/useAxiosPublic";
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 
 const CampDetails = () => {
     const camp = useLoaderData().data;
@@ -11,10 +11,12 @@ const CampDetails = () => {
     const axiosPublic = useAxiosPublic()
     const [reviews, setReviews] = useState([]);
 
-    axiosPublic.get(`/reviews/${_id}`)
+    useEffect(() => {
+        axiosPublic.get(`/reviews/${_id}`)
         .then(res => {
             setReviews(res.data);
         });
+    }, [axiosPublic, _id])
 
     return (
         <div className="container mx-auto p-6 mt-4">

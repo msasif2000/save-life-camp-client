@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import UpcomingCard from "../../pages/Home/UpcomingCard";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 
@@ -7,10 +7,12 @@ const Upcoming = () => {
     const [upcoming, setUpcoming] = useState([]);
     const axiosPublic = useAxiosPublic();
 
-    axiosPublic.get('/upcomingCamp')
+    useEffect(() => {
+        axiosPublic.get('/upcomingCamp')
         .then(res => {
             setUpcoming(res.data);
         })
+    }, [axiosPublic])
     return (
         <div>
             <div className="divider mt-12"></div>
