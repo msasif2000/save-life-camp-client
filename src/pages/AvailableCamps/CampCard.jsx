@@ -29,7 +29,7 @@ const CampCard = ({ camp }) => {
                 <img src={image} alt="" className="h-56 w-full rounded-tl-3xl" />
                 <p className="bg-third absolute  px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
                 <div className="flex items-center justify-between py-1">
-                    <p data-aos="fade-right" className="font-bold lg:text-3xl text-2xl  py-1 pl-2">{campName}</p>
+                    <p data-aos="fade-right" className="font-bold 2xl:text-3xl text-2xl  py-1 pl-2">{campName}</p>
                     <p data-aos="fade-left" className="bg-third p-1 rounded font-bold mr-1 flex gap-[1px]">{campFee} <span>tk</span></p>
                 </div>
                 <div className="flex flex-col px-4">

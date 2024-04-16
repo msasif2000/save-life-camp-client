@@ -13,9 +13,9 @@ const Upcoming = () => {
         })
     return (
         <div>
-             <div className="divider mt-12"></div>
+            <div className="divider mt-12"></div>
             <h2 data-aos="fade-right" className="text-4xl text-center font-bold">Upcoming Camp</h2>
-            <p data-aos="fade-left"  className="text-xl text-center italic my-2">Wait for amazing sessions please!</p>
+            <p data-aos="fade-left" className="text-xl text-center italic my-2">Wait for amazing sessions please!</p>
             {/* <div className="divider"></div> */}
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-16">
                 {
