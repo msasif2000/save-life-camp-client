@@ -22,7 +22,7 @@ const PopularCamp = () => {
     //console.log(camps);
     return (
         <div>
-            <div className="divider mt-12"></div>
+            <div className="divider mt-20 bg-grn h-1"></div>
             <h2 data-aos="fade-right" className="text-4xl text-center font-bold">Our Popular Camp</h2>
             <p data-aos="fade-left" className="text-xl text-center italic my-2">Register your desired camp now!</p>
 

@@ -16,7 +16,7 @@ const UpcomingCard = ({ camp }) => {
                     <p className="flex gap-2 pl-2 items-center"><BiTimeFive className="text-2xl"/><span className="italic font-bold ">{camp.date.split('T')[0]},
                         {camp.date.split('T')[1].split('.')[0]}</span></p>
                     <p className="pl-2 flex items-center gap-2"><FcPodiumWithAudience className="text-2xl"/><span className="italic font-bold ">{camp.audience}</span></p>
-                    <div className="bg-grn border-t rounded-b-xl p-2 text-white">
+                    <div className="bg-grn border-t rounded-b-xl p-2 text-white text-sm">
                         <p className="flex items-center gap-2"><ImLocation className="text-2xl"/><span className="italic font-bold ">{camp.venue}</span></p>
                     </div>
                 </div>
