@@ -19,7 +19,7 @@ const CampDetails = () => {
     }, [axiosPublic, _id])
 
     return (
-        <div className="container mx-auto p-6 mt-4">
+        <div className="container p-6 mt-4 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto lg:px-0 px-2">
             <Helmet>
                 <title>SL| CAMP DETAILS</title>
             </Helmet>

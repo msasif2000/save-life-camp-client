@@ -10,7 +10,7 @@ const PopularCamp = () => {
     const axiosPublic = useAxiosPublic();
 
     const [camps, setCamps] = useState([]);
-    
+
     useEffect(() => {
         axiosPublic.get('/popularCamp')
         .then(res => {
@@ -32,7 +32,7 @@ const PopularCamp = () => {
                     camps.map(camp => <CampCard key={camp._id} camp={camp}></CampCard>)
                 }
             </div>
-            <div className="flex justify-end my-8">
+            <div data-aos="zoom-in" className="flex justify-end my-8">
                 <Link to='/availableCamp'><button className="btn bg-grn border-2 text-white hover:bg-second"><BiRightTopArrowCircle  className="text-2xl"/>Available Camps</button></Link>
             </div>
         </div>

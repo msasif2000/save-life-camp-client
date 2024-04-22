@@ -24,8 +24,7 @@ const CampCard = ({ camp }) => {
     }, []);
 
     return (
-
-            <div data-aos="zoom-in-right" className="flex relative flex-col shadow-lg text-white  transition-all hover:-translate-y-1 hover:scale-105 bg-second hover:bg-grn duration-300 rounded-br-3xl rounded-tl-3xl">
+            <div data-aos="zoom-in-right" className="flex relative flex-col text-white bg-second hover:bg-grn rounded-br-3xl rounded-tl-3xl">
                 <img src={image} alt="" className="h-56 w-full rounded-tl-3xl" />
                 <p className="bg-third absolute  px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
                 <div className="flex items-center justify-between py-1">

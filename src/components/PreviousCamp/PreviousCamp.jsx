@@ -19,9 +19,9 @@ const PreviousCamp = () => {
     //console.log(camps);
     return (
         <div>
-             <div className="divider mt-12 shadow-xl shadow-red-600 "></div>
-            <h2 className="text-4xl text-center font-bold">Our Previous Camp</h2>
-            <p className="text-xl text-center italic my-2">Click on the details button to see details about our efficient works!</p>
+             <div className="divider mt-16"></div>
+            <h2 data-aos="fade-right" className="text-4xl text-center font-bold">Our Previous Camp</h2>
+            <p data-aos="fade-left" className="text-xl text-center italic my-2">Click on the details button to see details about our efficient works!</p>
             <div className="divider"></div>
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-8">
                 {

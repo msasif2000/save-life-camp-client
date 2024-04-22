@@ -8,7 +8,7 @@ const UpcomingCard = ({ camp }) => {
         <div>
             <div className="bg-prime rounded-b-xl text-grn">
                 <img data-aos="fade-right" src={camp.image} alt="" className="h-60 w-full" />
-                <div data-aos="fade-left" className="h-full flex flex-col flex-grow-1">
+                <div data-aos="fade-left" className="h-full flex flex-col transition-all hover:-translate-y-1 hover:scale-105 duration-300">
                     <h2 className="text-2xl 2xl:text-3xl font-bold pl-2">{camp.campName}</h2>
                     <div className="py-1 px-4">
                         {camp.services?.map((serv, index) => (<p className="flex items-center gap-1" key={index}><MdTopic /> {serv}</p>))}
