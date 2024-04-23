@@ -21,8 +21,8 @@ const Doctors = () => {
     return (
         <div>
             <div className="divider mt-20 bg-grn h-1"></div>
-            <h2 data-aos="fade-right" className="text-4xl text-center font-bold ">Meet Our Doctors</h2>
-            <p data-aos="fade-left" className="text-xl text-center italic my-2">They are highly qualified to train your physical and mental health!</p>
+            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold">Meet Our Doctors</h2>
+            <p data-aos="fade-left" data-aos-duration="1000" className="text-xl text-center italic my-2">They are highly qualified to train your physical and mental health!</p>
             {/* <div className="divider"></div> */}
 
             <Swiper

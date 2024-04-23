@@ -6,7 +6,7 @@ import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import { useState } from "react";
-
+import sgup from "../../assets/signup.png";
 
 
 const Register = () => {
@@ -217,12 +217,13 @@ const Register = () => {
                 <title>SAVE LIFE | SIGN UP</title>
             </Helmet>
             <div className="flex ">
-                <div className="hero min-h-screen mt-4 lg:w-4/5 md:w-5/6 mx-auto">
-                    <div className="hero-content flex-col w-full">
-                        <div className="text-center">
+                <div className="hero lg:w-4/5 md:w-5/6 mx-auto">
+                    <div className="hero-content flex-col lg:flex-row-reverse items-center mx-auto w-full gap-6">
+                        <div className="text-center p-4">
                             <h1 className="text-5xl font-bold">Sign up!</h1>
+                            <img src={sgup} alt="" />
                         </div>
-                        <div className="card flex-shrink-2 w-full max-w-sm border-8 border-double border-y-transparent shadow-2xl shadow-red-600 border-red-600 ">
+                        <div className="card flex-shrink-2 w-full max-w-sm border-8 border-double border-x-y-transparent border-prime">
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
                                 <div className="form-control">
@@ -236,7 +237,7 @@ const Register = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Photo URL</span>
                                     </label>
-                                    <input type="text" {...register("photoURL", { required: true })} placeholder="Photo URL" className="input input-bordered text-black" />
+                                    <input type="text" {...register("photoURL")} placeholder="Photo URL" className="input input-bordered text-black" />
                                     {errors.name && <span className="text-red-600">This field is required</span>}
                                 </div>
                                 <div className="form-control">
@@ -258,21 +259,19 @@ const Register = () => {
 
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="text-white py-2 rounded-xl font-bold bg-red-600">Sign Up</button>
+                                    <button className="py-2 rounded-xl font-bold bg-prime">Sign Up</button>
                                 </div>
-
-
                             </form>
                             <div className="flex justify-center">
                                 <label className="label ">
-                                    <p>Already have an Account? <Link to="/login" className="underline text-red-600 font-bold">Sign in</Link></p>
+                                    <p>Already have an Account? <Link to="/login" className="underline text-second font-bold">Sign in</Link></p>
                                 </label>
                             </div>
                             <div className="text-center">
                                 <p>--or--</p>
                                 <p>continue with</p>
-                                <div onClick={handleGoogleLogin} className="flex justify-center mx-10 border-2 rounded-lg border-red-600 my-1">
-                                    <p className="flex gap-2 p-2  bg-white"><FcGoogle className="text-2xl "></FcGoogle> Google</p>
+                                <div onClick={handleGoogleLogin} className="flex justify-center mx-auto mb-2 rounded-lg my-1">
+                                    <p className="flex gap-2 p-2 bg-prime rounded-lg font-bold"><FcGoogle className="text-2xl "></FcGoogle> Google</p>
                                 </div>
                             </div>
 

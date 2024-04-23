@@ -1,3 +1,4 @@
+// import { MdLogin } from "react-icons/md"; 
 import { BiUserCircle } from "react-icons/bi";
 import { Link, NavLink } from "react-router-dom";
 import './Navbar.css'
@@ -22,13 +23,13 @@ const Navbar = () => {
 
             <li className=""><NavLink to='/contact'>Contact</NavLink></li>
             {
-                user ?
-                    ''
-                    :
-                    <>
-                        <li><NavLink to='/login'>Sign in</NavLink></li>
-                        <button className="rounded-xl border-2 border-prime "><li><NavLink to='/register'>Sign up</NavLink></li></button>
-                    </>
+                // user ?
+                //     ''
+                //     :
+                //     <>
+                //         <li><NavLink to='/login' className="flex items-center gap-1 justify-center bg-prime"><MdLogin className="text-xl mt-1"/>Sign in</NavLink></li>
+                //         {/* <button className="rounded-xl border-2 border-prime "><li><NavLink to='/register'>Sign up</NavLink></li></button> */}
+                //     </>
             }
         </>
     return (
@@ -37,7 +38,7 @@ const Navbar = () => {
             <div className="navbar-start w-3/5">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
-                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="red"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="green"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
                     </label>
                     <ul tabIndex={0} className="sty menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-orange-600 rounded-box w-52 ">
                         {navlinks}
@@ -45,7 +46,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center gap-2">
                     <img src={logo} alt="" className="h-10 w-12" />
-                    <a className="flex flex-col text-center"><span className="text-prime text-2xl font-bold">SAVE LIFE</span>  <span className="text-second font-semibold">Medical Camp</span></a>
+                    <a className="flex flex-col text-center"><span className="text-prime text-left md:text-2xl text-xl font-bold">SAVE LIFE</span>  <span className="text-second text-left text-sm md:text-base font-semibold">Medical Camp</span></a>
                 </div>
             </div>
             <ul className="navbar-center hidden lg:flex sty">
@@ -59,7 +60,7 @@ const Navbar = () => {
                             <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-prime p-1" /></Link>
                         </>
                         :
-                        <Link to='/login'><BiUserCircle className="text-second text-4xl"></BiUserCircle></Link>
+                        <Link to='/login' className="bg-prime rounded-full p-1"><BiUserCircle className="text-second text-4xl"></BiUserCircle></Link>
 
                 }
             </div>
