@@ -6,7 +6,7 @@ const PreviousCampCard = ({ camp }) => {
     const { _id, campName, image, participants } = camp;
     return (
         <div className="flex flex-col shadow-2xl shadow-bs2 transition-all hover:-translate-y-1 hover:scale-105  duration-300 rounded-lg bg-ic3">
-            <img src={image} alt="" className="h-56 w-full rounded-lg" />
+            <img src={image} alt="" className="h-56 w-full rounded-t-lg rounded-b-2xl" />
             <p className="bg-ic3 text-txt1 absolute  px-2 mr-4 rounded-tl-lg">Participated {participants} Peoples</p>
             <div >
                 <div className="">

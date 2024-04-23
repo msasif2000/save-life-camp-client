@@ -56,7 +56,7 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <li className="list-none"><button onClick={handleLogout} className="btn btn-sm bg-white md:mr-2 mr-1 border-2 border-sl2 text-sm md:text-xl">Sign Out</button></li>
+                            <li className="list-none"><button onClick={handleLogout} className="btn btn-sm bg-bs1 md:mr-2 mr-1 border-2 border-sl2 text-sm md:text-xl">Sign Out</button></li>
                             <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-sl2 p-1" /></Link>
                         </>
                         :

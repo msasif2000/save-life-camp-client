@@ -25,7 +25,7 @@ const CampRegistration = () => {
             //console.log(participant);
             axiosSecure.post('/participants', participant)
                 .then(res => {
-                   // console.log(res);
+                    // console.log(res);
                     if (res.data.result.insertedId) {
                         Swal.fire({
                             position: "top-end",
@@ -62,25 +62,24 @@ const CampRegistration = () => {
             <Helmet>
                 <title>SL| CAMP REGISTRATION</title>
             </Helmet>
-            <div className="flex ">
-                <div className="hero min-h-screen mt-4  mx-auto">
-                    <div className="hero-content flex flex-col  md:flex-row w-full">
+            <div className="flex mb-16 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto lg:px-4 px-2">
+                <div className="hero mt-20 mx-auto">
+                    <div className="hero-content flex flex-col md:flex-row w-full ">
                         <div className="text-center">
-                            <h1 className="lg:text-5xl text-3xl font-bold my-6">Registration for <span className="text-red-600">{campName}</span> Camp</h1>
-                            <img src={image} alt="" className="h-[350px] w-full shadow-red-600 shadow-2xl" />
-                            <p className="text-xl my-4 font-bold">Camp Fee: <span className="text-red-600">{campFee} tk</span> only</p>
-                            <p className="flex gap-1 justify-center"><BiTimeFive className="text-red-600 text-2xl" />{date.split('T')[0]} <br />
-                                {date.split('T')[1].split('.')[0]}</p>
-                            <p className="flex gap-1 justify-center"><ImLocation className="text-red-600 text-2xl" /> {venue}</p>
+                            <h1 className="lg:text-5xl text-3xl font-bold my-6">Registration for <span className="text-sl2">{campName}</span> Camp</h1>
+                            <img src={image} alt="" className="h-[350px] w-full rounded-lg" />
+                            <p className="text-xl my-4 font-bold">Camp Fee: <span className="text-txt1">{campFee} tk</span> only</p>
+                            <p className="flex gap-1 justify-center"><BiTimeFive className="text-txt1 text-2xl" />{date.split('T')[0]}, {date.split('T')[1].split('.')[0]}</p>
+                            <p className="flex gap-1 justify-center"><ImLocation className="text-txt1 text-2xl" /> {venue}</p>
                             <p></p>
                         </div>
-                        <div className="card flex-shrink-2 w-full max-w-sm border-8 border-double  shadow-2xl shadow-red-600 border-red-600 ">
+                        <div className="card flex-shrink-2 w-full max-w-sm border-4 border-sl2 bg-ic1">
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-bold">Your Name</span>
                                     </label>
-                                    <input type="text" {...register("name", { required: true })} placeholder="Your Name" className="input input-bordered text-black" />
+                                    <input type="text" {...register("name", { required: true })} placeholder="Your Name" className="input input-bordered border-bs3 text-black" />
                                     {errors.name && <span className="text-red-600">This field is required</span>}
                                 </div>
 
@@ -90,7 +89,7 @@ const CampRegistration = () => {
                                     </label>
                                     <div className="flex items-center gap-4 ml-2">
                                         <label>
-                                            <input type="radio"  {...register("gender", { required: true })} value="male" className="mr-2" />
+                                            <input type="radio" {...register("gender", { required: true })} value="male" className="mr-2" />
                                             Male
                                         </label>
                                         <label>
@@ -110,7 +109,7 @@ const CampRegistration = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Email</span>
                                     </label>
-                                    <input type="email"  {...register("email", { required: true })} placeholder="Your Email" className="input input-bordered text-black" />
+                                    <input type="email"  {...register("email", { required: true })} placeholder="Your Email" className="input input-bordered border-bs3 text-black" />
                                     {errors.email && <span className="text-red-600">This field is required</span>}
                                 </div>
 
@@ -118,12 +117,12 @@ const CampRegistration = () => {
                                     <label className="label">
                                         <span className="label-text font-bold">Contact No</span>
                                     </label>
-                                    <input type="text"  {...register("mobile", { required: true })} placeholder="Your mobile no" className="input input-bordered text-black" />
+                                    <input type="text"  {...register("mobile", { required: true })} placeholder="Your mobile no" className="input input-bordered border-bs3 text-black" />
                                     {errors.mobile && <span className="text-red-600">This field is required</span>}
                                 </div>
 
                                 <div className="form-control mt-6">
-                                    <input className={`btn btn-sm text-white py-2 rounded-xl font-bold bg-red-600 `} type="submit" value="Register Camp" />
+                                    <input className={`btn btn-sm text-txt2 py-2 rounded-xl font-bold bg-sl2 hover:bg-sl1 `} type="submit" value="Register Camp" />
                                 </div>
                             </form>
                         </div>

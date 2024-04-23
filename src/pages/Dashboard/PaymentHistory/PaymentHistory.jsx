@@ -50,14 +50,13 @@ const PaymentHistory = () => {
                                             <>
                                                 {
                                                     new Date(item?.campDate) < today ?
-                                                        <Link to={`/dashboard/addReview/${item.campId}`}><button className="btn btn-xl text-white bg-green-600 ">Add Review</button></Link>
+                                                        <Link to={`/dashboard/addReview/${item.campId}`}><button className="btn btn-sm text-txt2 bg-sl2">Add Review</button></Link>
                                                         :
-                                                        <button disabled className="btn btn- text-white bg-red-600 ">Will Enable</button>
+                                                        <button disabled className="btn btn-sm">Will Enable</button>
                                                 }
                                             </>
                                             :
-                                            <button disabled className="btn btn-xl text-white bg-red-600 ">Add Review</button>
-
+                                            <button disabled className="btn btn-sm text-white bg-bs2 ">Add Review</button>
                                     }
                                 </td>
                                 <td>
@@ -65,7 +64,7 @@ const PaymentHistory = () => {
                                         item?.status === 'pending' ?
                                             <button className="btn btn-sm text-white bg-red-600">{item?.status}</button>
                                             :
-                                            <button className="btn btn-sm text-white bg-green-600">{item?.status}</button>
+                                            <button className="btn btn-sm bg-sl2">{item?.status}</button>
                                     }
                                 </td>
 

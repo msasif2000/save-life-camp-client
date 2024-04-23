@@ -88,7 +88,7 @@ const Booked = () => {
                                 <td>{item.venue}</td>
                                 <td>{item.email}</td>
                                 <td>
-                                    <Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-sm bg-sky-600 text-white">Pay</button></Link>
+                                    <Link to={`/dashboard/payment/${item._id}`}><button className="btn btn-sm bg-sl1">Pay</button></Link>
                                 </td>
                                 <td>
                                     <button onClick={() => handleDeleteRegistration(item._id, item.campId)} className="btn btn-sm bg-red-600 px-1"><MdDelete className="text-2xl text-white" /></button>

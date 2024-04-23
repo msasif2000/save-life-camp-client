@@ -216,7 +216,7 @@ const Login = () => {
                             <h1 className="text-5xl font-bold">Login now!</h1>
                             <img src={login} alt="" className=""/>
                         </div>
-                        <div className="card flex-shrink-2 w-full max-w-sm border-4 border-x-y-transparent border-sl2 pb-4">
+                        <div className="card flex-shrink-2 w-full max-w-sm border-4 border-x-y-transparent border-sl2 pb-4 bg-ic1">
                             <form onSubmit={handleLogin} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -241,13 +241,13 @@ const Login = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name="email" placeholder="email" className="input input-bordered" required />
+                                    <input type="email" name="email" placeholder="email" className="input input-bordered border-bs3" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text">Password</span>
                                     </label>
-                                    <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                                    <input type="password" name="password" placeholder="password" className="input input-bordered border-bs3" required />
                                 </div>
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>

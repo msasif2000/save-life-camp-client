@@ -13,12 +13,11 @@ const Testimonial = () => {
         axiosPublic.get('/reviews')
         .then(res => {
             setReviews(res.data);
-
         })
     }, [axiosPublic])
     //console.log(reviews);
     return (
-        <div>
+        <div className="mb-20">
             <div className="divider mt-20 bg-sl2 h-1"></div>
             <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold mt-8">Testimonials </h2>
             <p data-aos="fade-left" data-aos-duration="1500" className="text-xl text-center italic my-2">What our beautiful participants saying about SAVE LIFE MEDICAL CAMP!</p>

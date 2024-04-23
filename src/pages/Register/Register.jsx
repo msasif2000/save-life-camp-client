@@ -223,35 +223,35 @@ const Register = () => {
                             <h1 className="text-5xl font-bold">Sign up!</h1>
                             <img src={sgup} alt="" />
                         </div>
-                        <div className="card flex-shrink-2 w-full max-w-sm border-8 border-double border-x-y-transparent border-sl2">
+                        <div className="card flex-shrink-2 w-full max-w-sm border-4 border-x-y-transparent border-sl2 bg-ic1">
                             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
 
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-bold">Your Name</span>
                                     </label>
-                                    <input type="text" {...register("name", { required: true })} placeholder="name" className="input input-bordered text-black" />
+                                    <input type="text" {...register("name", { required: true })} placeholder="name" className="input input-bordered border-bs3 text-black" />
                                     {errors.name && <span className="text-red-600">This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-bold">Photo URL</span>
                                     </label>
-                                    <input type="text" {...register("photoURL")} placeholder="Photo URL" className="input input-bordered text-black" />
+                                    <input type="text" {...register("photoURL")} placeholder="Photo URL" className="input input-bordered border-bs3 text-black" />
                                     {errors.name && <span className="text-red-600">This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-bold">Email</span>
                                     </label>
-                                    <input type="email"  {...register("email", { required: true })} placeholder="email" className="input input-bordered text-black" />
+                                    <input type="email"  {...register("email", { required: true })} placeholder="email" className="input input-bordered border-bs3 text-black" />
                                     {errors.email && <span className="text-red-600">This field is required</span>}
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
                                         <span className="label-text font-bold">Password</span>
                                     </label>
-                                    <input type="password" {...register("password", { required: true, minLength: 6, pattern: /(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/, maxLength: 20 })} placeholder="password" className="input input-bordered text-black" />
+                                    <input type="password" {...register("password", { required: true, minLength: 6, pattern: /(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])/, maxLength: 20 })} placeholder="password" className="input input-bordered border-bs3 text-black" />
                                     {errors.password?.type === 'required' && <span className="text-red-600">Password is required</span>}
                                     {errors.password?.type === 'minLength' && <span className="text-red-600">Password must be at least 6 characters</span>}
                                     {errors.password?.type === 'maxLength' && <span className="text-red-600">Password must be at most 20 characters</span>}
@@ -259,7 +259,7 @@ const Register = () => {
 
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="py-2 rounded-xl font-bold bg-sl2">Sign Up</button>
+                                    <button className="py-2 rounded-xl font-bold bg-sl2 hover:bg-sl1">Sign Up</button>
                                 </div>
                             </form>
                             <div className="flex justify-center">
