@@ -41,17 +41,17 @@ const Doctors = () => {
                 {doctors.map(doctor => (
                     <SwiperSlide key={doctor._id}>
 
-                        <div className="text-center bg-sl2 text-white rounded-lg py-8 px-4 h-[400px]">
+                        <div className="text-center bg-ic2 text-txt2 rounded-lg py-8 px-4 h-[400px]">
                         {/* gradient-to-b from-blue-500 to-blue-700 */}
                             <img
                                 src={doctor.image}
                                 alt={doctor.name}
-                                className="mx-auto h-40 w-40 object-cover rounded-2xl mb-4"
+                                className="mx-auto h-40 w-40 lg:h-48 lg:w-48 object-cover rounded-2xl mb-4"
                             />
                             <h3 className="text-xl font-bold mb-2">{doctor.name}</h3>
                             <p className="text-xl font-bold">{doctor.designation}</p>
                             <p className="text-sm">{doctor.workingPlace}</p>
-                            <Link to={`/doctorsProfile/${doctor._id}`}><button className="btn btn-sm bg-sl2 mt-2">Profile<BsArrowRightCircleFill className="text-xl"/></button></Link>
+                            <Link to={`/doctorsProfile/${doctor._id}`}><button className="btn btn-sm bg-sl2 hover:bg-sl1 text-txt2 hover:text-black mt-2">Profile<BsArrowRightCircleFill className="text-xl"/></button></Link>
                         </div>
 
                     </SwiperSlide>

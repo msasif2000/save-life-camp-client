@@ -27,7 +27,7 @@ const CampDetails = () => {
                 <div data-aos="fade-left" data-aos-duration="1500">
                     <img src={image} alt={campName} className="w-full h-full rounded" />
                 </div>
-                <div data-aos="fade-right" data-aos-duration="1500" className="bg-sl1 p-4 text-xl rounded">
+                <div data-aos="fade-right" data-aos-duration="1500" className="bg-ic2 p-4 text-xl rounded">
                     <h1 className="text-3xl font-bold mb-4">{campName}</h1>
                     <p className="text-gray-600 mb-2">
                         Date: <span className="font-bold">{date}</span>
@@ -54,7 +54,7 @@ const CampDetails = () => {
                         {
                             today < new Date(date) ?
 
-                                <Link to={`/joinCamp/${_id}`}><button className="btn border-sl2 bg-bs3 font-bold">Join Camp</button></Link>
+                                <Link to={`/joinCamp/${_id}`}><button className="btn border-bs3 bg-sl2 hover:bg-sl1 font-bold">Join Camp</button></Link>
 
                                 :
                                 ''
@@ -66,7 +66,7 @@ const CampDetails = () => {
 
             <div className="mt-8">
                 <h2 className="text-2xl font-bold mb-4">Camp Details</h2>
-                <p className="text-gray-800">{details}</p>
+                <p className="text-txt2 bg-ic2 p-2 rounded">{details}</p>
             </div>
 
             <div className="mt-8">
