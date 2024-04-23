@@ -1,4 +1,4 @@
-.sty a{
+.dash a{
     color: #2F4317;
     text-decoration: none;
     font-size: 1.1rem;
@@ -7,9 +7,8 @@
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
 }
-.sty a.active{
-    color: #547F0F;
-    text-decoration: underline;
+.dash a.active{
+    background-color: none;
     text-shadow: #A9F537 0px 0px 10px;
-}
 
+}

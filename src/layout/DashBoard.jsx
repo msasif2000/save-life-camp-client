@@ -13,7 +13,7 @@ import { NavLink, Outlet } from "react-router-dom";
 import useAuth from "../hooks/useAuth";
 import { Helmet } from "react-helmet";
 import useUser from "../hooks/useUser";
-
+import "./DashBoard.css"
 
 const DashBoard = () => {
 
@@ -28,8 +28,8 @@ const DashBoard = () => {
             <Helmet>
                 <title>SAVE LIFE | DASHBOARD</title>
             </Helmet>
-            <div className="md:w-2/5 lg:w-1/4 xl:w-1/6 md:flex-shrink-0">
-                <div className="navbar-start md:hidden">
+            <div className="lg:w-1/4 xl:w-1/5 2xl:w-1/6 lg:flex-shrink-0">
+                <div className="navbar-start lg:hidden">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="green"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
@@ -112,9 +112,9 @@ const DashBoard = () => {
                         </ul>
                     </div>
                 </div>
-                <div className="md:flex hidden min-h-screen bg-ic2 pt-12">
+                <div className="lg:flex hidden min-h-screen bg-ic2 pt-12">
 
-                    <ul className="menu text-xl">
+                    <ul className="menu text-xl dash">
                         {
                             role === 'admin' ?
                                 <>
@@ -194,7 +194,7 @@ const DashBoard = () => {
                     </ul>
                 </div>
             </div>
-            <div className="md:flex-1 overflow-x-auto">
+            <div className="lg:flex-1 overflow-x-auto mt-8 lg:mt-0">
                 <Outlet></Outlet>
             </div>
         </div>

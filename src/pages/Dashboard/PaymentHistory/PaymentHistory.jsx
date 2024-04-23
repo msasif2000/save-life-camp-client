@@ -17,7 +17,6 @@ const PaymentHistory = () => {
                     <h2 className="text-3xl text-center py-8">
                         Payment History of <span className="text-blue-700">{paidCamps[0]?.email}</span>
                     </h2>
-
                 </div>
             </div>
             <div className="overflow-x-auto">
