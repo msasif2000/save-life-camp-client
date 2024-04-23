@@ -23,7 +23,7 @@ const PopularCamp = () => {
     return (
         <div>
             <div className="divider mt-20 bg-sl2 h-1"></div>
-            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold">Our Popular Camp</h2>
+            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold mt-8">Our Popular Camp</h2>
             <p data-aos="fade-left" data-aos-duration="1500" className="text-xl text-center italic my-2">Register your desired camp now!</p>
 
             {/* <div className="divider"></div> */}
@@ -33,7 +33,7 @@ const PopularCamp = () => {
                 }
             </div>
             <div data-aos="zoom-in" className="flex justify-end my-8">
-                <Link to='/availableCamp'><button className="btn bg-sl2 border-2 text-white hover:bg-txt1"><BiRightTopArrowCircle  className="text-2xl"/>Available Camps</button></Link>
+                <Link to='/availableCamp'><button className="btn bg-sl2 border-2 text-txt2 hover:bg-sl1 font-bold"><BiRightTopArrowCircle  className="text-2xl"/>Available Camps</button></Link>
             </div>
         </div>
     );

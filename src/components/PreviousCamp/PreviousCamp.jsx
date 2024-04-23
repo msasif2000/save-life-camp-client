@@ -21,7 +21,7 @@ const PreviousCamp = () => {
     return (
         <div>
              <div className="divider mt-20 bg-sl2 h-1"></div>
-            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold">Our Previous Camp</h2>
+            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold mt-8">Our Previous Camp</h2>
             <p data-aos="fade-left" data-aos-duration="1500" className="text-xl text-center italic my-2">Click on the details button to see details about our efficient works!</p>
             {/* <div className="divider"></div> */}
             <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8 mt-16">

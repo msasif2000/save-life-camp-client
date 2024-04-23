@@ -20,7 +20,7 @@ const Testimonial = () => {
     return (
         <div>
             <div className="divider mt-20 bg-sl2 h-1"></div>
-            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold">Testimonials </h2>
+            <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold mt-8">Testimonials </h2>
             <p data-aos="fade-left" data-aos-duration="1500" className="text-xl text-center italic my-2">What our beautiful participants saying about SAVE LIFE MEDICAL CAMP!</p>
             {/* <div className="divider"></div> */}
             <div className="bg-sl2 mt-16 p-16 rounded-lg">

@@ -10,7 +10,6 @@ export default {
       ic1: "#E6FAD3",
       ic2: "#D6F5B7",
       ic3: "#C5EC9E",
-      ski: "#B2FF9E",
       bs1: "#B4DF86",
       bs2: "#9FCE6A",
       bs3: "#82BA36",

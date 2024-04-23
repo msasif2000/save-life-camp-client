@@ -24,12 +24,12 @@ const CampCard = ({ camp }) => {
     }, []);
 
     return (
-            <div data-aos="zoom-in-right" className="flex relative flex-col text-white bg-txt1 hover:bg-sl2 rounded-br-3xl rounded-tl-3xl">
+            <div data-aos="zoom-in-right" className="flex relative flex-col bg-ic2 hover:bg-ic3 rounded-br-3xl rounded-tl-3xl">
                 <img src={image} alt="" className="h-56 w-full rounded-tl-3xl" />
-                <p className="bg-bs3 absolute  px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
+                <p className="bg-sl1 absolute text-txt2 px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
                 <div className="flex items-center justify-between py-1">
                     <p data-aos="fade-right" className="font-bold 2xl:text-3xl text-2xl  py-1 pl-2">{campName}</p>
-                    <p data-aos="fade-left" className="bg-bs3 p-1 rounded font-bold mr-1 flex gap-[1px]">{campFee} <span>tk</span></p>
+                    <p data-aos="fade-left" className="bg-sl2 p-1 rounded font-bold mr-1 flex gap-[1px]">{campFee} <span>tk</span></p>
                 </div>
                 <div className="flex flex-col px-4">
                     {services?.map((serv, index) => (<p className="flex items-center gap-1" key={index}><MdTopic /> {serv}</p>))}
@@ -52,13 +52,13 @@ const CampCard = ({ camp }) => {
                     <div className="flex justify-between">
                         {
                             user && role === 'admin' ? (
-                                <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-sl2 rounded-br-lg rounded-tl-lg bg-sl2 text-sl2 font-bold">See Details</button></Link>
+                                <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-txt2 rounded-br-lg rounded-tl-lg bg-sl2 text-txt2 font-bold">See Details</button></Link>
                             ) : (
                                 <>
-                                    <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-sl2 rounded-br-lg rounded-tl-lg bg-sl2 text-sl2 font-bold">See Details</button></Link>
+                                    <Link to={`/detailsCamp/${_id}`}><button className="p-2 border-l-4 border-txt2 rounded-br-lg rounded-tl-lg bg-sl2 text-txt2 font-bold">See Details</button></Link>
                                     {
                                         today > new Date(date) ? null : (
-                                            <Link to={`/joinCamp/${_id}`}><button className="p-2 border-r-4 border-txt1 rounded-br-lg rounded-tl-lg bg-bs3 font-bold mr-5">Join Camp</button></Link>
+                                            <Link to={`/joinCamp/${_id}`}><button className="p-2 border-r-4 border-txt1 rounded-br-lg rounded-tl-lg bg-bs2 text-txt2 font-bold mr-5">Join Camp</button></Link>
                                         )
                                     }
                                 </>
