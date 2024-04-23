@@ -1,13 +1,14 @@
 .sty a{
-    color: black;
+    color: #2F4317;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: 500;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
     transition: all 0.3s ease-in-out;
 }
 .sty a.active{
-    color: #AFFC41;
-    border-top: #3C1642 2px solid;
+    color: #547F0F;
+    text-decoration: underline;
+    text-shadow: #A9F537 0px 0px 10px;
 }

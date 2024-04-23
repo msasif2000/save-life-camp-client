@@ -27,8 +27,8 @@ const Navbar = () => {
                 //     ''
                 //     :
                 //     <>
-                //         <li><NavLink to='/login' className="flex items-center gap-1 justify-center bg-prime"><MdLogin className="text-xl mt-1"/>Sign in</NavLink></li>
-                //         {/* <button className="rounded-xl border-2 border-prime "><li><NavLink to='/register'>Sign up</NavLink></li></button> */}
+                //         <li><NavLink to='/login' className="flex items-center gap-1 justify-center bg-sl2"><MdLogin className="text-xl mt-1"/>Sign in</NavLink></li>
+                //         {/* <button className="rounded-xl border-2 border-sl2 "><li><NavLink to='/register'>Sign up</NavLink></li></button> */}
                 //     </>
             }
         </>
@@ -46,7 +46,7 @@ const Navbar = () => {
                 </div>
                 <div className="flex items-center gap-2">
                     <img src={logo} alt="" className="h-10 w-12" />
-                    <a className="flex flex-col text-center"><span className="text-prime text-left md:text-2xl text-xl font-bold">SAVE LIFE</span>  <span className="text-second text-left text-sm md:text-base font-semibold">Medical Camp</span></a>
+                    <a className="flex flex-col text-center"><span className="text-sl2 text-left md:text-2xl text-xl font-bold">SAVE LIFE</span>  <span className="text-txt1 text-left text-sm md:text-base font-semibold">Medical Camp</span></a>
                 </div>
             </div>
             <ul className="navbar-center hidden lg:flex sty">
@@ -56,11 +56,11 @@ const Navbar = () => {
                 {
                     user ?
                         <>
-                            <li className="list-none"><button onClick={handleLogout} className="btn btn-sm bg-white md:mr-2 mr-1 border-2 border-prime text-sm md:text-xl">Sign Out</button></li>
-                            <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-prime p-1" /></Link>
+                            <li className="list-none"><button onClick={handleLogout} className="btn btn-sm bg-white md:mr-2 mr-1 border-2 border-sl2 text-sm md:text-xl">Sign Out</button></li>
+                            <Link to='/dashboard'><img src={user.photoURL} alt="" className="h-14 w-14 rounded-full bg-sl2 p-1" /></Link>
                         </>
                         :
-                        <Link to='/login' className="bg-prime rounded-full p-1"><BiUserCircle className="text-second text-4xl"></BiUserCircle></Link>
+                        <Link to='/login' className="bg-sl2 rounded-full p-1"><BiUserCircle className="text-txt1 text-4xl"></BiUserCircle></Link>
 
                 }
             </div>

@@ -216,7 +216,7 @@ const Login = () => {
                             <h1 className="text-5xl font-bold">Login now!</h1>
                             <img src={login} alt="" className=""/>
                         </div>
-                        <div className="card flex-shrink-2 w-full max-w-sm border-4 border-x-y-transparent border-prime pb-4">
+                        <div className="card flex-shrink-2 w-full max-w-sm border-4 border-x-y-transparent border-sl2 pb-4">
                             <form onSubmit={handleLogin} className="card-body">
                                 <div className="form-control">
                                     <label className="label">
@@ -253,13 +253,13 @@ const Login = () => {
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
                                 <div className="form-control mt-6">
-                                    <input className={`btn btn-sm py-2 rounded-xl font-bold bg-prime hover:bg-ski`} type="submit" value="Sign in" />
+                                    <input className={`btn btn-sm py-2 rounded-xl font-bold bg-sl2 hover:bg-sl1`} type="submit" value="Sign in" />
                                 </div>
 
                             </form>
                             <div className="flex justify-center">
                                 <label className="label">
-                                    <p>Don`t have an Account? <Link to="/register" className="underline text-second font-bold">Sign Up</Link></p>
+                                    <p>Don`t have an Account? <Link to="/register" className="underline text-txt1 font-bold">Sign Up</Link></p>
                                 </label>
                             </div>
                             <div className="text-center">
@@ -267,7 +267,7 @@ const Login = () => {
                                 <p>continue with</p>
 
                             </div>
-                            <div onClick={handleGoogleLogin} className="flex justify-center mx-auto mb-2 border-2 rounded-lg border-prime my-1">
+                            <div onClick={handleGoogleLogin} className="flex justify-center mx-auto mb-2 border-2 rounded-lg border-sl2 my-1">
                                 <p className="flex gap-2 p-2  bg-white"><FcGoogle className="text-2xl "></FcGoogle> Google</p>
                             </div>
 

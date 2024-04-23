@@ -6,7 +6,7 @@ import { BiPhoneCall } from "react-icons/bi";
 
 const Contact = () => {
     return (
-        <div className="bg-third p-4 rounded">
+        <div className="bg-bs3 p-4 rounded">
             <div className="xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto lg:px-4 px-2 my-20">
                 <Helmet>
                     <title>SAVE LIFE | Contact</title>
@@ -26,7 +26,7 @@ const Contact = () => {
                     <AiOutlineMail className="text-3xl" /> <span> info@savelifemedicalcamp.org</span>
                 </div>
                 <div className="lg:flex gap-2 w-full justify-between">
-                    <div data-aos="fade-right" className="mt-8 rounded-bl-2xl rounded-tr-3xl w-full bg-ski p-4 ">
+                    <div data-aos="fade-right" className="mt-8 rounded-bl-2xl rounded-tr-3xl w-full bg-sl1 p-4 ">
                         <h2 className="text-2xl text-center">For General Inquiries</h2>
                         <div className="flex items-center justify-center gap-1 text-xl">
                             <BiPhoneCall className="text-3xl text-black" /> <span> +123-456-7890</span>
@@ -35,7 +35,7 @@ const Contact = () => {
                             <AiOutlineMail className="text-3xl" /> <span> contact@slmc.org </span>
                         </div>
                     </div>
-                    <div data-aos="fade-down" className="mt-8 rounded-bl-2xl rounded-tr-3xl w-full bg-grn p-4 text-white">
+                    <div data-aos="fade-down" className="mt-8 rounded-bl-2xl rounded-tr-3xl w-full bg-sl2 p-4 text-white">
                         <h2 className="text-2xl text-center">For Media Inquiries</h2>
                         <div className="flex items-center justify-center gap-1 text-xl">
                             <BiPhoneCall className="text-3xl text-white" /> <span> +123-456-7980</span>
@@ -44,7 +44,7 @@ const Contact = () => {
                             <AiOutlineMail className="text-3xl" /> <span> media@slmc.org  </span>
                         </div>
                     </div>
-                    <div data-aos="fade-left" className="mt-8 rounded-bl-2xl rounded-tr-3xl w-full bg-ski p-4 ">
+                    <div data-aos="fade-left" className="mt-8 rounded-bl-2xl rounded-tr-3xl w-full bg-sl1 p-4 ">
                         <h2 className="text-2xl text-center">For Volunteer Opportunities</h2>
                         <div className="flex items-center justify-center gap-1 text-xl">
                             <BiPhoneCall className="text-3xl text-black" /> <span> +123-456-5689</span>

@@ -8,7 +8,7 @@ const ErrorPage = () => {
                 <img src={img} alt="" className="h-[70vh] w-[90vh]" />
             </div>
             <div className="mt-20 flex flex-col justify-center mx-auto my-20">
-                <Link to='/'><button className="btn btn-secondary">Back to Home</button></Link>
+                <Link to='/'><button className="btn btn-txt1ary">Back to Home</button></Link>
             </div>
         </div>
     );

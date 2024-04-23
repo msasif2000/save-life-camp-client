@@ -20,9 +20,9 @@ const Doctors = () => {
 
     return (
         <div>
-            <div className="divider mt-20 bg-grn h-1"></div>
+            <div className="divider mt-20 bg-sl2 h-1"></div>
             <h2 data-aos="fade-right" data-aos-duration="1500" className="text-4xl text-center font-bold">Meet Our Doctors</h2>
-            <p data-aos="fade-left" data-aos-duration="1000" className="text-xl text-center italic my-2">They are highly qualified to train your physical and mental health!</p>
+            <p data-aos="fade-left" data-aos-duration="1500" className="text-xl text-center italic my-2">They are highly qualified to train your physical and mental health!</p>
             {/* <div className="divider"></div> */}
 
             <Swiper
@@ -41,7 +41,7 @@ const Doctors = () => {
                 {doctors.map(doctor => (
                     <SwiperSlide key={doctor._id}>
 
-                        <div className="text-center bg-grn text-white rounded-lg py-8 px-4 h-[400px]">
+                        <div className="text-center bg-sl2 text-white rounded-lg py-8 px-4 h-[400px]">
                         {/* gradient-to-b from-blue-500 to-blue-700 */}
                             <img
                                 src={doctor.image}
@@ -51,7 +51,7 @@ const Doctors = () => {
                             <h3 className="text-xl font-bold mb-2">{doctor.name}</h3>
                             <p className="text-xl font-bold">{doctor.designation}</p>
                             <p className="text-sm">{doctor.workingPlace}</p>
-                            <Link to={`/doctorsProfile/${doctor._id}`}><button className="btn btn-sm bg-prime mt-2">Profile<BsArrowRightCircleFill className="text-xl"/></button></Link>
+                            <Link to={`/doctorsProfile/${doctor._id}`}><button className="btn btn-sm bg-sl2 mt-2">Profile<BsArrowRightCircleFill className="text-xl"/></button></Link>
                         </div>
 
                     </SwiperSlide>

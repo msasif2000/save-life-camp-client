@@ -19,15 +19,15 @@ const CampDetails = () => {
     }, [axiosPublic, _id])
 
     return (
-        <div className="container p-6 mt-4 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto lg:px-0 px-2">
+        <div className="container p-6 mt-4 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto lg:px-4 px-2">
             <Helmet>
                 <title>SL| CAMP DETAILS</title>
             </Helmet>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <img src={image} alt={campName} className="w-full h-auto rounded" />
+                <div data-aos="fade-left" data-aos-duration="1500">
+                    <img src={image} alt={campName} className="w-full h-full rounded" />
                 </div>
-                <div className="bg-sky-200 p-4 text-xl">
+                <div data-aos="fade-right" data-aos-duration="1500" className="bg-sl1 p-4 text-xl rounded">
                     <h1 className="text-3xl font-bold mb-4">{campName}</h1>
                     <p className="text-gray-600 mb-2">
                         Date: <span className="font-bold">{date}</span>
@@ -54,7 +54,7 @@ const CampDetails = () => {
                         {
                             today < new Date(date) ?
 
-                                <Link to={`/joinCamp/${_id}`}><button className="btn border-red-600 bg-sky-300">Join Camp</button></Link>
+                                <Link to={`/joinCamp/${_id}`}><button className="btn border-sl2 bg-bs3 font-bold">Join Camp</button></Link>
 
                                 :
                                 ''
