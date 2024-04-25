@@ -5,7 +5,6 @@ import useAuth from "../../hooks/useAuth";
 import { Helmet } from "react-helmet";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-import { useState } from "react";
 import sgup from "../../assets/signup.png";
 
 
@@ -16,7 +15,7 @@ const Register = () => {
         reset,
         formState: { errors },
     } = useForm();
-    const { createUser, googleLogin, updateUserProfile, userLogout } = useAuth();
+    const { createUser, googleLogin, updateUserProfile } = useAuth();
     const location = useLocation();
     const navigate = useNavigate();
 
@@ -33,23 +32,21 @@ const Register = () => {
                             photoURL: data.photoURL,
                         };
                         // console.log(userInfo);
-                        axiosPublic.post('/users', userInfo).then((res) => {
-                            if (res.data.insertedId) {
-                                Swal.fire({
-                                    title: 'Account Created!',
-                                    text: 'You are Logged in',
-                                    icon: 'success',
-                                    confirmButtonText: 'Ok',
-                                }).then((result) => {
-                                    if (result.isConfirmed) {
-                                        reset();
-                                        navigate(
-                                            location.state?.from ? location.state.from : '/dashboard'
-                                        );
-                                    }
-                                });
-                            }
-                        });
+                        axiosPublic.post('/users', userInfo)
+                            .then((res) => {
+                                if (res.data.insertedId) {
+                                    Swal.fire({
+                                        title: 'Account Created!',
+                                        icon: 'success',
+                                        confirmButtonText: 'Ok',
+                                    }).then((result) => {
+                                        if (result.isConfirmed) {
+                                            reset();
+                                            navigate('/signUp/role');
+                                        }
+                                    });
+                                }
+                            });
                     });
                 }
             })
@@ -63,152 +60,45 @@ const Register = () => {
                 }).then((result) => {
                     if (result.isConfirmed) {
                         reset();
-                        navigate(location.state?.from ? location.state.from : '/login');
+                        navigate(location.state?.from ? location.state.from : '/register');
                     }
                 });
             });
     }; // Closing parenthesis for onSubmit function
 
-    const [selectedRole, setSelectedRole] = useState(null);
 
-    const handleRoleSelection = async () => {
-        const { value: role } = await Swal.fire({
-            title: 'Select Your Role',
-            input: 'select',
-            inputOptions: {
-                'admin': 'Admin',
-                'user': 'User',
-                'professional': 'Professional',
-            },
-            inputPlaceholder: 'Select your role',
-            showCancelButton: true,
-            inputValidator: (value) => {
-                if (!value) {
-                    return 'Role cannot be empty';
+    const checkRole = (email) => {
+        axiosPublic.get(`/checkRole/${email}`)
+            .then((response) => {
+                const userRole = response.data.role;
+                if (userRole === "true") {
+                    navigate(location.state?.from ? location.state.from : '/register');
+                } else {
+                    navigate("/signUp/role");
                 }
-            },
-        });
-
-        if (role) {
-            setSelectedRole(role.toLowerCase());
-        }
+            })
+            .catch((error) => {
+                console.error("Error checking user role:", error);
+            });
     };
 
-    const handleGoogleLogin = async () => {
-        // Prompt the user to select a role
-        await handleRoleSelection();
+    const handleGoogleLogin = () => {
+        googleLogin().then((res) => {
+            const userInfo = {
+                name: res.user.displayName,
+                email: res.user.email,
+                photoURL: res.user.photoURL,
+            };
 
-        if (selectedRole) {
-            // Continue with Google login
-            googleLogin()
-                .then((result) => {
-                    const { displayName, email, photoURL } = result.user;
-                    // Check if the user with the provided email and role exists in the database
-                    axiosPublic.get(`/usersLogin?email=${email}&role=${selectedRole}`)
-                        .then(res => {
-                            if (res.data) {
-                                // User with matching email and role found, proceed with login
-                                const userInfo = { name: displayName, email, photoURL, role: selectedRole };
-                                axiosPublic.post('/users', userInfo).then((res) => {
-                                    if (res.data.insertedId) {
-                                        Swal.fire({
-                                            title: 'Login  Successful!',
-                                            text: 'You are Logged in',
-                                            icon: 'success',
-                                            confirmButtonText: 'Ok',
-                                        }).then((result) => {
-                                            if (result.isConfirmed) {
-                                                navigate(
-                                                    location.state?.from ? location.state.from : '/dashboard'
-                                                );
-                                            }
-                                        });
-                                    }
-                                });
+            axiosPublic.post('/users', userInfo)
+                .then(() => {
 
-                                navigate(location.state?.from ? location.state.from : '/dashboard');
-                            } else {
-                                const userInfo = { name: displayName, email, photoURL, role: 'user' };
-                                axiosPublic.post('/users', userInfo)
-                                    .then((res) => {
-                                        console.log(
-                                            res.data
-                                        );
-                                        if (res.data.insertedId) {
-                                            Swal.fire({
-                                                title: 'Account Created!',
-                                                text: 'You are Logged in',
-                                                icon: 'success',
-                                                confirmButtonText: 'Ok',
-                                            }).then((result) => {
-                                                if (result.isConfirmed) {
-                                                    navigate(
-                                                        location.state?.from ? location.state.from : '/dashboard'
-                                                    );
-                                                }
-                                            });
-                                        }
-                                        else {
-                                            userLogout();
-                                            // User with matching email and role not found, display error
-                                            Swal.fire({
-                                                icon: 'error',
-                                                title: 'Error!',
-                                                text: 'User with the provided email and role not found!',
-                                                confirmButtonText: 'Ok',
-                                            }).then((result) => {
-                                                if (result.isConfirmed) {
-                                                    navigate(location.state?.from ? location.state.from : '/login');
-                                                }
-                                            });
-                                        }
-                                    })
-                            }
-                        })
-                        .catch(() => {
-                            // Handle database error
-                            const userInfo = { name: displayName, email, photoURL, role: selectedRole };
-                            axiosPublic.post('/users', userInfo)
-                                .then((res) => {
-                                    if (res.data.insertedId) {
-                                        Swal.fire({
-                                            title: 'Account Created!',
-                                            text: 'You are Logged in',
-                                            icon: 'success',
-                                            confirmButtonText: 'Ok',
-                                        }).then((result) => {
-                                            if (result.isConfirmed) {
-                                                navigate(
-                                                    location.state?.from ? location.state.from : '/dashboard'
-                                                );
-                                            }
-                                        });
-                                    }
-                                });
-
-                            navigate(location.state?.from ? location.state.from : '/dashboard');
-                        });
-                })
-                .catch((error) => {
-                    // Handle Google login error
-                    console.log(error.message);
-                    Swal.fire({
-                        title: 'Error!',
-                        text: error.message,
-                        icon: 'error',
-                        confirmButtonText: 'Ok',
-                    }).then((result) => {
-                        if (result.isConfirmed) {
-                            navigate(location.state?.from ? location.state.from : '/login');
-                        }
-                    });
+                    checkRole(userInfo.email);
                 });
-        } else {
-            // Handle if the user cancels the role selection
-            console.log('Role selection canceled');
-        }
-    };
 
+                navigate('/')
+        })
+    }
 
 
     return (

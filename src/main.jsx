@@ -38,6 +38,7 @@ import AddReview from './pages/Dashboard/Review/AddReview';
 import CampDetails from './pages/AvailableCamps/CampDetails';
 import { axiosPublic } from './hooks/useAxiosPublic';
 import DoctorsViewProfile from './components/Doctors/DoctorsViewProfile';
+import Role from './pages/Register/Role';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: '/register',
         element: <Register></Register>
+      },
+      {
+        path: '/signUp/role',
+        element: <Role />
       },
       {
         path: '/availableCamp',

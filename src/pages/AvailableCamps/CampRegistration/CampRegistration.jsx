@@ -63,7 +63,7 @@ const CampRegistration = () => {
                 <title>SL| CAMP REGISTRATION</title>
             </Helmet>
             <div className="flex mb-16 xl:max-w-screen-lg 2xl:max-w-screen-xl mx-auto lg:px-4 px-2">
-                <div className="hero mt-20 mx-auto">
+                <div className="hero mt-8 mx-auto">
                     <div className="hero-content flex flex-col md:flex-row w-full ">
                         <div className="text-center">
                             <h1 className="lg:text-5xl text-3xl font-bold my-6">Registration for <span className="text-sl2">{campName}</span> Camp</h1>
