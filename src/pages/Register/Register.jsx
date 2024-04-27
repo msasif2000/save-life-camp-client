@@ -42,7 +42,7 @@ const Register = () => {
                                     }).then((result) => {
                                         if (result.isConfirmed) {
                                             reset();
-                                            
+
                                         }
                                     });
                                 }
@@ -69,10 +69,10 @@ const Register = () => {
 
     const checkRole = (email) => {
         axiosPublic.get(`/checkRole/${email}`)
-            .then((response) => {
-                const userRole = response.data.role;
-                if (userRole === "true") {
-                    navigate(location.state?.from ? location.state.from : '/register');
+            .then((res) => {
+                const userRole = res.data.role;
+                if (userRole) {
+                    navigate(location.state?.from ? location.state.from : '/');
                 } else {
                     navigate("/signUp/role");
                 }

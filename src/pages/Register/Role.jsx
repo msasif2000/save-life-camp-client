@@ -11,7 +11,6 @@ const Role = () => {
     const {user} = useAuth();
     const navigate = useNavigate();
     const handlRoleSet = (role) => {
-        console.log(role);
         axiosPublic.put(`/roleSet/${user?.email}`, { role: role })
             .then((res) => {
                 if (res.data.acknowledged) {
