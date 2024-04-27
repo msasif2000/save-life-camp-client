@@ -42,7 +42,7 @@ const Register = () => {
                                     }).then((result) => {
                                         if (result.isConfirmed) {
                                             reset();
-                                            navigate('/signUp/role');
+                                            
                                         }
                                     });
                                 }
@@ -92,11 +92,10 @@ const Register = () => {
 
             axiosPublic.post('/users', userInfo)
                 .then(() => {
-
                     checkRole(userInfo.email);
                 });
 
-                navigate('/')
+            navigate('/')
         })
     }
 

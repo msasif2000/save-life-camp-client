@@ -114,14 +114,14 @@ const Login = () => {
                                         }).then((result) => {
                                             if (result.isConfirmed) {
                                                 navigate(
-                                                    location.state?.from ? location.state.from : '/dashboard'
+                                                    location.state?.from ? location.state.from : '/'
                                                 );
                                             }
                                         });
                                     }
                                 });
 
-                                navigate(location.state?.from ? location.state.from : '/dashboard');
+                                navigate(location.state?.from ? location.state.from : '/');
                             } else {
                                 const userInfo = { name: displayName, email, photoURL, role: 'user' };
                                 axiosPublic.post('/users', userInfo)
@@ -138,7 +138,7 @@ const Login = () => {
                                             }).then((result) => {
                                                 if (result.isConfirmed) {
                                                     navigate(
-                                                        location.state?.from ? location.state.from : '/dashboard'
+                                                        location.state?.from ? location.state.from : '/'
                                                     );
                                                 }
                                             });
@@ -174,14 +174,14 @@ const Login = () => {
                                         }).then((result) => {
                                             if (result.isConfirmed) {
                                                 navigate(
-                                                    location.state?.from ? location.state.from : '/dashboard'
+                                                    location.state?.from ? location.state.from : '/'
                                                 );
                                             }
                                         });
                                     }
                                 });
 
-                            navigate(location.state?.from ? location.state.from : '/dashboard');
+                            navigate(location.state?.from ? location.state.from : '/');
                         });
                 })
                 .catch((error) => {
