@@ -6,6 +6,7 @@ import PreviousCamp from "../../components/PreviousCamp/PreviousCamp";
 import Testimonial from "../../components/Testimonial/Testimonial";
 import Upcoming from "../../components/Upcoming/Upcoming";
 import InfoGraph from "./InfoGraph";
+import Album from "./Album";
 
 const Home = () => {
     return (
@@ -19,6 +20,7 @@ const Home = () => {
             <Upcoming></Upcoming>
             <PreviousCamp></PreviousCamp>
             <Doctors></Doctors>
+            <Album></Album>
             <Testimonial></Testimonial>
         </div>
     );
