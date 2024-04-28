@@ -24,12 +24,12 @@ const CampCard = ({ camp }) => {
     }, []);
 
     return (
-            <div data-aos="zoom-in-right" className="flex relative flex-col bg-ic2 hover:bg-ic3 rounded-br-3xl rounded-tl-3xl">
+            <div data-aos="zoom-in-right" data-aos-duration="1000" className="flex relative flex-col bg-ic2 hover:bg-ic3 rounded-br-3xl rounded-tl-3xl">
                 <img src={image} alt="" className="h-56 w-full rounded-tl-3xl" />
                 <p className="bg-sl1 absolute text-txt2 px-2 mr-4 rounded-tl-3xl">Joined {participants} Peoples</p>
                 <div className="flex items-center justify-between py-1">
-                    <p data-aos="fade-right"data-aos-duration="1000"  className="font-bold 2xl:text-3xl text-2xl  py-1 pl-2">{campName}</p>
-                    <p data-aos="fade-left" data-aos-duration="1000" className="bg-sl2 p-1 rounded font-bold mr-1 flex gap-[1px]">{campFee} <span>tk</span></p>
+                    <p data-aos="fade-right"data-aos-duration="1200"  className="font-bold 2xl:text-3xl text-2xl  py-1 pl-2">{campName}</p>
+                    <p data-aos="fade-left" data-aos-duration="1200" className="bg-sl2 p-1 rounded font-bold mr-1 flex gap-[1px]">{campFee} <span>tk</span></p>
                 </div>
                 <div className="flex flex-col px-4">
                     {services?.map((serv, index) => (<p className="flex items-center gap-1" key={index}><MdTopic /> {serv}</p>))}
@@ -43,12 +43,12 @@ const CampCard = ({ camp }) => {
                 <p className="flex items-center gap-1  px-2 text-center"><span><FcPodiumWithAudience className="text-2xl" /></span> <span className="font-bold">{audience}</span></p>
 
                 <dispatchEvent className="mb-8 mx-2">
-                    <p data-aos="fade-right"data-aos-duration="1000"  className="flex gap-2 items-center pr-4"><BiTimeFive className="text-2xl" /><span className="">{date.split('T')[0]},
+                    <p data-aos="fade-right"data-aos-duration="1200"  className="flex gap-2 items-center pr-4"><BiTimeFive className="text-2xl" /><span className="">{date.split('T')[0]},
                         {date.split('T')[1].split('.')[0]}</span></p>
-                    <p data-aos="fade-left" data-aos-duration="1000" className="flex gap-2 text-right justify-end"><span className=" bold">{venue}</span><ImLocation className="text-2xl" /></p>
+                    <p data-aos="fade-left" data-aos-duration="1200" className="flex gap-2 text-right justify-end"><span className=" bold">{venue}</span><ImLocation className="text-2xl" /></p>
                 </dispatchEvent>
 
-                <div data-aos="fade-left" data-aos-duration="1000" className="absolute -bottom-4 left-0 right-0">
+                <div data-aos="fade-left" data-aos-duration="1200" className="absolute -bottom-4 left-0 right-0">
                     <div className="flex justify-between">
                         {
                             user && role === 'admin' ? (
